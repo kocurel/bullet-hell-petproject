@@ -1,0 +1,130 @@
+\doxysection{Pickup\+Manager Class Reference}
+\hypertarget{class_pickup_manager}{}\label{class_pickup_manager}\index{PickupManager@{PickupManager}}
+
+
+Manages the lifecycle, processing, and rendering of various in-\/game pickups.  
+
+
+
+
+{\ttfamily \#include $<$Pickup\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_pickup_manager_a3ad6e368c0ff9095f99f253c7c6de201}{clear\+Pickups}} ()
+\begin{DoxyCompactList}\small\item\em Clears all pickups from the manager. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_pickup}{Pickup}} $>$ $>$ \& \mbox{\hyperlink{class_pickup_manager_a71524ac9d5827e1cd0a236432cc1e8fe}{get\+Pickups}} ()
+\begin{DoxyCompactList}\small\item\em Gets a constant reference to the vector of pickups. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pickup_manager_ac0d0f23fec96c90e88c9d30cac8b588e}{process}} ()
+\begin{DoxyCompactList}\small\item\em Processes all active pickups. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pickup_manager_aebe8af10605c41b4233638f6ce24adfd}{render\+Pickups}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders all active pickups on the provided SFML render window. \end{DoxyCompactList}\item 
+std\+::mutex \& \mbox{\hyperlink{class_pickup_manager_a7ca95027ce16a7de7214fd49b72705bc}{get\+Mutex}} ()
+\begin{DoxyCompactList}\small\item\em Gets a reference to the internal mutex. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pickup_manager_a94d8e3cdc94ab3bf0b1fcb8e419bbb5f}{create\+Pickup}} (int type, sf\+::\+Vector2f posistion)
+\begin{DoxyCompactList}\small\item\em Creates a new pickup of a specified type at a given position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_pickup_manager_ab1d29f071202e24cf7998d0a022fc5c1}{\texorpdfstring{$\sim$}{\string~}\+Pickup\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the lifecycle, processing, and rendering of various in-\/game pickups. 
+
+This class is responsible for creating new pickups, updating their state, rendering them on the screen, and cleaning up disabled pickups. It uses {\ttfamily std\+::unique\+\_\+ptr} for automatic memory management of pickups and a mutex for thread-\/safe operations, particularly during pickup creation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pickup_manager_ab1d29f071202e24cf7998d0a022fc5c1}\label{class_pickup_manager_ab1d29f071202e24cf7998d0a022fc5c1} 
+\index{PickupManager@{PickupManager}!````~PickupManager@{\texorpdfstring{$\sim$}{\string~}PickupManager}}
+\index{````~PickupManager@{\texorpdfstring{$\sim$}{\string~}PickupManager}!PickupManager@{PickupManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}PickupManager()}{\string~PickupManager()}}
+{\footnotesize\ttfamily Pickup\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Pickup\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pickup_manager_a3ad6e368c0ff9095f99f253c7c6de201}\label{class_pickup_manager_a3ad6e368c0ff9095f99f253c7c6de201} 
+\index{PickupManager@{PickupManager}!clearPickups@{clearPickups}}
+\index{clearPickups@{clearPickups}!PickupManager@{PickupManager}}
+\doxysubsubsection{\texorpdfstring{clearPickups()}{clearPickups()}}
+{\footnotesize\ttfamily void Pickup\+Manager\+::clear\+Pickups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears all pickups from the manager. 
+
+\Hypertarget{class_pickup_manager_a94d8e3cdc94ab3bf0b1fcb8e419bbb5f}\label{class_pickup_manager_a94d8e3cdc94ab3bf0b1fcb8e419bbb5f} 
+\index{PickupManager@{PickupManager}!createPickup@{createPickup}}
+\index{createPickup@{createPickup}!PickupManager@{PickupManager}}
+\doxysubsubsection{\texorpdfstring{createPickup()}{createPickup()}}
+{\footnotesize\ttfamily void Pickup\+Manager\+::create\+Pickup (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{sf\+::\+Vector2f}]{posistion }\end{DoxyParamCaption})}
+
+
+
+Creates a new pickup of a specified type at a given position. 
+
+This method uses a {\ttfamily std\+::lock\+\_\+guard} to ensure thread-\/safe addition of new pickups to the {\ttfamily pickups\+\_\+} vector. It uses a switch statement to create different types of pickups based on the provided {\ttfamily type} integer. 
+\begin{DoxyParams}{Parameters}
+{\em type} & -\/ an integer representing the type of pickup to create (0\+: Health, 1\+: Attack\+Up, etc.). \\
+\hline
+{\em posistion} & -\/ The SFML 2D vector representing the initial position of the pickup. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pickup_manager_a7ca95027ce16a7de7214fd49b72705bc}\label{class_pickup_manager_a7ca95027ce16a7de7214fd49b72705bc} 
+\index{PickupManager@{PickupManager}!getMutex@{getMutex}}
+\index{getMutex@{getMutex}!PickupManager@{PickupManager}}
+\doxysubsubsection{\texorpdfstring{getMutex()}{getMutex()}}
+{\footnotesize\ttfamily std\+::mutex \& Pickup\+Manager\+::get\+Mutex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a reference to the internal mutex. 
+
+This allows external code to lock the mutex when performing operations that might conflict with create\+Pickup like the \doxylink{class_player}{Player} object iterating through the vector in another thread \Hypertarget{class_pickup_manager_a71524ac9d5827e1cd0a236432cc1e8fe}\label{class_pickup_manager_a71524ac9d5827e1cd0a236432cc1e8fe} 
+\index{PickupManager@{PickupManager}!getPickups@{getPickups}}
+\index{getPickups@{getPickups}!PickupManager@{PickupManager}}
+\doxysubsubsection{\texorpdfstring{getPickups()}{getPickups()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_pickup}{Pickup}} $>$ $>$ \& Pickup\+Manager\+::get\+Pickups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a constant reference to the vector of pickups. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to the pickups\+\_\+ vector, allowing read-\/only access. 
+\end{DoxyReturn}
+\Hypertarget{class_pickup_manager_ac0d0f23fec96c90e88c9d30cac8b588e}\label{class_pickup_manager_ac0d0f23fec96c90e88c9d30cac8b588e} 
+\index{PickupManager@{PickupManager}!process@{process}}
+\index{process@{process}!PickupManager@{PickupManager}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Pickup\+Manager\+::process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Processes all active pickups. 
+
+This method first calls cleanup() to remove disabled pickups. Then, it iterates through all remaining active pickups and calls their \doxylink{class_pickup_manager_ac0d0f23fec96c90e88c9d30cac8b588e}{process()} method. \Hypertarget{class_pickup_manager_aebe8af10605c41b4233638f6ce24adfd}\label{class_pickup_manager_aebe8af10605c41b4233638f6ce24adfd} 
+\index{PickupManager@{PickupManager}!renderPickups@{renderPickups}}
+\index{renderPickups@{renderPickups}!PickupManager@{PickupManager}}
+\doxysubsubsection{\texorpdfstring{renderPickups()}{renderPickups()}}
+{\footnotesize\ttfamily void Pickup\+Manager\+::render\+Pickups (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders all active pickups on the provided SFML render window. 
+
+This method iterates through all active pickups and calls their render() method. 
+\begin{DoxyParams}{Parameters}
+{\em window} & -\/ a reference to the SFML Render\+Window where pickups will be drawn \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_pickup_manager_8h}{Pickup\+Manager.\+h}}\item 
+\mbox{\hyperlink{_pickup_manager_8cpp}{Pickup\+Manager.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,73 @@
+\doxysection{IAdd\+Projectile Class Reference}
+\hypertarget{class_i_add_projectile}{}\label{class_i_add_projectile}\index{IAddProjectile@{IAddProjectile}}
+
+
+Interface of \doxylink{class_projectile_manager}{Projectile\+Manager} manager class. Used to pass ownership of \doxylink{class_projectile}{Projectile} objects into the projectile manager.  
+
+
+
+
+{\ttfamily \#include $<$IAdd\+Projectile.\+h$>$}
+
+Inheritance diagram for IAdd\+Projectile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_add_projectile}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_add_projectile_a5f6a689b7b1dfca8fe3a18d8262b463c}{create\+Player\+Projectile}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&\&proj)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method. Used to pass the ownership of player-\/made \doxylink{class_projectile}{Projectile} objects to \doxylink{class_event_manager}{Event\+Manager}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_add_projectile_af6071ba1b51f07cc20e2b88e7b88032a}{create\+Enemy\+Projectile}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&\&proj)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method. Used to pass the ownership of enemy-\/made \doxylink{class_projectile}{Projectile} objects to \doxylink{class_event_manager}{Event\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface of \doxylink{class_projectile_manager}{Projectile\+Manager} manager class. Used to pass ownership of \doxylink{class_projectile}{Projectile} objects into the projectile manager. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_add_projectile_af6071ba1b51f07cc20e2b88e7b88032a}\label{class_i_add_projectile_af6071ba1b51f07cc20e2b88e7b88032a} 
+\index{IAddProjectile@{IAddProjectile}!createEnemyProjectile@{createEnemyProjectile}}
+\index{createEnemyProjectile@{createEnemyProjectile}!IAddProjectile@{IAddProjectile}}
+\doxysubsubsection{\texorpdfstring{createEnemyProjectile()}{createEnemyProjectile()}}
+{\footnotesize\ttfamily virtual void IAdd\+Projectile\+::create\+Enemy\+Projectile (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&\&}]{proj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method. Used to pass the ownership of enemy-\/made \doxylink{class_projectile}{Projectile} objects to \doxylink{class_event_manager}{Event\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em proj} & -\/ an r-\/value reference to the \doxylink{class_projectile}{Projectile} object. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_projectile_manager_ab20c76db1d18cb53fb5bd108904e2a10}{Projectile\+Manager}}.
+
+\Hypertarget{class_i_add_projectile_a5f6a689b7b1dfca8fe3a18d8262b463c}\label{class_i_add_projectile_a5f6a689b7b1dfca8fe3a18d8262b463c} 
+\index{IAddProjectile@{IAddProjectile}!createPlayerProjectile@{createPlayerProjectile}}
+\index{createPlayerProjectile@{createPlayerProjectile}!IAddProjectile@{IAddProjectile}}
+\doxysubsubsection{\texorpdfstring{createPlayerProjectile()}{createPlayerProjectile()}}
+{\footnotesize\ttfamily virtual void IAdd\+Projectile\+::create\+Player\+Projectile (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&\&}]{proj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method. Used to pass the ownership of player-\/made \doxylink{class_projectile}{Projectile} objects to \doxylink{class_event_manager}{Event\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em proj} & -\/ an r-\/value reference to the \doxylink{class_projectile}{Projectile} object. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_projectile_manager_a65795f332bb7904febe9decca5c524a2}{Projectile\+Manager}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_i_add_projectile_8h}{IAdd\+Projectile.\+h}}\end{DoxyCompactItemize}

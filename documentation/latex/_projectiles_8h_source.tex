@@ -1,0 +1,42 @@
+\doxysection{Projectiles.\+h}
+\hypertarget{_projectiles_8h_source}{}\label{_projectiles_8h_source}\mbox{\hyperlink{_projectiles_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_add_projectile_8h}{IAddProjectile.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile}{Projectile}};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesf}{sf}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }RenderWindow;}
+\DoxyCodeLine{00012\ \}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectiles}{Projectiles}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ std::mutex\ enemy\_mtx\_;}
+\DoxyCodeLine{00017\ \ \ \ \ std::mutex\ player\_mtx\_;}
+\DoxyCodeLine{00018\ \ \ \ \ std::vector<std::unique\_ptr<Projectile>>\ enemy\_projectiles\_;}
+\DoxyCodeLine{00019\ \ \ \ \ std::vector<std::unique\_ptr<Projectile>>\ player\_projectiles\_;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \_cleanup\_counter\ =\ 120;}
+\DoxyCodeLine{00021\ \ \ \ \ std::function<bool(\textcolor{keyword}{const}\ std::unique\_ptr<Projectile>\&)>\ is\_not\_disabled;}
+\DoxyCodeLine{00022\ \ \ \ \ std::function<bool(\textcolor{keyword}{const}\ std::unique\_ptr<Projectile>\&)>\ is\_disabled;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ cleanupProjectiles();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_projectiles_a1c2d12ed2a660e5536edf5ecb385df6f}{Projectiles}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectiles_a444ea732ddd2b5110843782fb97b4bfe}{clearProjectiles}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectiles_a7ccf290a391a661bfcf680cf04a2ab96}{process\_projectiles}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectiles_a9460145f2dd05a860376d11322b5d2c1}{createPlayerProjectile}}(std::unique\_ptr<Projectile>\&\ projectile)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectiles_afac0c95d71ca5b34badc7e11034d3908}{createEnemyProjectile}}(std::unique\_ptr<Projectile>\&\ projectile)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectiles_a76570e7bd85e2f84db42c9275fba89c3}{render}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00033\ \ \ \ \ std::mutex\&\ \mbox{\hyperlink{class_projectiles_ad90afb061694695e5399a82b0aa8b3d4}{getEnemyMtx}}();}
+\DoxyCodeLine{00034\ \ \ \ \ std::mutex\&\ \mbox{\hyperlink{class_projectiles_a81019af11cfeca73bad6e53cc6379e36}{getPlayerMtx}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ std::vector\ <std::unique\_ptr<Projectile>>\&\ \mbox{\hyperlink{class_projectiles_ad7c2c5f46f67634671197c6235bbc4b1}{getPlayerProjectiles}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ std::vector\ <std::unique\_ptr<Projectile>>\&\ \mbox{\hyperlink{class_projectiles_a43622c2d69a40a4ca1e60050dd6ff211}{getEnemyProjectiles}}();}
+\DoxyCodeLine{00037\ \};}
+
+\end{DoxyCode}

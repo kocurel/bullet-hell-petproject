@@ -1,0 +1,169 @@
+\doxysection{Enemy\+Manager Class Reference}
+\hypertarget{class_enemy_manager}{}\label{class_enemy_manager}\index{EnemyManager@{EnemyManager}}
+
+
+\doxylink{class_enemy}{Enemy} manager class. Keeps all enemies inside a vector of unique pointers Is responsible for calling \doxylink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{Enemy\+::process(\+Player\&)}, \doxylink{class_sprite_owner_aec9bd1d26b203a50e38d1ac4e4776247}{Enemy\+::render(sf\+::\+Render\+Window\&)}, receiving new enemies and cleaning up the disabled enemies. Has exclusive ownership over the stored objects.  
+
+
+
+
+{\ttfamily \#include $<$Enemy\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_manager_a5a29b3e6ab0a7edb1c8dc5ec5083308f}{Enemy\+Manager}} (\mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Disabled copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \& \mbox{\hyperlink{class_enemy_manager_ac2f44643c19d2c01868da316e69adc39}{operator=}} (\mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Disabled copy assignment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_enemy_manager_a32e40df74cd494c69b3922b519d3146e}{Enemy\+Manager}} (\mbox{\hyperlink{class_i_notify_end_wave}{INotify\+End\+Wave}} \&wave\+\_\+controller)
+\begin{DoxyCompactList}\small\item\em The class constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_manager_ab2c10dfd9580ec5e0b02b75c785d05bf}{clear\+Enemies}} ()
+\begin{DoxyCompactList}\small\item\em Clears the enemies\+\_\+ vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_manager_ae92082a83e6ef5549f34eab11e20c82b}{process}} (\mbox{\hyperlink{class_player}{Player}} \&player, \mbox{\hyperlink{class_projectile_manager}{Projectile\+Manager}} \&projectiles, \mbox{\hyperlink{class_pickup_manager}{Pickup\+Manager}} \&pickups)
+\begin{DoxyCompactList}\small\item\em Main process function. Is to be called each frame by the game controller. It is resposible for calling cleanup\+Enemies(),check\+Wave() and calling \doxylink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{Enemy\+::process(\+Player\&)} for each non-\/disabled enemy and checking collisions with player projectiles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_manager_a8333cb2363202fcacd49189962d22f57}{create\+Enemy}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $>$ \&\&enemy)
+\begin{DoxyCompactList}\small\item\em Moves a unique pointer passed as parameter to the enemies\+\_\+ vector. Once called, the \doxylink{class_enemy_manager}{Enemy\+Manager} class becomes the owner of the enemy object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_manager_a4d99c5302aab6e079e3c891e1b444337}{render\+Enemies}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Calls render(sf\+::\+Render\+Window\&) of all the non-\/disabled enemies. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_enemy_manager_afe3583e45273d5509e59467d06a3feb6}{\texorpdfstring{$\sim$}{\string~}\+Enemy\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_enemy_manager}{Enemy\+Manager} destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_enemy}{Enemy} manager class. Keeps all enemies inside a vector of unique pointers Is responsible for calling \doxylink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{Enemy\+::process(\+Player\&)}, \doxylink{class_sprite_owner_aec9bd1d26b203a50e38d1ac4e4776247}{Enemy\+::render(sf\+::\+Render\+Window\&)}, receiving new enemies and cleaning up the disabled enemies. Has exclusive ownership over the stored objects. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_enemy}{Enemy} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_enemy_manager_a5a29b3e6ab0a7edb1c8dc5ec5083308f}\label{class_enemy_manager_a5a29b3e6ab0a7edb1c8dc5ec5083308f} 
+\index{EnemyManager@{EnemyManager}!EnemyManager@{EnemyManager}}
+\index{EnemyManager@{EnemyManager}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{EnemyManager()}{EnemyManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Enemy\+Manager\+::\+Enemy\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Disabled copy constructor. 
+
+\Hypertarget{class_enemy_manager_a32e40df74cd494c69b3922b519d3146e}\label{class_enemy_manager_a32e40df74cd494c69b3922b519d3146e} 
+\index{EnemyManager@{EnemyManager}!EnemyManager@{EnemyManager}}
+\index{EnemyManager@{EnemyManager}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{EnemyManager()}{EnemyManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Enemy\+Manager\+::\+Enemy\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_notify_end_wave}{INotify\+End\+Wave}} \&}]{wave\+\_\+controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+The class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wave\+\_\+controller} & -\/ Reference to the \doxylink{class_i_notify_end_wave}{INotify\+End\+Wave} interface of \doxylink{class_event_manager}{Event\+Manager} to let \doxylink{class_enemy_manager}{Enemy\+Manager} call \doxylink{class_i_notify_end_wave_aa3d1bcf61a2f3628bbb82d84c72596a1}{INotify\+End\+Wave\+::end\+Wave()}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_i_notify_end_wave}{INotify\+End\+Wave}, Enemy\+Manager\+::check\+Wave 
+\end{DoxySeeAlso}
+\Hypertarget{class_enemy_manager_afe3583e45273d5509e59467d06a3feb6}\label{class_enemy_manager_afe3583e45273d5509e59467d06a3feb6} 
+\index{EnemyManager@{EnemyManager}!````~EnemyManager@{\texorpdfstring{$\sim$}{\string~}EnemyManager}}
+\index{````~EnemyManager@{\texorpdfstring{$\sim$}{\string~}EnemyManager}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EnemyManager()}{\string~EnemyManager()}}
+{\footnotesize\ttfamily Enemy\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Enemy\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxylink{class_enemy_manager}{Enemy\+Manager} destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_enemy_manager_ab2c10dfd9580ec5e0b02b75c785d05bf}\label{class_enemy_manager_ab2c10dfd9580ec5e0b02b75c785d05bf} 
+\index{EnemyManager@{EnemyManager}!clearEnemies@{clearEnemies}}
+\index{clearEnemies@{clearEnemies}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{clearEnemies()}{clearEnemies()}}
+{\footnotesize\ttfamily void Enemy\+Manager\+::clear\+Enemies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the enemies\+\_\+ vector. 
+
+To be called when starting a new game. \begin{DoxySeeAlso}{See also}
+Enemy\+Manager\+::enemies\+\_\+ 
+\end{DoxySeeAlso}
+\Hypertarget{class_enemy_manager_a8333cb2363202fcacd49189962d22f57}\label{class_enemy_manager_a8333cb2363202fcacd49189962d22f57} 
+\index{EnemyManager@{EnemyManager}!createEnemy@{createEnemy}}
+\index{createEnemy@{createEnemy}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{createEnemy()}{createEnemy()}}
+{\footnotesize\ttfamily void Enemy\+Manager\+::create\+Enemy (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $>$ \&\&}]{enemy }\end{DoxyParamCaption})}
+
+
+
+Moves a unique pointer passed as parameter to the enemies\+\_\+ vector. Once called, the \doxylink{class_enemy_manager}{Enemy\+Manager} class becomes the owner of the enemy object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & -\/ a unique pointer to the new enemy object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Enemy\+Manager\+::enemies\+\_\+ 
+\end{DoxySeeAlso}
+\Hypertarget{class_enemy_manager_ac2f44643c19d2c01868da316e69adc39}\label{class_enemy_manager_ac2f44643c19d2c01868da316e69adc39} 
+\index{EnemyManager@{EnemyManager}!operator=@{operator=}}
+\index{operator=@{operator=}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \& Enemy\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Disabled copy assignment. 
+
+\Hypertarget{class_enemy_manager_ae92082a83e6ef5549f34eab11e20c82b}\label{class_enemy_manager_ae92082a83e6ef5549f34eab11e20c82b} 
+\index{EnemyManager@{EnemyManager}!process@{process}}
+\index{process@{process}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Enemy\+Manager\+::process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player,  }\item[{\mbox{\hyperlink{class_projectile_manager}{Projectile\+Manager}} \&}]{projectiles,  }\item[{\mbox{\hyperlink{class_pickup_manager}{Pickup\+Manager}} \&}]{pickups }\end{DoxyParamCaption})}
+
+
+
+Main process function. Is to be called each frame by the game controller. It is resposible for calling cleanup\+Enemies(),check\+Wave() and calling \doxylink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{Enemy\+::process(\+Player\&)} for each non-\/disabled enemy and checking collisions with player projectiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & -\/ a reference to the \doxylink{class_player}{Player} object, necessary to pass as a parammeter to \doxylink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{Enemy\+::process()} \\
+\hline
+{\em projectiles} & -\/ a reference to the \doxylink{class_projectile_manager}{Projectile\+Manager}, necessary to check for collisions. \\
+\hline
+{\em pickups} & -\/ a reference to the \doxylink{class_pickup_manager}{Pickup\+Manager}, necessary for enemies to create pickups on destruction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Enemy\+Manager\+::cleanup\+Enemies, Enemy\+Manager\+::check\+Wave, \doxylink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{Enemy\+::process}, \doxylink{class_collision_circle_af1cf2e37caf8b6910fdbae28efe81f0a}{Collision\+Circle\+::check\+Collision} 
+\end{DoxySeeAlso}
+\Hypertarget{class_enemy_manager_a4d99c5302aab6e079e3c891e1b444337}\label{class_enemy_manager_a4d99c5302aab6e079e3c891e1b444337} 
+\index{EnemyManager@{EnemyManager}!renderEnemies@{renderEnemies}}
+\index{renderEnemies@{renderEnemies}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{renderEnemies()}{renderEnemies()}}
+{\footnotesize\ttfamily void Enemy\+Manager\+::render\+Enemies (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Calls render(sf\+::\+Render\+Window\&) of all the non-\/disabled enemies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & -\/ a reference to the Render\+Window, necessary to pass as a parameter to Sprite\+Owner\+::render(\+Render\+Window\&) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_sprite_owner_aec9bd1d26b203a50e38d1ac4e4776247}{Sprite\+Owner\+::render} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_enemy_manager_8h}{Enemy\+Manager.\+h}}\item 
+\mbox{\hyperlink{_enemy_manager_8cpp}{Enemy\+Manager.\+cpp}}\end{DoxyCompactItemize}

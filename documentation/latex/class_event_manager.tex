@@ -1,0 +1,130 @@
+\doxysection{Event\+Manager Class Reference}
+\hypertarget{class_event_manager}{}\label{class_event_manager}\index{EventManager@{EventManager}}
+
+
+\doxylink{class_event}{Event} manager class. Keeps all events inside a queue of unique pointers. Responsible for counting down the frames and releasing events.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Manager.\+h$>$}
+
+Inheritance diagram for Event\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_event_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_event_manager_ae80e8f2affb7a204ad84eb361f40d11c}{process}} (\mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \&enemies, \mbox{\hyperlink{class_projectile_manager}{Projectile\+Manager}} \&projectiles)
+\begin{DoxyCompactList}\small\item\em Counts down frames for the top event of the queue. Calls on\+Release when the event is ready. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_event_manager_a89099b22114f158b5c530edfea52371d}{Event\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_event_manager_ae1d60ad812ec73b322c31cf8f5a8de6a}{end\+Wave}} () override
+\begin{DoxyCompactList}\small\item\em Implementation of the \doxylink{class_i_notify_end_wave}{INotify\+End\+Wave} interface. Sets waiting\+\_\+ to false, ending the enemy wave. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_event_manager_a5e37bfa53be7e6d08d9183cfed2fbec6}{is\+Stage\+Over}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the stage is over. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_event_manager_ac84a50b8c625035edd3b4e39987fd3e4}{clear\+Events}} ()
+\begin{DoxyCompactList}\small\item\em Clear the events\+\_\+ \doxylink{class_event}{Event} queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_event_manager_a380273ca41683fb1fd3c6b27e6b5c966}{add\+Event}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_event}{Event}} $>$ \&\&event) override
+\begin{DoxyCompactList}\small\item\em Adds an event to the events\+\_\+ \doxylink{class_event}{Event} queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_event}{Event} manager class. Keeps all events inside a queue of unique pointers. Responsible for counting down the frames and releasing events. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_event_manager_a89099b22114f158b5c530edfea52371d}\label{class_event_manager_a89099b22114f158b5c530edfea52371d} 
+\index{EventManager@{EventManager}!EventManager@{EventManager}}
+\index{EventManager@{EventManager}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{EventManager()}{EventManager()}}
+{\footnotesize\ttfamily Event\+Manager\+::\+Event\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_event_manager_a380273ca41683fb1fd3c6b27e6b5c966}\label{class_event_manager_a380273ca41683fb1fd3c6b27e6b5c966} 
+\index{EventManager@{EventManager}!addEvent@{addEvent}}
+\index{addEvent@{addEvent}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{addEvent()}{addEvent()}}
+{\footnotesize\ttfamily void Event\+Manager\+::add\+Event (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_event}{Event}} $>$ \&\&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds an event to the events\+\_\+ \doxylink{class_event}{Event} queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & -\/ a reference to the \doxylink{class_event}{Event} to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_add_event_ae92c319814b88c748c8ed5df60a9022f}{IAdd\+Event}}.
+
+\Hypertarget{class_event_manager_ac84a50b8c625035edd3b4e39987fd3e4}\label{class_event_manager_ac84a50b8c625035edd3b4e39987fd3e4} 
+\index{EventManager@{EventManager}!clearEvents@{clearEvents}}
+\index{clearEvents@{clearEvents}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{clearEvents()}{clearEvents()}}
+{\footnotesize\ttfamily void Event\+Manager\+::clear\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear the events\+\_\+ \doxylink{class_event}{Event} queue. 
+
+\Hypertarget{class_event_manager_ae1d60ad812ec73b322c31cf8f5a8de6a}\label{class_event_manager_ae1d60ad812ec73b322c31cf8f5a8de6a} 
+\index{EventManager@{EventManager}!endWave@{endWave}}
+\index{endWave@{endWave}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{endWave()}{endWave()}}
+{\footnotesize\ttfamily void Event\+Manager\+::end\+Wave (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implementation of the \doxylink{class_i_notify_end_wave}{INotify\+End\+Wave} interface. Sets waiting\+\_\+ to false, ending the enemy wave. 
+
+
+
+Implements \mbox{\hyperlink{class_i_notify_end_wave_aa3d1bcf61a2f3628bbb82d84c72596a1}{INotify\+End\+Wave}}.
+
+\Hypertarget{class_event_manager_a5e37bfa53be7e6d08d9183cfed2fbec6}\label{class_event_manager_a5e37bfa53be7e6d08d9183cfed2fbec6} 
+\index{EventManager@{EventManager}!isStageOver@{isStageOver}}
+\index{isStageOver@{isStageOver}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{isStageOver()}{isStageOver()}}
+{\footnotesize\ttfamily bool Event\+Manager\+::is\+Stage\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the stage is over. 
+
+\begin{DoxyReturn}{Returns}
+Returns true when there no events in the queue and waiting\+\_\+ is set to false. 
+\end{DoxyReturn}
+\Hypertarget{class_event_manager_ae80e8f2affb7a204ad84eb361f40d11c}\label{class_event_manager_ae80e8f2affb7a204ad84eb361f40d11c} 
+\index{EventManager@{EventManager}!process@{process}}
+\index{process@{process}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Event\+Manager\+::process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \&}]{enemies,  }\item[{\mbox{\hyperlink{class_projectile_manager}{Projectile\+Manager}} \&}]{projectiles }\end{DoxyParamCaption})}
+
+
+
+Counts down frames for the top event of the queue. Calls on\+Release when the event is ready. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemies} & -\/ a reference to the \doxylink{class_enemy_manager}{Enemy\+Manager}, to be passed to the \doxylink{class_event}{Event} on release \\
+\hline
+{\em projectiles} & -\/ a reference to the \doxylink{class_projectile_manager}{Projectile\+Manager}, to be passed to the \doxylink{class_event}{Event} on release \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_event_manager_8h}{Event\+Manager.\+h}}\item 
+\mbox{\hyperlink{_event_manager_8cpp}{Event\+Manager.\+cpp}}\end{DoxyCompactItemize}

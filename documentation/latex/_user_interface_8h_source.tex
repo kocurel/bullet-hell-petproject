@@ -1,0 +1,74 @@
+\doxysection{User\+Interface.\+h}
+\hypertarget{_user_interface_8h_source}{}\label{_user_interface_8h_source}\mbox{\hyperlink{_user_interface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_user_interface}{UserInterface}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ score\_value\_\ =\ 0;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ \ \ \ \ sf::Sprite\ heart\_;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \ \ \ \ sf::Sprite\ bomb\_;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ life\_\ =\ 3;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ bombs\_\ =\ 3;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ sf::Text\ score\_text\_;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ sf::Text\ selection\_text\_;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ sf::Text\ game\_over\_text\_;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ sf::Text\ stage\_over\_text\_;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ sf::Text\ game\_over\_score\_text\_;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ sf::Font\ font\_;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \ \ \ \ sf::RectangleShape\ game\_space\_;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ sf::RectangleShape\ black\_bar1\_;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ sf::RectangleShape\ black\_bar2\_;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ sf::RectangleShape\ black\_bar3\_;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \ \ \ \ sf::RectangleShape\ black\_bar4\_;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \ \ \ \ sf::RectangleShape\ shadow\_overlay\_;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_user_interface}{UserInterface}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_user_interface}{UserInterface}}\&\ \mbox{\hyperlink{class_user_interface_abed51436a2e41582681ffbe1a7658367}{getInstance}}();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_user_interface_ad0f717e7fd6f859bbf921ccb347f8804}{UserInterface}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_user_interface}{UserInterface}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_user_interface}{UserInterface}}\&\ \mbox{\hyperlink{class_user_interface_a3231a5ca6f8f63099e3b3d1ceb30ca9c}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_user_interface}{UserInterface}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_interface_a14593d08035e01998f7cdb1fada92284}{updateBombs}}(\textcolor{keywordtype}{int}\ bomb);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_interface_a42b02d0c38131e80ebf075b948fb02ce}{updateLife}}(\textcolor{keywordtype}{int}\ life);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_interface_a50efd3bd97877fa892df1e9acbb80895}{increaseScore}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_interface_a971663de0dad0332b16706ca0a6a203c}{resetScore}}();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_user_interface_a00dc290e668739fc8e649639062e7156}{getScore}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_interface_a4497812fb1cac9e8e2d6723e15810425}{renderGameOver}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_interface_a360c3d26ae4cc8241f5c7cf1c1d4dd10}{renderStageOver}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_interface_accbd12699c224625f5f3edc5d1e4f938}{renderSelection}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_interface_a2757b27ec1f02bdd48b3c617872667e9}{renderBottom}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_interface_a237179570ba9351f62944a88c14c2779}{renderTop}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00119\ \};}
+
+\end{DoxyCode}

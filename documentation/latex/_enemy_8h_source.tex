@@ -1,0 +1,37 @@
+\doxysection{Enemy.\+h}
+\hypertarget{_enemy_8h_source}{}\label{_enemy_8h_source}\mbox{\hyperlink{_enemy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sprite_owner_8h}{SpriteOwner.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_positionable_8h}{Positionable.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_collision_circle_8h}{CollisionCircle.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ forward\ declarations}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pickup_manager}{PickupManager}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile}{Projectile}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemy}{Enemy}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_sprite_owner}{SpriteOwner}}\ ,\ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_positionable}{Positionable}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ \mbox{\hyperlink{class_enemy_a8463fc52c98fcc5b1593dedf2a364aa6}{projectiles\_}};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_enemy_a60808e25721a8d6dfb9cc00043407280}{Enemy}}(\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_enemy_aa6d000b5d884889125f5a068f1088b44}{health\_}}\ =\ 10;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_enemy_a17f6ce71aa488a91bf1c2b606468022d}{Enemy}}(\mbox{\hyperlink{class_enemy}{Enemy}}\&\ other)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_collision_circle}{CollisionCircle}}\ \mbox{\hyperlink{class_enemy_a53f5f7940c1cf1af557ff3f2a4faa563}{hitbox\_}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{process}}(\mbox{\hyperlink{class_player}{Player}}\&\ player)\ =\ 0;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a3873c83d23938ebba3af92bdcdd8ee1f}{onDestruction}}(\mbox{\hyperlink{class_pickup_manager}{PickupManager}}\&\ pickups);\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a3a13bd5a106b7559ba3f0a78662330f2}{hit}}(\mbox{\hyperlink{class_projectile}{Projectile}}\&\ projectile,\ \mbox{\hyperlink{class_pickup_manager}{PickupManager}}\&\ pickups);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_aaa242732555e05f659f27f21c32657b1}{checkCollision}}(\mbox{\hyperlink{class_projectile}{Projectile}}\&\ projectile,\ \mbox{\hyperlink{class_pickup_manager}{PickupManager}}\&\ pickups);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_enemy_aafb628c66008e33afdd750e2f492bd98}{\string~Enemy}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00056\ \};}
+
+\end{DoxyCode}

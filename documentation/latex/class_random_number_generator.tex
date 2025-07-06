@@ -1,0 +1,121 @@
+\doxysection{Random\+Number\+Generator Class Reference}
+\hypertarget{class_random_number_generator}{}\label{class_random_number_generator}\index{RandomNumberGenerator@{RandomNumberGenerator}}
+
+
+Generates random numbers. Designed as a thread safe Singleton to ensure only instance of it exists globally. \doxylink{class_random_number_generator}{Random\+Number\+Generator} uses default\+\_\+random\+\_\+engine seeded with current time.  
+
+
+
+
+{\ttfamily \#include $<$Random\+Number\+Generator.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_random_number_generator_a34c6f571d52fa537efeb63c15234e736}{uniform\+Range}} (const int lower\+\_\+bound, const int upper\+\_\+bound)
+\begin{DoxyCompactList}\small\item\em Generates a random int bounded by two integer values (inclusive). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_random_number_generator_a365e99299cd2b028acd3c1a52d66ada4}{uniform\+Range}} (const float lower\+\_\+bound, const float upper\+\_\+bound)
+\begin{DoxyCompactList}\small\item\em Generates a random float bounded by two floating point values (inclusive). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_random_number_generator_a5567db9a0e079b2188d0800c9d065f33}{Random\+Number\+Generator}} (const \mbox{\hyperlink{class_random_number_generator}{Random\+Number\+Generator}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevents copying of the Singleton instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_random_number_generator}{Random\+Number\+Generator}} \& \mbox{\hyperlink{class_random_number_generator_a1fad21ff5e6af89a9380905ef6e4a35a}{operator=}} (const \mbox{\hyperlink{class_random_number_generator}{Random\+Number\+Generator}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevents assignment of the Singleton instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_random_number_generator}{Random\+Number\+Generator}} \& \mbox{\hyperlink{class_random_number_generator_ac6bd7d016b298cf42eaf2204821595af}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Singleton instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generates random numbers. Designed as a thread safe Singleton to ensure only instance of it exists globally. \doxylink{class_random_number_generator}{Random\+Number\+Generator} uses default\+\_\+random\+\_\+engine seeded with current time. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_random_number_generator_a5567db9a0e079b2188d0800c9d065f33}\label{class_random_number_generator_a5567db9a0e079b2188d0800c9d065f33} 
+\index{RandomNumberGenerator@{RandomNumberGenerator}!RandomNumberGenerator@{RandomNumberGenerator}}
+\index{RandomNumberGenerator@{RandomNumberGenerator}!RandomNumberGenerator@{RandomNumberGenerator}}
+\doxysubsubsection{\texorpdfstring{RandomNumberGenerator()}{RandomNumberGenerator()}}
+{\footnotesize\ttfamily Random\+Number\+Generator\+::\+Random\+Number\+Generator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_random_number_generator}{Random\+Number\+Generator}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevents copying of the Singleton instance. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_random_number_generator_ac6bd7d016b298cf42eaf2204821595af}\label{class_random_number_generator_ac6bd7d016b298cf42eaf2204821595af} 
+\index{RandomNumberGenerator@{RandomNumberGenerator}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!RandomNumberGenerator@{RandomNumberGenerator}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_random_number_generator}{Random\+Number\+Generator}} \& Random\+Number\+Generator\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Singleton instance. 
+
+\begin{DoxyReturn}{Returns}
+Returns the single instance of the \doxylink{class_random_number_generator}{Random\+Number\+Generator} 
+\end{DoxyReturn}
+\Hypertarget{class_random_number_generator_a1fad21ff5e6af89a9380905ef6e4a35a}\label{class_random_number_generator_a1fad21ff5e6af89a9380905ef6e4a35a} 
+\index{RandomNumberGenerator@{RandomNumberGenerator}!operator=@{operator=}}
+\index{operator=@{operator=}!RandomNumberGenerator@{RandomNumberGenerator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_random_number_generator}{Random\+Number\+Generator}} \& Random\+Number\+Generator\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_random_number_generator}{Random\+Number\+Generator}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevents assignment of the Singleton instance. 
+
+\Hypertarget{class_random_number_generator_a365e99299cd2b028acd3c1a52d66ada4}\label{class_random_number_generator_a365e99299cd2b028acd3c1a52d66ada4} 
+\index{RandomNumberGenerator@{RandomNumberGenerator}!uniformRange@{uniformRange}}
+\index{uniformRange@{uniformRange}!RandomNumberGenerator@{RandomNumberGenerator}}
+\doxysubsubsection{\texorpdfstring{uniformRange()}{uniformRange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Random\+Number\+Generator\+::uniform\+Range (\begin{DoxyParamCaption}\item[{const float}]{lower\+\_\+bound,  }\item[{const float}]{upper\+\_\+bound }\end{DoxyParamCaption})}
+
+
+
+Generates a random float bounded by two floating point values (inclusive). 
+
+Method is made thread-\/safe with the use of mtx\+\_\+ 
+\begin{DoxyParams}{Parameters}
+{\em lower\+\_\+bound} & The lower bound for generated number. \\
+\hline
+{\em upper\+\_\+bound} & The upper bound for generated number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the newly generated float. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Random\+Number\+Generator\+::mtx\+\_\+ 
+\end{DoxySeeAlso}
+\Hypertarget{class_random_number_generator_a34c6f571d52fa537efeb63c15234e736}\label{class_random_number_generator_a34c6f571d52fa537efeb63c15234e736} 
+\index{RandomNumberGenerator@{RandomNumberGenerator}!uniformRange@{uniformRange}}
+\index{uniformRange@{uniformRange}!RandomNumberGenerator@{RandomNumberGenerator}}
+\doxysubsubsection{\texorpdfstring{uniformRange()}{uniformRange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Random\+Number\+Generator\+::uniform\+Range (\begin{DoxyParamCaption}\item[{const int}]{lower\+\_\+bound,  }\item[{const int}]{upper\+\_\+bound }\end{DoxyParamCaption})}
+
+
+
+Generates a random int bounded by two integer values (inclusive). 
+
+Method is made thread-\/safe with the use of mtx\+\_\+ 
+\begin{DoxyParams}{Parameters}
+{\em lower\+\_\+bound} & The lower bound for generated number. \\
+\hline
+{\em upper\+\_\+bound} & The upper bound for generated number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the newly generated int. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Random\+Number\+Generator\+::mtx\+\_\+ 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_random_number_generator_8h}{Random\+Number\+Generator.\+h}}\item 
+\mbox{\hyperlink{_random_number_generator_8cpp}{Random\+Number\+Generator.\+cpp}}\end{DoxyCompactItemize}

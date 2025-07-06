@@ -1,0 +1,199 @@
+\doxysection{Player Class Reference}
+\hypertarget{class_player}{}\label{class_player}\index{Player@{Player}}
+
+
+Represents the player character in the game.  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+Inheritance diagram for Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_a09d6f965bbea372603f88c61829a8d72}{increase\+Bomb}} ()
+\begin{DoxyCompactList}\small\item\em Increases the number of bombs the player has, up to a maximum. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_ae8fc9ef4b50d97112bf537689b73fe13}{Attack\+Speed\+Up}} ()
+\begin{DoxyCompactList}\small\item\em Decreases the player\textquotesingle{}s attack cooldown, effectively increasing attack speed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a2213576fa8886afac21843b11b88cfa3}{increase\+Health}} ()
+\begin{DoxyCompactList}\small\item\em Increases the player\textquotesingle{}s health points, up to a maximum. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_addf69533eb6fcd0ea8ef559532f5d0d5}{next\+Attack\+Pattern}} ()
+\begin{DoxyCompactList}\small\item\em Advances the player\textquotesingle{}s attack pattern to the next level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a64f3efd0c43b7aa3138d532ff8dc615a}{reset\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Resets the player\textquotesingle{}s health and bomb count to their initial values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a876818716e936257241f6febfa6c3cc6}{set\+Position}} (sf\+::\+Vector2f position)
+\begin{DoxyCompactList}\small\item\em Sets the player\textquotesingle{}s position in game coordinates. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_player_a389746e04863b9c12f957e67ee796e33}{get\+Health\+Points}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current health points of the player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_player_a1075ea1f14ebd80f8ce6ac66a712cebd}{Player}} (\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectiles)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_player}{Player} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a630f4e4326f2a039b1caeadadeaf2c5d}{process}} (\mbox{\hyperlink{class_projectile_manager}{Projectile\+Manager}} \&projectiles, \mbox{\hyperlink{class_pickup_manager}{Pickup\+Manager}} \&pickups)
+\begin{DoxyCompactList}\small\item\em Processes the player\textquotesingle{}s game logic for the current frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sprite_owner_a42c30188e75ab8b437364b66e4ecb253}{is\+Disabled}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the sprite owner is currently disabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sprite_owner_aff092b79461bcda2b34cd48358227d05}{disable}} ()
+\begin{DoxyCompactList}\small\item\em Disables the sprite owner. Sets the internal flag to true, preventing further rendering or processing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sprite_owner_aec9bd1d26b203a50e38d1ac4e4776247}{render}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the owned sprite to the specified SFML render window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_a5b5c5227d2c6487f5ff925e066f9449a}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current position of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_positionable_a1f1525ace9fc2b25462e6b088ed058d8}{set\+Position}} (sf\+::\+Vector2f pos)
+\begin{DoxyCompactList}\small\item\em Sets the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sprite_owner_ac188881cf211fc2b9213c7fc8b9e05a0}{Sprite\+Owner}} ()
+\begin{DoxyCompactList}\small\item\em Protected default constructor. Initializes the internal sf\+::\+Sprite with an error texture. This constructor is protected to ensure creation through derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sprite_owner_a789762815ee1eb2238e1f33bc16ea7db}{disabled\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the sprite owner is disabled (for rendering and processing). \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_sprite_owner_a5329203d1a37c21b1bbf659473246ec8}{sprite\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The SFML sprite object owned by this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_aa5ac62eec93831b439524651f3a96282}{position\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The 2D position of the object in game coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the player character in the game. 
+
+The \doxylink{class_player}{Player} class handles player movement, attacking, health, collision detection with projectiles and pickups, and interaction with various game systems like projectiles and the UI. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_player_a1075ea1f14ebd80f8ce6ac66a712cebd}\label{class_player_a1075ea1f14ebd80f8ce6ac66a712cebd} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor for the \doxylink{class_player}{Player} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projectiles} & A reference to an \doxylink{class_i_add_projectile}{IAdd\+Projectile} interface, used for adding player-\/fired projectiles. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_ae8fc9ef4b50d97112bf537689b73fe13}\label{class_player_ae8fc9ef4b50d97112bf537689b73fe13} 
+\index{Player@{Player}!AttackSpeedUp@{AttackSpeedUp}}
+\index{AttackSpeedUp@{AttackSpeedUp}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{AttackSpeedUp()}{AttackSpeedUp()}}
+{\footnotesize\ttfamily void Player\+::\+Attack\+Speed\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Decreases the player\textquotesingle{}s attack cooldown, effectively increasing attack speed. 
+
+\Hypertarget{class_player_a389746e04863b9c12f957e67ee796e33}\label{class_player_a389746e04863b9c12f957e67ee796e33} 
+\index{Player@{Player}!getHealthPoints@{getHealthPoints}}
+\index{getHealthPoints@{getHealthPoints}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getHealthPoints()}{getHealthPoints()}}
+{\footnotesize\ttfamily int Player\+::get\+Health\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current health points of the player. 
+
+\begin{DoxyReturn}{Returns}
+An integer representing the player\textquotesingle{}s current health. 
+\end{DoxyReturn}
+\Hypertarget{class_player_a09d6f965bbea372603f88c61829a8d72}\label{class_player_a09d6f965bbea372603f88c61829a8d72} 
+\index{Player@{Player}!increaseBomb@{increaseBomb}}
+\index{increaseBomb@{increaseBomb}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{increaseBomb()}{increaseBomb()}}
+{\footnotesize\ttfamily void Player\+::increase\+Bomb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increases the number of bombs the player has, up to a maximum. 
+
+\Hypertarget{class_player_a2213576fa8886afac21843b11b88cfa3}\label{class_player_a2213576fa8886afac21843b11b88cfa3} 
+\index{Player@{Player}!increaseHealth@{increaseHealth}}
+\index{increaseHealth@{increaseHealth}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{increaseHealth()}{increaseHealth()}}
+{\footnotesize\ttfamily void Player\+::increase\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increases the player\textquotesingle{}s health points, up to a maximum. 
+
+\Hypertarget{class_player_addf69533eb6fcd0ea8ef559532f5d0d5}\label{class_player_addf69533eb6fcd0ea8ef559532f5d0d5} 
+\index{Player@{Player}!nextAttackPattern@{nextAttackPattern}}
+\index{nextAttackPattern@{nextAttackPattern}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{nextAttackPattern()}{nextAttackPattern()}}
+{\footnotesize\ttfamily void Player\+::next\+Attack\+Pattern (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Advances the player\textquotesingle{}s attack pattern to the next level. 
+
+\Hypertarget{class_player_a630f4e4326f2a039b1caeadadeaf2c5d}\label{class_player_a630f4e4326f2a039b1caeadadeaf2c5d} 
+\index{Player@{Player}!process@{process}}
+\index{process@{process}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Player\+::process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_projectile_manager}{Projectile\+Manager}} \&}]{projectiles,  }\item[{\mbox{\hyperlink{class_pickup_manager}{Pickup\+Manager}} \&}]{pickups }\end{DoxyParamCaption})}
+
+
+
+Processes the player\textquotesingle{}s game logic for the current frame. 
+
+This includes handling invincibility frames, movement, attacking, bomb usage, and collision detection with enemy projectiles and pickups. 
+\begin{DoxyParams}{Parameters}
+{\em projectiles} & -\/ a reference to the \doxylink{class_projectile_manager}{Projectile\+Manager} manager for enemy projectile collision. \\
+\hline
+{\em pickups} & -\/ a reference to the \doxylink{class_pickup_manager}{Pickup\+Manager} for pickup collision. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_a64f3efd0c43b7aa3138d532ff8dc615a}\label{class_player_a64f3efd0c43b7aa3138d532ff8dc615a} 
+\index{Player@{Player}!resetPlayer@{resetPlayer}}
+\index{resetPlayer@{resetPlayer}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{resetPlayer()}{resetPlayer()}}
+{\footnotesize\ttfamily void Player\+::reset\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the player\textquotesingle{}s health and bomb count to their initial values. 
+
+\Hypertarget{class_player_a876818716e936257241f6febfa6c3cc6}\label{class_player_a876818716e936257241f6febfa6c3cc6} 
+\index{Player@{Player}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Player\+::set\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{position }\end{DoxyParamCaption})}
+
+
+
+Sets the player\textquotesingle{}s position in game coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The new sf\+::\+Vector2f position for the player. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_player_8h}{Player.\+h}}\item 
+\mbox{\hyperlink{_player_8cpp}{Player.\+cpp}}\end{DoxyCompactItemize}

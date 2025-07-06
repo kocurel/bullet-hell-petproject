@@ -1,0 +1,162 @@
+\doxysection{Test\+Enemy1 Class Reference}
+\hypertarget{class_test_enemy1}{}\label{class_test_enemy1}\index{TestEnemy1@{TestEnemy1}}
+
+
+{\ttfamily \#include $<$Test\+Enemy1.\+h$>$}
+
+Inheritance diagram for Test\+Enemy1\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_test_enemy1}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_enemy1_a7cddc36f8312166303c5d74fc33e3380}{Test\+Enemy1}} (\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectiles)
+\item 
+void \mbox{\hyperlink{class_test_enemy1_ae008381468e2637eb81748a9c99075d3}{process}} (\mbox{\hyperlink{class_player}{Player}} \&player)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_enemy}{Enemy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_enemy_aa46ba919f86f6e44c82ee2cadf82a1a6}{on\+Destruction}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_ae4aedd954fb11895e33deaa4f78a35ac}{hit}} (\mbox{\hyperlink{class_projectile}{Projectile}} \&projectile)
+\item 
+void \mbox{\hyperlink{class_enemy_ad4c31d06a17f6ab5a8654d27e832b270}{set\+Health}} (float health)
+\item 
+void \mbox{\hyperlink{class_enemy_a88b14f88b3d9aaae51ca8e5ef6136875}{check\+Collision}} (\mbox{\hyperlink{class_projectile}{Projectile}} \&projectile)
+\item 
+void \mbox{\hyperlink{class_enemy_a2b165175752fa9b497886bcec8771a37}{set\+Color}} (sf\+::\+Color color)
+\item 
+virtual \mbox{\hyperlink{class_enemy_aafb628c66008e33afdd750e2f492bd98}{\texorpdfstring{$\sim$}{\string~}\+Enemy}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sprite_owner_a42c30188e75ab8b437364b66e4ecb253}{is\+Disabled}} () const
+\item 
+void \mbox{\hyperlink{class_sprite_owner_aff092b79461bcda2b34cd48358227d05}{disable}} ()
+\item 
+void \mbox{\hyperlink{class_sprite_owner_aec9bd1d26b203a50e38d1ac4e4776247}{render}} (sf\+::\+Render\+Window \&window)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_a5b5c5227d2c6487f5ff925e066f9449a}{get\+Position}} ()
+\item 
+void \mbox{\hyperlink{class_positionable_a1f1525ace9fc2b25462e6b088ed058d8}{set\+Position}} (sf\+::\+Vector2f pos)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static sf\+::\+Texture \& \mbox{\hyperlink{class_test_enemy1_a4b8e9cd16704036319dc5d584e4fc891}{get\+Texture}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const float \mbox{\hyperlink{class_test_enemy1_a57c13f92c516b9bea8f6ce632a2a7569}{bullet\+\_\+speed\+\_\+}} = 8.f
+\item 
+bool \mbox{\hyperlink{class_test_enemy1_ae3a7726255da2a66b034134013e7dff6}{going\+\_\+left\+\_\+}} = 0
+\item 
+int \mbox{\hyperlink{class_test_enemy1_aa473b7fe40016b881d120fd61873565c}{attack\+\_\+cooldown\+\_\+}} = 0
+\item 
+int \mbox{\hyperlink{class_test_enemy1_a51e3a41f0bab2f00be7b250c88963de2}{attack\+\_\+pattern\+\_\+}} = 2
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_enemy}{Enemy}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \& \mbox{\hyperlink{class_enemy_a8463fc52c98fcc5b1593dedf2a364aa6}{projectiles\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sprite_owner_a789762815ee1eb2238e1f33bc16ea7db}{disabled\+\_\+}} = false
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_sprite_owner_a5329203d1a37c21b1bbf659473246ec8}{sprite\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_aa5ac62eec93831b439524651f3a96282}{position\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_enemy}{Enemy}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_enemy_aa6d000b5d884889125f5a068f1088b44}{health\+\_\+}} = 10
+\item 
+\mbox{\hyperlink{class_collision_circle}{Collision\+Circle}} \mbox{\hyperlink{class_enemy_a53f5f7940c1cf1af557ff3f2a4faa563}{hitbox\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_enemy}{Enemy}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_a60808e25721a8d6dfb9cc00043407280}{Enemy}} (\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectiles)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sprite_owner_ac188881cf211fc2b9213c7fc8b9e05a0}{Sprite\+Owner}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_test_enemy1_a7cddc36f8312166303c5d74fc33e3380}\label{class_test_enemy1_a7cddc36f8312166303c5d74fc33e3380} 
+\index{TestEnemy1@{TestEnemy1}!TestEnemy1@{TestEnemy1}}
+\index{TestEnemy1@{TestEnemy1}!TestEnemy1@{TestEnemy1}}
+\doxysubsubsection{\texorpdfstring{TestEnemy1()}{TestEnemy1()}}
+{\footnotesize\ttfamily Test\+Enemy1\+::\+Test\+Enemy1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_test_enemy1_a4b8e9cd16704036319dc5d584e4fc891}\label{class_test_enemy1_a4b8e9cd16704036319dc5d584e4fc891} 
+\index{TestEnemy1@{TestEnemy1}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!TestEnemy1@{TestEnemy1}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily static sf\+::\+Texture \& Test\+Enemy1\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{class_test_enemy1_ae008381468e2637eb81748a9c99075d3}\label{class_test_enemy1_ae008381468e2637eb81748a9c99075d3} 
+\index{TestEnemy1@{TestEnemy1}!process@{process}}
+\index{process@{process}!TestEnemy1@{TestEnemy1}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Test\+Enemy1\+::process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{Enemy}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_test_enemy1_aa473b7fe40016b881d120fd61873565c}\label{class_test_enemy1_aa473b7fe40016b881d120fd61873565c} 
+\index{TestEnemy1@{TestEnemy1}!attack\_cooldown\_@{attack\_cooldown\_}}
+\index{attack\_cooldown\_@{attack\_cooldown\_}!TestEnemy1@{TestEnemy1}}
+\doxysubsubsection{\texorpdfstring{attack\_cooldown\_}{attack\_cooldown\_}}
+{\footnotesize\ttfamily int Test\+Enemy1\+::attack\+\_\+cooldown\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_test_enemy1_a51e3a41f0bab2f00be7b250c88963de2}\label{class_test_enemy1_a51e3a41f0bab2f00be7b250c88963de2} 
+\index{TestEnemy1@{TestEnemy1}!attack\_pattern\_@{attack\_pattern\_}}
+\index{attack\_pattern\_@{attack\_pattern\_}!TestEnemy1@{TestEnemy1}}
+\doxysubsubsection{\texorpdfstring{attack\_pattern\_}{attack\_pattern\_}}
+{\footnotesize\ttfamily int Test\+Enemy1\+::attack\+\_\+pattern\+\_\+ = 2\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_test_enemy1_a57c13f92c516b9bea8f6ce632a2a7569}\label{class_test_enemy1_a57c13f92c516b9bea8f6ce632a2a7569} 
+\index{TestEnemy1@{TestEnemy1}!bullet\_speed\_@{bullet\_speed\_}}
+\index{bullet\_speed\_@{bullet\_speed\_}!TestEnemy1@{TestEnemy1}}
+\doxysubsubsection{\texorpdfstring{bullet\_speed\_}{bullet\_speed\_}}
+{\footnotesize\ttfamily const float Test\+Enemy1\+::bullet\+\_\+speed\+\_\+ = 8.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_test_enemy1_ae3a7726255da2a66b034134013e7dff6}\label{class_test_enemy1_ae3a7726255da2a66b034134013e7dff6} 
+\index{TestEnemy1@{TestEnemy1}!going\_left\_@{going\_left\_}}
+\index{going\_left\_@{going\_left\_}!TestEnemy1@{TestEnemy1}}
+\doxysubsubsection{\texorpdfstring{going\_left\_}{going\_left\_}}
+{\footnotesize\ttfamily bool Test\+Enemy1\+::going\+\_\+left\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_test_enemy1_8h}{Test\+Enemy1.\+h}}\item 
+\mbox{\hyperlink{_test_enemy1_8cpp}{Test\+Enemy1.\+cpp}}\end{DoxyCompactItemize}

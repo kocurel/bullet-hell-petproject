@@ -1,0 +1,58 @@
+\doxysection{Enemies.\+h}
+\hypertarget{_enemies_8h_source}{}\label{_enemies_8h_source}\mbox{\hyperlink{_enemies_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//forward\ declarations}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesf}{sf}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }RenderWindow;}
+\DoxyCodeLine{00012\ \}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemy}{Enemy}};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile}{Projectile}};}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_notify_end_wave}{INotifyEndWave}};}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile_manager}{ProjectileManager}};}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pickup_manager}{PickupManager}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemy_manager}{EnemyManager}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_i_notify_end_wave}{INotifyEndWave}}\&\ wave\_controller\_;}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ std::vector<std::unique\_ptr<Enemy>>\ enemies\_;}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ cleanup\_counter\_\ =\ 360;}
+\DoxyCodeLine{00040\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ wave\_counter\_\ =\ 30;}
+\DoxyCodeLine{00045\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ std::function<bool(\textcolor{keyword}{const}\ std::unique\_ptr<Enemy>\&)>\ is\_enemy\_disabled;}
+\DoxyCodeLine{00048\ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ std::function<bool(\textcolor{keyword}{const}\ std::unique\_ptr<Enemy>\&)>\ is\_enemy\_not\_disabled;}
+\DoxyCodeLine{00051\ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ std::function<bool(\textcolor{keyword}{const}\ std::unique\_ptr<Projectile>\&)>\ is\_projectile\_not\_disabled;}
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ cleanupEnemies();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ checkWave();}
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_enemy_manager_a5a29b3e6ab0a7edb1c8dc5ec5083308f}{EnemyManager}}(\mbox{\hyperlink{class_enemy_manager}{EnemyManager}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_enemy_manager}{EnemyManager}}\&\ \mbox{\hyperlink{class_enemy_manager_ac2f44643c19d2c01868da316e69adc39}{operator=}}(\mbox{\hyperlink{class_enemy_manager}{EnemyManager}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_enemy_manager_a5a29b3e6ab0a7edb1c8dc5ec5083308f}{EnemyManager}}(\mbox{\hyperlink{class_i_notify_end_wave}{INotifyEndWave}}\&\ wave\_controller);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_manager_ab2c10dfd9580ec5e0b02b75c785d05bf}{clearEnemies}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_manager_a3f76ff7347bce6eed692145e3eacc21e}{processEnemies}}(\mbox{\hyperlink{class_player}{Player}}\&\ player,\ \mbox{\hyperlink{class_projectile_manager}{ProjectileManager}}\&\ projectiles,\ \mbox{\hyperlink{class_pickup_manager}{PickupManager}}\&\ pickups);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_manager_a8333cb2363202fcacd49189962d22f57}{createEnemy}}(std::unique\_ptr<Enemy>\&\&\ enemy);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_manager_a4d99c5302aab6e079e3c891e1b444337}{renderEnemies}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_enemy_manager_afe3583e45273d5509e59467d06a3feb6}{\string~EnemyManager}}();}
+\DoxyCodeLine{00107\ \};}
+
+\end{DoxyCode}

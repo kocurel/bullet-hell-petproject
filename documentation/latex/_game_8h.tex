@@ -1,0 +1,31 @@
+\doxysection{Game.\+h File Reference}
+\hypertarget{_game_8h}{}\label{_game_8h}\index{Game.h@{Game.h}}
+
+
+declares the core game manager class  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include "{}Projectile\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}Event\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}Enemy\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}Player.\+h"{}}\newline
+{\ttfamily \#include "{}Event\+Parser.\+h"{}}\newline
+{\ttfamily \#include "{}Pickup\+Manager.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_game}{Game}}
+\begin{DoxyCompactList}\small\item\em Main class responsible for handling game logic. Has to be called each frame with \doxylink{class_game_aeaa87dabe9d859300293f9b02095de48}{process()} and \doxylink{class_game_a15ddd769261d923827a3cdf41499c843}{render()}. For the \doxylink{class_game}{Game} class to work a pointer to the SFML Window has to be set using the \doxylink{class_game_a3c91ff49b408d218cbd22edcf01b82d6}{set\+Render\+Window(sf\+::\+Render\+Window\texorpdfstring{$\ast$}{*})} method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesf}{sf}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+declares the core game manager class 
+

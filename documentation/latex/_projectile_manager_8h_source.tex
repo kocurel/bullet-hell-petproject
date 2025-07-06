@@ -1,0 +1,60 @@
+\doxysection{Projectile\+Manager.\+h}
+\hypertarget{_projectile_manager_8h_source}{}\label{_projectile_manager_8h_source}\mbox{\hyperlink{_projectile_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_add_projectile_8h}{IAddProjectile.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile}{Projectile}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesf}{sf}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }RenderWindow;}
+\DoxyCodeLine{00016\ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile_manager}{ProjectileManager}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ std::mutex\ enemy\_mtx\_;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ std::mutex\ player\_mtx\_;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::vector<std::unique\_ptr<Projectile>>\ enemy\_projectiles\_;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<std::unique\_ptr<Projectile>>\ player\_projectiles\_;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ cleanup\_counter\_\ =\ 120;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00045\ \ \ \ \ std::function<bool(\textcolor{keyword}{const}\ std::unique\_ptr<Projectile>\&)>\ is\_not\_disabled;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00049\ \ \ \ \ std::function<bool(\textcolor{keyword}{const}\ std::unique\_ptr<Projectile>\&)>\ is\_disabled;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ cleanupProjectiles();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_projectile_manager_aa1f4d3c4eec327b6a6db2b89843508b3}{ProjectileManager}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_manager_a04fa5741cdb7981c2f6b782049a22d88}{clearProjectiles}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_manager_a10c3881fe386752e1aa399820ae63ac8}{process}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_manager_a65795f332bb7904febe9decca5c524a2}{createPlayerProjectile}}(std::unique\_ptr<Projectile>\&\&\ projectile)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_manager_ab20c76db1d18cb53fb5bd108904e2a10}{createEnemyProjectile}}(std::unique\_ptr<Projectile>\&\&\ projectile)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_manager_ac8d1e8f56acf6bcce87c0ce719001abb}{render}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \ \ \ \ std::mutex\&\ \mbox{\hyperlink{class_projectile_manager_a6c989f3d82e37c518f4a0218240477d3}{getEnemyMtx}}();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00095\ \ \ \ \ std::mutex\&\ \mbox{\hyperlink{class_projectile_manager_a92a0feb6e1c42a30b049f7836c355a2a}{getPlayerMtx}}();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{const}\ std::vector\ <std::unique\_ptr<Projectile>>\&\ \mbox{\hyperlink{class_projectile_manager_a7a0a6722b284d843dfba6913b3ff0a60}{getPlayerProjectiles}}();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{const}\ std::vector\ <std::unique\_ptr<Projectile>>\&\ \mbox{\hyperlink{class_projectile_manager_a3f00214e3813c822815773c27d8a80b0}{getEnemyProjectiles}}();}
+\DoxyCodeLine{00104\ \};}
+
+\end{DoxyCode}

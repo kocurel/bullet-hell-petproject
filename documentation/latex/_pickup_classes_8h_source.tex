@@ -1,0 +1,54 @@
+\doxysection{Pickup\+Classes.\+h}
+\hypertarget{_pickup_classes_8h_source}{}\label{_pickup_classes_8h_source}\mbox{\hyperlink{_pickup_classes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pickup_8h}{Pickup.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_player_8h}{Player.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_texture_manager_8h}{TextureManager.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pickup_attack_up}{PickupAttackUp}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_pickup}{Pickup}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_pickup_attack_up_a1a2cc2d16f42fcac995841aeff6f8719}{PickupAttackUp}}()\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sprite_owner_a5329203d1a37c21b1bbf659473246ec8}{sprite\_}}.setColor(sf::Color(240,\ 0,\ 0));}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_attack_up_af1ed04b4a9bb4766c0dd89406797bad3}{onPickup}}(\mbox{\hyperlink{class_player}{Player}}\&\ player)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sprite_owner_aff092b79461bcda2b34cd48358227d05}{disable}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ player.\mbox{\hyperlink{class_player_ae8fc9ef4b50d97112bf537689b73fe13}{AttackSpeedUp}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \};}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pickup_health}{PickupHealth}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_pickup}{Pickup}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_pickup_health_a121d0391fe2b53f74333116fd5ea8788}{PickupHealth}}()\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sprite_owner_a5329203d1a37c21b1bbf659473246ec8}{sprite\_}}.setColor(sf::Color(0,\ 240,\ 0));}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_health_a2ef3cb5eff27c7aad52e51d0989e3cae}{onPickup}}(\mbox{\hyperlink{class_player}{Player}}\&\ player)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sprite_owner_aff092b79461bcda2b34cd48358227d05}{disable}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ player.\mbox{\hyperlink{class_player_a2213576fa8886afac21843b11b88cfa3}{increaseHealth}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pickup_attack_pattern}{PickupAttackPattern}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_pickup}{Pickup}}\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_pickup_attack_pattern_af7ca1bd0c29cba2afd82427c39311711}{PickupAttackPattern}}()\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sprite_owner_a5329203d1a37c21b1bbf659473246ec8}{sprite\_}}.setColor(sf::Color(255,\ 223,\ 0));}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_attack_pattern_a0dcbf2a03f4928c8d1ea8e0d42db8a59}{onPickup}}(\mbox{\hyperlink{class_player}{Player}}\&\ player)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sprite_owner_aff092b79461bcda2b34cd48358227d05}{disable}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ player.\mbox{\hyperlink{class_player_addf69533eb6fcd0ea8ef559532f5d0d5}{nextAttackPattern}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pickup_bomb}{PickupBomb}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_pickup}{Pickup}}\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_pickup_bomb_ae36c7d8e4d6dc2c91904d3ab8a938913}{PickupBomb}}()\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sprite_owner_a5329203d1a37c21b1bbf659473246ec8}{sprite\_}}.setColor(sf::Color(255,\ 133,\ 25));}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_bomb_af0a85c0b2dd4872a64a684dd88724ed3}{onPickup}}(\mbox{\hyperlink{class_player}{Player}}\&\ player)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sprite_owner_aff092b79461bcda2b34cd48358227d05}{disable}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ player.\mbox{\hyperlink{class_player_a09d6f965bbea372603f88c61829a8d72}{increaseBomb}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \};}
+\DoxyCodeLine{00054\ \};}
+
+\end{DoxyCode}

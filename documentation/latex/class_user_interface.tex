@@ -1,0 +1,236 @@
+\doxysection{User\+Interface Class Reference}
+\hypertarget{class_user_interface}{}\label{class_user_interface}\index{UserInterface@{UserInterface}}
+
+
+Manages and renders all user interface (UI) elements for the game.  
+
+
+
+
+{\ttfamily \#include $<$User\+Interface.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_interface_ad0f717e7fd6f859bbf921ccb347f8804}{User\+Interface}} (const \mbox{\hyperlink{class_user_interface}{User\+Interface}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor to prevent copying. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user_interface}{User\+Interface}} \& \mbox{\hyperlink{class_user_interface_a3231a5ca6f8f63099e3b3d1ceb30ca9c}{operator=}} (const \mbox{\hyperlink{class_user_interface}{User\+Interface}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator to prevent copying. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_interface_a14593d08035e01998f7cdb1fada92284}{update\+Bombs}} (int bomb)
+\begin{DoxyCompactList}\small\item\em Updates the displayed number of bombs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_interface_a42b02d0c38131e80ebf075b948fb02ce}{update\+Life}} (int life)
+\begin{DoxyCompactList}\small\item\em Updates the displayed number of player lives. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_interface_a50efd3bd97877fa892df1e9acbb80895}{increase\+Score}} (int value)
+\begin{DoxyCompactList}\small\item\em Increases the player\textquotesingle{}s score by a given value. Updates the score text display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_interface_a971663de0dad0332b16706ca0a6a203c}{reset\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Resets the player\textquotesingle{}s score to zero. Updates the score text display. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_user_interface_a00dc290e668739fc8e649639062e7156}{get\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current score value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_interface_a4497812fb1cac9e8e2d6723e15810425}{render\+Game\+Over}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the "{}\+GAME OVER"{} screen overlay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_interface_a360c3d26ae4cc8241f5c7cf1c1d4dd10}{render\+Stage\+Over}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the "{}\+STAGE OVER"{} screen overlay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_interface_accbd12699c224625f5f3edc5d1e4f938}{render\+Selection}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the stage selection screen overlay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_interface_a2757b27ec1f02bdd48b3c617872667e9}{render\+Bottom}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the background for the main game space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_interface_a237179570ba9351f62944a88c14c2779}{render\+Top}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the top UI elements, including score, lives, and bombs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_user_interface}{User\+Interface}} \& \mbox{\hyperlink{class_user_interface_abed51436a2e41582681ffbe1a7658367}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the single instance of the \doxylink{class_user_interface}{User\+Interface}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages and renders all user interface (UI) elements for the game. 
+
+This class implements the Singleton design pattern to ensure a single instance manages all UI components such as score, player life, bombs, and various game state overlays (game over, stage over, selection screen). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_user_interface_ad0f717e7fd6f859bbf921ccb347f8804}\label{class_user_interface_ad0f717e7fd6f859bbf921ccb347f8804} 
+\index{UserInterface@{UserInterface}!UserInterface@{UserInterface}}
+\index{UserInterface@{UserInterface}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{UserInterface()}{UserInterface()}}
+{\footnotesize\ttfamily User\+Interface\+::\+User\+Interface (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_user_interface}{User\+Interface}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy constructor to prevent copying. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_user_interface_abed51436a2e41582681ffbe1a7658367}\label{class_user_interface_abed51436a2e41582681ffbe1a7658367} 
+\index{UserInterface@{UserInterface}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_user_interface}{User\+Interface}} \& User\+Interface\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the single instance of the \doxylink{class_user_interface}{User\+Interface}. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{class_user_interface}{User\+Interface} instance. 
+\end{DoxyReturn}
+\Hypertarget{class_user_interface_a00dc290e668739fc8e649639062e7156}\label{class_user_interface_a00dc290e668739fc8e649639062e7156} 
+\index{UserInterface@{UserInterface}!getScore@{getScore}}
+\index{getScore@{getScore}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{getScore()}{getScore()}}
+{\footnotesize\ttfamily int User\+Interface\+::get\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current score value. 
+
+\begin{DoxyReturn}{Returns}
+An integer representing the current score. 
+\end{DoxyReturn}
+\Hypertarget{class_user_interface_a50efd3bd97877fa892df1e9acbb80895}\label{class_user_interface_a50efd3bd97877fa892df1e9acbb80895} 
+\index{UserInterface@{UserInterface}!increaseScore@{increaseScore}}
+\index{increaseScore@{increaseScore}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{increaseScore()}{increaseScore()}}
+{\footnotesize\ttfamily void User\+Interface\+::increase\+Score (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Increases the player\textquotesingle{}s score by a given value. Updates the score text display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The integer amount to add to the score. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_interface_a3231a5ca6f8f63099e3b3d1ceb30ca9c}\label{class_user_interface_a3231a5ca6f8f63099e3b3d1ceb30ca9c} 
+\index{UserInterface@{UserInterface}!operator=@{operator=}}
+\index{operator=@{operator=}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_user_interface}{User\+Interface}} \& User\+Interface\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_user_interface}{User\+Interface}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy assignment operator to prevent copying. 
+
+\Hypertarget{class_user_interface_a2757b27ec1f02bdd48b3c617872667e9}\label{class_user_interface_a2757b27ec1f02bdd48b3c617872667e9} 
+\index{UserInterface@{UserInterface}!renderBottom@{renderBottom}}
+\index{renderBottom@{renderBottom}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{renderBottom()}{renderBottom()}}
+{\footnotesize\ttfamily void User\+Interface\+::render\+Bottom (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders the background for the main game space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & A reference to the SFML Render\+Window to draw on. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_interface_a4497812fb1cac9e8e2d6723e15810425}\label{class_user_interface_a4497812fb1cac9e8e2d6723e15810425} 
+\index{UserInterface@{UserInterface}!renderGameOver@{renderGameOver}}
+\index{renderGameOver@{renderGameOver}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{renderGameOver()}{renderGameOver()}}
+{\footnotesize\ttfamily void User\+Interface\+::render\+Game\+Over (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders the "{}\+GAME OVER"{} screen overlay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & A reference to the SFML Render\+Window to draw on. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_interface_accbd12699c224625f5f3edc5d1e4f938}\label{class_user_interface_accbd12699c224625f5f3edc5d1e4f938} 
+\index{UserInterface@{UserInterface}!renderSelection@{renderSelection}}
+\index{renderSelection@{renderSelection}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{renderSelection()}{renderSelection()}}
+{\footnotesize\ttfamily void User\+Interface\+::render\+Selection (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders the stage selection screen overlay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & A reference to the SFML Render\+Window to draw on. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_interface_a360c3d26ae4cc8241f5c7cf1c1d4dd10}\label{class_user_interface_a360c3d26ae4cc8241f5c7cf1c1d4dd10} 
+\index{UserInterface@{UserInterface}!renderStageOver@{renderStageOver}}
+\index{renderStageOver@{renderStageOver}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{renderStageOver()}{renderStageOver()}}
+{\footnotesize\ttfamily void User\+Interface\+::render\+Stage\+Over (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders the "{}\+STAGE OVER"{} screen overlay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & A reference to the SFML Render\+Window to draw on. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_interface_a237179570ba9351f62944a88c14c2779}\label{class_user_interface_a237179570ba9351f62944a88c14c2779} 
+\index{UserInterface@{UserInterface}!renderTop@{renderTop}}
+\index{renderTop@{renderTop}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{renderTop()}{renderTop()}}
+{\footnotesize\ttfamily void User\+Interface\+::render\+Top (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders the top UI elements, including score, lives, and bombs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & A reference to the SFML Render\+Window to draw on. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_interface_a971663de0dad0332b16706ca0a6a203c}\label{class_user_interface_a971663de0dad0332b16706ca0a6a203c} 
+\index{UserInterface@{UserInterface}!resetScore@{resetScore}}
+\index{resetScore@{resetScore}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{resetScore()}{resetScore()}}
+{\footnotesize\ttfamily void User\+Interface\+::reset\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the player\textquotesingle{}s score to zero. Updates the score text display. 
+
+\Hypertarget{class_user_interface_a14593d08035e01998f7cdb1fada92284}\label{class_user_interface_a14593d08035e01998f7cdb1fada92284} 
+\index{UserInterface@{UserInterface}!updateBombs@{updateBombs}}
+\index{updateBombs@{updateBombs}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{updateBombs()}{updateBombs()}}
+{\footnotesize\ttfamily void User\+Interface\+::update\+Bombs (\begin{DoxyParamCaption}\item[{int}]{bomb }\end{DoxyParamCaption})}
+
+
+
+Updates the displayed number of bombs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bomb} & The new integer value for bombs. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_user_interface_a42b02d0c38131e80ebf075b948fb02ce}\label{class_user_interface_a42b02d0c38131e80ebf075b948fb02ce} 
+\index{UserInterface@{UserInterface}!updateLife@{updateLife}}
+\index{updateLife@{updateLife}!UserInterface@{UserInterface}}
+\doxysubsubsection{\texorpdfstring{updateLife()}{updateLife()}}
+{\footnotesize\ttfamily void User\+Interface\+::update\+Life (\begin{DoxyParamCaption}\item[{int}]{life }\end{DoxyParamCaption})}
+
+
+
+Updates the displayed number of player lives. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em life} & The new integer value for lives. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_user_interface_8h}{User\+Interface.\+h}}\item 
+\mbox{\hyperlink{_user_interface_8cpp}{User\+Interface.\+cpp}}\end{DoxyCompactItemize}

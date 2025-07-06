@@ -1,0 +1,218 @@
+\doxysection{Projectile\+Builder\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_projectile_builder}{}\label{class_projectile_builder}\index{ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}}
+
+
+A builder class for constructing \doxylink{class_projectile}{Projectile} objects.  
+
+
+
+
+{\ttfamily \#include $<$Projectile\+Builder.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_projectile_builder_aa02459ff668b1ec0d83ad9c8a42fe1da}{Projectile\+Builder}} (\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectiles)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_projectile_builder}{Projectile\+Builder}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder_a15c1241ff7ed6208e806eab29399f41f}{color}} (const sf\+::\+Color clr)
+\begin{DoxyCompactList}\small\item\em Sets the color tint for the projectile. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder_a96a2f6fbcde18b57824baf751000043a}{scale}} (const float scale)
+\begin{DoxyCompactList}\small\item\em Sets the scale factor for the projectile\textquotesingle{}s sprite. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder_a197b6e150c1c187b6f4efd23a2cf2d9c}{position}} (const sf\+::\+Vector2f pos)
+\begin{DoxyCompactList}\small\item\em Sets the initial position of the projectile. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder_ab38e88cb902b8f6754501c0fc8d9f87f}{direction}} (const sf\+::\+Vector2f dir)
+\begin{DoxyCompactList}\small\item\em Sets the movement direction of the projectile. The input vector will be normalized. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder_adb2550104384892106749349bdddd0b8}{damage}} (const float dmg)
+\begin{DoxyCompactList}\small\item\em Sets the damage value of the projectile. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder_a1020e022b41dcd1b4fd40e95599f14d1}{velocity}} (const float vel)
+\begin{DoxyCompactList}\small\item\em Sets the velocity (speed) of the projectile. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder_a4cea6e4fcef500d1fc9f4501d08ab0b6}{max\+\_\+velocity}} (const float vel)
+\begin{DoxyCompactList}\small\item\em Sets the maximum velocity for the projectile. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{class_projectile_builder_a264765c890c98e1b9abfe5e6f0b82543}{build}} () const
+\begin{DoxyCompactList}\small\item\em Constructs and returns a unique pointer to the configured projectile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$\mbox{\hyperlink{concept_derived}{Derived}}$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ T$>$\newline
+class Projectile\+Builder$<$ T $>$}
+A builder class for constructing \doxylink{class_projectile}{Projectile} objects. 
+
+This class implements the Builder design pattern, allowing for a fluent interface to set various properties of a projectile before constructing it. It is templated to create specific types of projectiles derived from {\ttfamily \doxylink{class_projectile}{Projectile}}. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The concrete type of \doxylink{class_projectile}{Projectile} to build, which must be derived from {\ttfamily \doxylink{class_projectile}{Projectile}}. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_projectile_builder_aa02459ff668b1ec0d83ad9c8a42fe1da}\label{class_projectile_builder_aa02459ff668b1ec0d83ad9c8a42fe1da} 
+\index{ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}!ProjectileBuilder@{ProjectileBuilder}}
+\index{ProjectileBuilder@{ProjectileBuilder}!ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ProjectileBuilder()}{ProjectileBuilder()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{concept_derived}{Derived}}$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ T$>$ \\
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}}$<$ T $>$\mbox{\hyperlink{class_projectile_builder}{\+::\+Projectile\+Builder}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor for the \doxylink{class_projectile_builder}{Projectile\+Builder}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projectiles} & A reference to an \doxylink{class_i_add_projectile}{IAdd\+Projectile} interface, which will be passed to the constructed projectile. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_projectile_builder_a264765c890c98e1b9abfe5e6f0b82543}\label{class_projectile_builder_a264765c890c98e1b9abfe5e6f0b82543} 
+\index{ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}!build@{build}}
+\index{build@{build}!ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{concept_derived}{Derived}}$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ T$>$ \\
+std\+::unique\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}}$<$ T $>$\+::build (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs and returns a unique pointer to the configured projectile. 
+
+\begin{DoxyReturn}{Returns}
+A std\+::unique\+\_\+ptr to the newly created projectile of type T. 
+\end{DoxyReturn}
+\Hypertarget{class_projectile_builder_a15c1241ff7ed6208e806eab29399f41f}\label{class_projectile_builder_a15c1241ff7ed6208e806eab29399f41f} 
+\index{ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}!color@{color}}
+\index{color@{color}!ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{color()}{color()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{concept_derived}{Derived}}$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ T$>$ \\
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}}$<$ T $>$\+::color (\begin{DoxyParamCaption}\item[{const sf\+::\+Color}]{clr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the color tint for the projectile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clr} & The sf\+::\+Color to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the builder for method chaining. 
+\end{DoxyReturn}
+\Hypertarget{class_projectile_builder_adb2550104384892106749349bdddd0b8}\label{class_projectile_builder_adb2550104384892106749349bdddd0b8} 
+\index{ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}!damage@{damage}}
+\index{damage@{damage}!ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{damage()}{damage()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{concept_derived}{Derived}}$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ T$>$ \\
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}}$<$ T $>$\+::damage (\begin{DoxyParamCaption}\item[{const float}]{dmg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the damage value of the projectile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dmg} & The float damage value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the builder for method chaining. 
+\end{DoxyReturn}
+\Hypertarget{class_projectile_builder_ab38e88cb902b8f6754501c0fc8d9f87f}\label{class_projectile_builder_ab38e88cb902b8f6754501c0fc8d9f87f} 
+\index{ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}!direction@{direction}}
+\index{direction@{direction}!ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{direction()}{direction()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{concept_derived}{Derived}}$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ T$>$ \\
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}}$<$ T $>$\+::direction (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the movement direction of the projectile. The input vector will be normalized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & The sf\+::\+Vector2f direction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the builder for method chaining. 
+\end{DoxyReturn}
+\Hypertarget{class_projectile_builder_a4cea6e4fcef500d1fc9f4501d08ab0b6}\label{class_projectile_builder_a4cea6e4fcef500d1fc9f4501d08ab0b6} 
+\index{ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}!max\_velocity@{max\_velocity}}
+\index{max\_velocity@{max\_velocity}!ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{max\_velocity()}{max\_velocity()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{concept_derived}{Derived}}$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ T$>$ \\
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}}$<$ T $>$\+::max\+\_\+velocity (\begin{DoxyParamCaption}\item[{const float}]{vel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the maximum velocity for the projectile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vel} & The float maximum velocity value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the builder for method chaining. 
+\end{DoxyReturn}
+\Hypertarget{class_projectile_builder_a197b6e150c1c187b6f4efd23a2cf2d9c}\label{class_projectile_builder_a197b6e150c1c187b6f4efd23a2cf2d9c} 
+\index{ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}!position@{position}}
+\index{position@{position}!ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{position()}{position()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{concept_derived}{Derived}}$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ T$>$ \\
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}}$<$ T $>$\+::position (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the initial position of the projectile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The sf\+::\+Vector2f position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the builder for method chaining. 
+\end{DoxyReturn}
+\Hypertarget{class_projectile_builder_a96a2f6fbcde18b57824baf751000043a}\label{class_projectile_builder_a96a2f6fbcde18b57824baf751000043a} 
+\index{ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}!scale@{scale}}
+\index{scale@{scale}!ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{concept_derived}{Derived}}$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ T$>$ \\
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}}$<$ T $>$\+::scale (\begin{DoxyParamCaption}\item[{const float}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the scale factor for the projectile\textquotesingle{}s sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The float scale value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the builder for method chaining. 
+\end{DoxyReturn}
+\Hypertarget{class_projectile_builder_a1020e022b41dcd1b4fd40e95599f14d1}\label{class_projectile_builder_a1020e022b41dcd1b4fd40e95599f14d1} 
+\index{ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}!velocity@{velocity}}
+\index{velocity@{velocity}!ProjectileBuilder$<$ T $>$@{ProjectileBuilder$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{velocity()}{velocity()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{concept_derived}{Derived}}$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ T$>$ \\
+\mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}} \& \mbox{\hyperlink{class_projectile_builder}{Projectile\+Builder}}$<$ T $>$\+::velocity (\begin{DoxyParamCaption}\item[{const float}]{vel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the velocity (speed) of the projectile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vel} & The float velocity value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the builder for method chaining. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_projectile_builder_8h}{Projectile\+Builder.\+h}}\end{DoxyCompactItemize}

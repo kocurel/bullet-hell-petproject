@@ -1,0 +1,192 @@
+\doxysection{Projectile\+Manager Class Reference}
+\hypertarget{class_projectile_manager}{}\label{class_projectile_manager}\index{ProjectileManager@{ProjectileManager}}
+
+
+Manages collections of player and enemy projectiles.  
+
+
+
+
+{\ttfamily \#include $<$Projectile\+Manager.\+h$>$}
+
+Inheritance diagram for Projectile\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_projectile_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_projectile_manager_aa1f4d3c4eec327b6a6db2b89843508b3}{Projectile\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_projectile_manager}{Projectile\+Manager}. Initializes the {\ttfamily is\+\_\+not\+\_\+disabled} and {\ttfamily is\+\_\+disabled} function objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_manager_a04fa5741cdb7981c2f6b782049a22d88}{clear\+Projectiles}} ()
+\begin{DoxyCompactList}\small\item\em Clears all projectiles (both enemy and player) from the manager. This is typically used for game resets or bomb effects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_manager_a10c3881fe386752e1aa399820ae63ac8}{process}} ()
+\begin{DoxyCompactList}\small\item\em Processes all active projectiles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_manager_a65795f332bb7904febe9decca5c524a2}{create\+Player\+Projectile}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&\&projectile) override
+\begin{DoxyCompactList}\small\item\em Creates and adds a new player-\/fired projectile to the manager. This method overrides the pure virtual function from {\ttfamily \doxylink{class_i_add_projectile}{IAdd\+Projectile}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_manager_ab20c76db1d18cb53fb5bd108904e2a10}{create\+Enemy\+Projectile}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&\&projectile) override
+\begin{DoxyCompactList}\small\item\em Creates and adds a new enemy-\/fired projectile to the manager. This method overrides the pure virtual function from {\ttfamily \doxylink{class_i_add_projectile}{IAdd\+Projectile}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_manager_ac8d1e8f56acf6bcce87c0ce719001abb}{render}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders all active projectiles (both player and enemy) on the provided SFML render window. \end{DoxyCompactList}\item 
+std\+::mutex \& \mbox{\hyperlink{class_projectile_manager_a6c989f3d82e37c518f4a0218240477d3}{get\+Enemy\+Mtx}} ()
+\begin{DoxyCompactList}\small\item\em Gets a reference to the mutex protecting the enemy projectile collection. This allows external code to lock the mutex for thread-\/safe access. \end{DoxyCompactList}\item 
+std\+::mutex \& \mbox{\hyperlink{class_projectile_manager_a92a0feb6e1c42a30b049f7836c355a2a}{get\+Player\+Mtx}} ()
+\begin{DoxyCompactList}\small\item\em Gets a reference to the mutex protecting the player projectile collection. This allows external code to lock the mutex for thread-\/safe access. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ $>$ \& \mbox{\hyperlink{class_projectile_manager_a7a0a6722b284d843dfba6913b3ff0a60}{get\+Player\+Projectiles}} ()
+\begin{DoxyCompactList}\small\item\em Gets a constant reference to the vector of player projectiles. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ $>$ \& \mbox{\hyperlink{class_projectile_manager_a3f00214e3813c822815773c27d8a80b0}{get\+Enemy\+Projectiles}} ()
+\begin{DoxyCompactList}\small\item\em Gets a constant reference to the vector of enemy projectiles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages collections of player and enemy projectiles. 
+
+This class is responsible for owning, processing, rendering, and cleaning up both player-\/fired and enemy-\/fired projectiles. It implements the {\ttfamily \doxylink{class_i_add_projectile}{IAdd\+Projectile}} interface to provide a consistent way for other game entities to add new projectiles. It uses separate mutexes for player and enemy projectiles to allow concurrent access from different threads if needed, while maintaining data integrity. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_projectile_manager_aa1f4d3c4eec327b6a6db2b89843508b3}\label{class_projectile_manager_aa1f4d3c4eec327b6a6db2b89843508b3} 
+\index{ProjectileManager@{ProjectileManager}!ProjectileManager@{ProjectileManager}}
+\index{ProjectileManager@{ProjectileManager}!ProjectileManager@{ProjectileManager}}
+\doxysubsubsection{\texorpdfstring{ProjectileManager()}{ProjectileManager()}}
+{\footnotesize\ttfamily Projectile\+Manager\+::\+Projectile\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_projectile_manager}{Projectile\+Manager}. Initializes the {\ttfamily is\+\_\+not\+\_\+disabled} and {\ttfamily is\+\_\+disabled} function objects. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_projectile_manager_a04fa5741cdb7981c2f6b782049a22d88}\label{class_projectile_manager_a04fa5741cdb7981c2f6b782049a22d88} 
+\index{ProjectileManager@{ProjectileManager}!clearProjectiles@{clearProjectiles}}
+\index{clearProjectiles@{clearProjectiles}!ProjectileManager@{ProjectileManager}}
+\doxysubsubsection{\texorpdfstring{clearProjectiles()}{clearProjectiles()}}
+{\footnotesize\ttfamily void Projectile\+Manager\+::clear\+Projectiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears all projectiles (both enemy and player) from the manager. This is typically used for game resets or bomb effects. 
+
+\Hypertarget{class_projectile_manager_ab20c76db1d18cb53fb5bd108904e2a10}\label{class_projectile_manager_ab20c76db1d18cb53fb5bd108904e2a10} 
+\index{ProjectileManager@{ProjectileManager}!createEnemyProjectile@{createEnemyProjectile}}
+\index{createEnemyProjectile@{createEnemyProjectile}!ProjectileManager@{ProjectileManager}}
+\doxysubsubsection{\texorpdfstring{createEnemyProjectile()}{createEnemyProjectile()}}
+{\footnotesize\ttfamily void Projectile\+Manager\+::create\+Enemy\+Projectile (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&\&}]{projectile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates and adds a new enemy-\/fired projectile to the manager. This method overrides the pure virtual function from {\ttfamily \doxylink{class_i_add_projectile}{IAdd\+Projectile}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projectile} & -\/ An rvalue reference to a unique\+\_\+ptr holding the new projectile. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_add_projectile_af6071ba1b51f07cc20e2b88e7b88032a}{IAdd\+Projectile}}.
+
+\Hypertarget{class_projectile_manager_a65795f332bb7904febe9decca5c524a2}\label{class_projectile_manager_a65795f332bb7904febe9decca5c524a2} 
+\index{ProjectileManager@{ProjectileManager}!createPlayerProjectile@{createPlayerProjectile}}
+\index{createPlayerProjectile@{createPlayerProjectile}!ProjectileManager@{ProjectileManager}}
+\doxysubsubsection{\texorpdfstring{createPlayerProjectile()}{createPlayerProjectile()}}
+{\footnotesize\ttfamily void Projectile\+Manager\+::create\+Player\+Projectile (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&\&}]{projectile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates and adds a new player-\/fired projectile to the manager. This method overrides the pure virtual function from {\ttfamily \doxylink{class_i_add_projectile}{IAdd\+Projectile}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projectile} & -\/ An rvalue reference to a unique\+\_\+ptr holding the new projectile. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_add_projectile_a5f6a689b7b1dfca8fe3a18d8262b463c}{IAdd\+Projectile}}.
+
+\Hypertarget{class_projectile_manager_a6c989f3d82e37c518f4a0218240477d3}\label{class_projectile_manager_a6c989f3d82e37c518f4a0218240477d3} 
+\index{ProjectileManager@{ProjectileManager}!getEnemyMtx@{getEnemyMtx}}
+\index{getEnemyMtx@{getEnemyMtx}!ProjectileManager@{ProjectileManager}}
+\doxysubsubsection{\texorpdfstring{getEnemyMtx()}{getEnemyMtx()}}
+{\footnotesize\ttfamily std\+::mutex \& Projectile\+Manager\+::get\+Enemy\+Mtx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a reference to the mutex protecting the enemy projectile collection. This allows external code to lock the mutex for thread-\/safe access. 
+
+\begin{DoxyReturn}{Returns}
+A reference to enemy\+\_\+mtx\+\_\+. 
+\end{DoxyReturn}
+\Hypertarget{class_projectile_manager_a3f00214e3813c822815773c27d8a80b0}\label{class_projectile_manager_a3f00214e3813c822815773c27d8a80b0} 
+\index{ProjectileManager@{ProjectileManager}!getEnemyProjectiles@{getEnemyProjectiles}}
+\index{getEnemyProjectiles@{getEnemyProjectiles}!ProjectileManager@{ProjectileManager}}
+\doxysubsubsection{\texorpdfstring{getEnemyProjectiles()}{getEnemyProjectiles()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ $>$ \& Projectile\+Manager\+::get\+Enemy\+Projectiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a constant reference to the vector of enemy projectiles. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to enemy\+\_\+projectiles\+\_\+. 
+\end{DoxyReturn}
+\Hypertarget{class_projectile_manager_a92a0feb6e1c42a30b049f7836c355a2a}\label{class_projectile_manager_a92a0feb6e1c42a30b049f7836c355a2a} 
+\index{ProjectileManager@{ProjectileManager}!getPlayerMtx@{getPlayerMtx}}
+\index{getPlayerMtx@{getPlayerMtx}!ProjectileManager@{ProjectileManager}}
+\doxysubsubsection{\texorpdfstring{getPlayerMtx()}{getPlayerMtx()}}
+{\footnotesize\ttfamily std\+::mutex \& Projectile\+Manager\+::get\+Player\+Mtx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a reference to the mutex protecting the player projectile collection. This allows external code to lock the mutex for thread-\/safe access. 
+
+\begin{DoxyReturn}{Returns}
+A reference to player\+\_\+mtx\+\_\+. 
+\end{DoxyReturn}
+\Hypertarget{class_projectile_manager_a7a0a6722b284d843dfba6913b3ff0a60}\label{class_projectile_manager_a7a0a6722b284d843dfba6913b3ff0a60} 
+\index{ProjectileManager@{ProjectileManager}!getPlayerProjectiles@{getPlayerProjectiles}}
+\index{getPlayerProjectiles@{getPlayerProjectiles}!ProjectileManager@{ProjectileManager}}
+\doxysubsubsection{\texorpdfstring{getPlayerProjectiles()}{getPlayerProjectiles()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ $>$ \& Projectile\+Manager\+::get\+Player\+Projectiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a constant reference to the vector of player projectiles. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to player\+\_\+projectiles\+\_\+. 
+\end{DoxyReturn}
+\Hypertarget{class_projectile_manager_a10c3881fe386752e1aa399820ae63ac8}\label{class_projectile_manager_a10c3881fe386752e1aa399820ae63ac8} 
+\index{ProjectileManager@{ProjectileManager}!process@{process}}
+\index{process@{process}!ProjectileManager@{ProjectileManager}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Projectile\+Manager\+::process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Processes all active projectiles. 
+
+This method first calls {\ttfamily cleanup\+Projectiles()} to remove disabled ones. Then, it iterates through all remaining active enemy and player projectiles and calls their {\ttfamily \doxylink{class_projectile_manager_a10c3881fe386752e1aa399820ae63ac8}{process()}} method. \Hypertarget{class_projectile_manager_ac8d1e8f56acf6bcce87c0ce719001abb}\label{class_projectile_manager_ac8d1e8f56acf6bcce87c0ce719001abb} 
+\index{ProjectileManager@{ProjectileManager}!render@{render}}
+\index{render@{render}!ProjectileManager@{ProjectileManager}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Projectile\+Manager\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders all active projectiles (both player and enemy) on the provided SFML render window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & -\/ A reference to the SFML Render\+Window where projectiles will be drawn. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_projectile_manager_8h}{Projectile\+Manager.\+h}}\item 
+\mbox{\hyperlink{_projectile_manager_8cpp}{Projectile\+Manager.\+cpp}}\end{DoxyCompactItemize}

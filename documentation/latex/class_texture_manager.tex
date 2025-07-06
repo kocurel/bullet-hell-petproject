@@ -1,0 +1,131 @@
+\doxysection{Texture\+Manager Class Reference}
+\hypertarget{class_texture_manager}{}\label{class_texture_manager}\index{TextureManager@{TextureManager}}
+
+
+Manages the eager loading and retrieval of game texures. \doxylink{class_texture_manager}{Texture\+Manager} is designed as a Singleton to ensure only one instance of it exists globally.  
+
+
+
+
+{\ttfamily \#include $<$Texture\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const sf\+::\+Texture \& \mbox{\hyperlink{class_texture_manager_a1d0972efb44fc9364a6b0c08365b974e}{get\+Texture}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Returns a reference to a preloaded texture given its path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_texture_manager_a96f95762bb82a328e166c3352e5ad17a}{load\+All\+Textures}} (const std\+::vector$<$ std\+::string $>$ \&texture\+Paths)
+\begin{DoxyCompactList}\small\item\em Preloads all the textures from paths passed by parameter. \end{DoxyCompactList}\item 
+const sf\+::\+Texture \& \mbox{\hyperlink{class_texture_manager_a803f07530048154181ec7854e4c21168}{get\+Error\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em The error texture. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_manager_ae0a812052ff90565e3a0e3bcfc766240}{Texture\+Manager}} (const \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevents copying of the Singleton instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} \& \mbox{\hyperlink{class_texture_manager_ab69a7a235f3fa0a0e5a1cc6cf9c29ab3}{operator=}} (const \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Prevents assignment of the Singleton instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} \& \mbox{\hyperlink{class_texture_manager_a8a5e21d83ec790c9075325c09111b8b1}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Singleton instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the eager loading and retrieval of game texures. \doxylink{class_texture_manager}{Texture\+Manager} is designed as a Singleton to ensure only one instance of it exists globally. 
+
+\begin{DoxyWarning}{Warning}
+If a requested texture is not found the \doxylink{class_texture_manager}{Texture\+Manager} returns a reference to the error texture accessable by \doxylink{class_texture_manager_a803f07530048154181ec7854e4c21168}{get\+Error\+Texture()}. 
+\end{DoxyWarning}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_texture_manager_ae0a812052ff90565e3a0e3bcfc766240}\label{class_texture_manager_ae0a812052ff90565e3a0e3bcfc766240} 
+\index{TextureManager@{TextureManager}!TextureManager@{TextureManager}}
+\index{TextureManager@{TextureManager}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{TextureManager()}{TextureManager()}}
+{\footnotesize\ttfamily Texture\+Manager\+::\+Texture\+Manager (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevents copying of the Singleton instance. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_texture_manager_a803f07530048154181ec7854e4c21168}\label{class_texture_manager_a803f07530048154181ec7854e4c21168} 
+\index{TextureManager@{TextureManager}!getErrorTexture@{getErrorTexture}}
+\index{getErrorTexture@{getErrorTexture}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{getErrorTexture()}{getErrorTexture()}}
+{\footnotesize\ttfamily const sf\+::\+Texture \& Texture\+Manager\+::get\+Error\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The error texture. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to the error texture. 
+\end{DoxyReturn}
+\Hypertarget{class_texture_manager_a8a5e21d83ec790c9075325c09111b8b1}\label{class_texture_manager_a8a5e21d83ec790c9075325c09111b8b1} 
+\index{TextureManager@{TextureManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} \& Texture\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Singleton instance. 
+
+\begin{DoxyReturn}{Returns}
+Returns the single instance of the \doxylink{class_random_number_generator}{Random\+Number\+Generator} 
+\end{DoxyReturn}
+\Hypertarget{class_texture_manager_a1d0972efb44fc9364a6b0c08365b974e}\label{class_texture_manager_a1d0972efb44fc9364a6b0c08365b974e} 
+\index{TextureManager@{TextureManager}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily const sf\+::\+Texture \& Texture\+Manager\+::get\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Returns a reference to a preloaded texture given its path. 
+
+Returns an error texture if the texture wasn\textquotesingle{}t preloaded. 
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to the preloaded texture. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A const reference to the preloaded SFML Texture. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_texture_manager_a803f07530048154181ec7854e4c21168}{Texture\+Manager\+::get\+Error\+Texture} 
+\end{DoxySeeAlso}
+\Hypertarget{class_texture_manager_a96f95762bb82a328e166c3352e5ad17a}\label{class_texture_manager_a96f95762bb82a328e166c3352e5ad17a} 
+\index{TextureManager@{TextureManager}!loadAllTextures@{loadAllTextures}}
+\index{loadAllTextures@{loadAllTextures}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{loadAllTextures()}{loadAllTextures()}}
+{\footnotesize\ttfamily void Texture\+Manager\+::load\+All\+Textures (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{texture\+Paths }\end{DoxyParamCaption})}
+
+
+
+Preloads all the textures from paths passed by parameter. 
+
+Loads the error\+Texture if the texture can\textquotesingle{}t be loaded. 
+\begin{DoxyParams}{Parameters}
+{\em texture\+Paths} & A vector of strings, where each string is a path to a texture file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_texture_manager_ab69a7a235f3fa0a0e5a1cc6cf9c29ab3}\label{class_texture_manager_ab69a7a235f3fa0a0e5a1cc6cf9c29ab3} 
+\index{TextureManager@{TextureManager}!operator=@{operator=}}
+\index{operator=@{operator=}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} \& Texture\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Prevents assignment of the Singleton instance. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_texture_manager_8h}{Texture\+Manager.\+h}}\item 
+\mbox{\hyperlink{_texture_manager_8cpp}{Texture\+Manager.\+cpp}}\end{DoxyCompactItemize}

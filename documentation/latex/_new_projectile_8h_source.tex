@@ -1,0 +1,22 @@
+\doxysection{New\+Projectile.\+h}
+\hypertarget{_new_projectile_8h_source}{}\label{_new_projectile_8h_source}\mbox{\hyperlink{_new_projectile_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_event_8h}{Event.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemy_manager}{EnemyManager}};}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }Projecitles;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile}{Projectile}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_new_projectile}{NewProjectile}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_event}{Event}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ std::unique\_ptr<Projectile>\ projectile\_;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_new_projectile_aa222fe02ecffbf0e2eaa8921a4fedf78}{NewProjectile}}(std::unique\_ptr<Projectile>\&\&\ projectile);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_new_projectile_a93bd209e4b632a1038677b16e3839f48}{onRelease}}(\mbox{\hyperlink{class_enemy_manager}{EnemyManager}}\&\ enemies,\ \mbox{\hyperlink{class_projectile_manager}{ProjectileManager}}\&\ projectiles)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \};}
+
+\end{DoxyCode}

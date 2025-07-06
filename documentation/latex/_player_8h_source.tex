@@ -1,0 +1,65 @@
+\doxysection{Player.\+h}
+\hypertarget{_player_8h_source}{}\label{_player_8h_source}\mbox{\hyperlink{_player_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sprite_owner_8h}{SpriteOwner.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_collision_circle_8h}{CollisionCircle.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_projectile_builder_8h}{ProjectileBuilder.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_positionable_8h}{Positionable.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ forward\ declarations}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile_manager}{ProjectileManager}};}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile}{Projectile}};}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile_straight}{ProjectileStraight}};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_user_interface}{UserInterface}};}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pickup_manager}{PickupManager}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_sprite_owner}{SpriteOwner}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_positionable}{Positionable}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles\_;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_collision_circle}{CollisionCircle}}\ hitbox\_;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{float}\ speed\_\ =\ 6.f;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{float}\ bullet\_speed\_\ =\ 18.0f;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{float}\ bullet\_damage\_\ =\ 3.f;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{float}\ cooldown\_\ =\ 0;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{float}\ attack\_cooldown\_\ =\ 15.f;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ health\_points\_\ =\ 3;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ i\_frames\_\ =\ 0;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ bomb\_cooldown\ =\ 0;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ bombs\_\ =\ 3;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ attack\_pattern\_\ =\ 0;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ hit(\mbox{\hyperlink{class_projectile}{Projectile}}\&\ projectile);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ attack(\mbox{\hyperlink{class_projectile_manager}{ProjectileManager}}\&\ projectiles)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ move();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a09d6f965bbea372603f88c61829a8d72}{increaseBomb}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ae8fc9ef4b50d97112bf537689b73fe13}{AttackSpeedUp}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a2213576fa8886afac21843b11b88cfa3}{increaseHealth}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_addf69533eb6fcd0ea8ef559532f5d0d5}{nextAttackPattern}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a64f3efd0c43b7aa3138d532ff8dc615a}{resetPlayer}}();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a876818716e936257241f6febfa6c3cc6}{setPosition}}(sf::Vector2f\ position);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a389746e04863b9c12f957e67ee796e33}{getHealthPoints}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_player_a1075ea1f14ebd80f8ce6ac66a712cebd}{Player}}(\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a630f4e4326f2a039b1caeadadeaf2c5d}{process}}(\mbox{\hyperlink{class_projectile_manager}{ProjectileManager}}\&\ projectiles,\ \mbox{\hyperlink{class_pickup_manager}{PickupManager}}\&\ pickups);}
+\DoxyCodeLine{00101\ \};}
+
+\end{DoxyCode}

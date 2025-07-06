@@ -1,0 +1,141 @@
+\doxysection{Projectile\+Straight Class Reference}
+\hypertarget{class_projectile_straight}{}\label{class_projectile_straight}\index{ProjectileStraight@{ProjectileStraight}}
+
+
+\doxylink{class_projectile}{Projectile} type that moves in a straight line.  
+
+
+
+
+{\ttfamily \#include $<$Projectile\+Straight.\+h$>$}
+
+Inheritance diagram for Projectile\+Straight\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_projectile_straight}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_projectile_straight_a1ed5b771a343ac5635606b8ea859897f}{Projectile\+Straight}} (\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectiles, const float scaling)
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_straight_ac856cc35192ce80c8aa39feabbe8b8da}{process}} ()
+\begin{DoxyCompactList}\small\item\em Handles the projectile\textquotesingle{}s movement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_projectile}{Projectile}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_projectile_a954a349fe38dfd24ff9e427b44ac9619}{\texorpdfstring{$\sim$}{\string~}\+Projectile}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived \doxylink{class_projectile}{Projectile} types. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_collision_circle}{Collision\+Circle}} \& \mbox{\hyperlink{class_projectile_a418157c7c89d7d34cadcd38e1a41ac77}{get\+Hitbox}} () const
+\begin{DoxyCompactList}\small\item\em Gets a constant reference to the projectile\textquotesingle{}s hitbox. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_projectile_affba3102e074d81233a4b0aec1122408}{get\+Damage}} () const
+\begin{DoxyCompactList}\small\item\em Gets the damage value of the projectile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_a1c71b5758815bfcf12e392289efa0721}{set\+Scale}} (float scale)
+\begin{DoxyCompactList}\small\item\em Sets the scaling factor for the projectile\textquotesingle{}s sprite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_aa0e3a660f30a86c3d0756426f3e544c2}{set\+Direction}} (sf\+::\+Vector2f direction)
+\begin{DoxyCompactList}\small\item\em Sets the movement direction of the projectile. The input vector will be normalized. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_a27d913b202db4ed44152fe8923d830f4}{set\+Damage}} (float damage)
+\begin{DoxyCompactList}\small\item\em Sets the damage value of the projectile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_a3736c79af23d2b4d3857115dd187742b}{set\+Velocity}} (float velocity)
+\begin{DoxyCompactList}\small\item\em Sets the velocity (speed) of the projectile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_aba773e4990a8e1badb355623eec24001}{move}} (sf\+::\+Vector2f displacement)
+\begin{DoxyCompactList}\small\item\em Moves the projectile by a given displacement vector. Updates both the sprite and hitbox positions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_ae07f879ff7091e007f89e1e875f08962}{set\+Position}} (sf\+::\+Vector2f position)
+\begin{DoxyCompactList}\small\item\em Sets the absolute position of the projectile. Updates both the sprite and hitbox positions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_a070ccfaab6322e71228465baba39a1bc}{set\+Max\+Velocity}} (float max\+\_\+velocity)
+\begin{DoxyCompactList}\small\item\em Sets the maximum velocity for the projectile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_projectile_aa115a7f1aa9f562e3894a97bc456f4b7}{set\+Color}} (sf\+::\+Color color)
+\begin{DoxyCompactList}\small\item\em Sets the color tint of the projectile\textquotesingle{}s sprite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sprite_owner_a42c30188e75ab8b437364b66e4ecb253}{is\+Disabled}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the sprite owner is currently disabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sprite_owner_aff092b79461bcda2b34cd48358227d05}{disable}} ()
+\begin{DoxyCompactList}\small\item\em Disables the sprite owner. Sets the internal flag to true, preventing further rendering or processing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sprite_owner_aec9bd1d26b203a50e38d1ac4e4776247}{render}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the owned sprite to the specified SFML render window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_projectile}{Projectile}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_projectile_a301d83ffaa938156290b3256b68ce03a}{Projectile}} (\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectiles)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_projectile}{Projectile} base class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sprite_owner_ac188881cf211fc2b9213c7fc8b9e05a0}{Sprite\+Owner}} ()
+\begin{DoxyCompactList}\small\item\em Protected default constructor. Initializes the internal sf\+::\+Sprite with an error texture. This constructor is protected to ensure creation through derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_projectile}{Projectile}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \& \mbox{\hyperlink{class_projectile_ac6720df93fe1b448503d3790cc896789}{projectiles\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Reference to an interface for adding new projectiles. This allows projectiles to potentially create other projectiles (e.\+g., on hit, or for special attacks). \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_projectile_a140bc7cb513fbdbeadcc62f673cef8af}{position\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The current position of the projectile in game coordinates. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_projectile_abf37648dc4512444b0cc0dd2d90d757c}{direction\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The normalized direction vector of the projectile\textquotesingle{}s movement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_collision_circle}{Collision\+Circle}} \mbox{\hyperlink{class_projectile_ad009e6e19868597e7c56f8c5a1f5b9cd}{hitbox\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The circular hitbox used for collision detection. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_projectile_a7439591e3f6dcaca2482f8bea882a7e1}{damage\+\_\+}} = 3.f
+\begin{DoxyCompactList}\small\item\em The amount of damage this projectile deals upon impact. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_projectile_adf526081f49a2e8140dbcf5f6bf0c2b0}{scale\+\_\+}} = 1.f
+\begin{DoxyCompactList}\small\item\em The scaling factor applied to the projectile\textquotesingle{}s sprite. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_projectile_a555f1c2b6ef07d347201c5a3ec17f92c}{velocity\+\_\+}} = 3.f
+\begin{DoxyCompactList}\small\item\em The current velocity (speed) of the projectile. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_projectile_a0379c4528185049b6bcde1200afd627c}{max\+\_\+velocity\+\_\+}} = 1000000.f
+\begin{DoxyCompactList}\small\item\em The maximum allowed velocity for the projectile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sprite_owner_a789762815ee1eb2238e1f33bc16ea7db}{disabled\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the sprite owner is disabled (for rendering and processing). \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_sprite_owner_a5329203d1a37c21b1bbf659473246ec8}{sprite\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The SFML sprite object owned by this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_projectile}{Projectile} type that moves in a straight line. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_projectile_straight_a1ed5b771a343ac5635606b8ea859897f}\label{class_projectile_straight_a1ed5b771a343ac5635606b8ea859897f} 
+\index{ProjectileStraight@{ProjectileStraight}!ProjectileStraight@{ProjectileStraight}}
+\index{ProjectileStraight@{ProjectileStraight}!ProjectileStraight@{ProjectileStraight}}
+\doxysubsubsection{\texorpdfstring{ProjectileStraight()}{ProjectileStraight()}}
+{\footnotesize\ttfamily Projectile\+Straight\+::\+Projectile\+Straight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&}]{projectiles,  }\item[{const float}]{scaling }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projectiles} & -\/ a reference to an \doxylink{class_i_add_projectile}{IAdd\+Projectile} interface. \\
+\hline
+{\em scaling} & -\/ factor scale of the projectile. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_projectile_straight_ac856cc35192ce80c8aa39feabbe8b8da}\label{class_projectile_straight_ac856cc35192ce80c8aa39feabbe8b8da} 
+\index{ProjectileStraight@{ProjectileStraight}!process@{process}}
+\index{process@{process}!ProjectileStraight@{ProjectileStraight}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Projectile\+Straight\+::process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles the projectile\textquotesingle{}s movement. 
+
+
+
+Implements \mbox{\hyperlink{class_projectile_ad035b64c306155cccbcdf87e55da35f6}{Projectile}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_projectile_straight_8h}{Projectile\+Straight.\+h}}\item 
+\mbox{\hyperlink{_projectile_straight_8cpp}{Projectile\+Straight.\+cpp}}\end{DoxyCompactItemize}

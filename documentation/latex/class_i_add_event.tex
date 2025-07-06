@@ -1,0 +1,52 @@
+\doxysection{IAdd\+Event Class Reference}
+\hypertarget{class_i_add_event}{}\label{class_i_add_event}\index{IAddEvent@{IAddEvent}}
+
+
+Interface class of \doxylink{class_event_manager}{Event\+Manager}.  
+
+
+
+
+{\ttfamily \#include $<$IAdd\+Event.\+h$>$}
+
+Inheritance diagram for IAdd\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_add_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_add_event_ae92c319814b88c748c8ed5df60a9022f}{add\+Event}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_event}{Event}} $>$ \&\&event)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method. Used to pass the ownership of \doxylink{class_event}{Event} objects to \doxylink{class_event_manager}{Event\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface class of \doxylink{class_event_manager}{Event\+Manager}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_add_event_ae92c319814b88c748c8ed5df60a9022f}\label{class_i_add_event_ae92c319814b88c748c8ed5df60a9022f} 
+\index{IAddEvent@{IAddEvent}!addEvent@{addEvent}}
+\index{addEvent@{addEvent}!IAddEvent@{IAddEvent}}
+\doxysubsubsection{\texorpdfstring{addEvent()}{addEvent()}}
+{\footnotesize\ttfamily virtual void IAdd\+Event\+::add\+Event (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_event}{Event}} $>$ \&\&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method. Used to pass the ownership of \doxylink{class_event}{Event} objects to \doxylink{class_event_manager}{Event\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & -\/ and r-\/value reference to the \doxylink{class_event}{Event} object. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_event_manager_a380273ca41683fb1fd3c6b27e6b5c966}{Event\+Manager}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_i_add_event_8h}{IAdd\+Event.\+h}}\end{DoxyCompactItemize}

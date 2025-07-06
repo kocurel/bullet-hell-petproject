@@ -1,0 +1,118 @@
+\doxysection{Pickup\+Bomb Class Reference}
+\hypertarget{class_pickup_bomb}{}\label{class_pickup_bomb}\index{PickupBomb@{PickupBomb}}
+
+
+A pickup that increases the number of \doxylink{class_player}{Player}\textquotesingle{}s bombs.  
+
+
+
+
+{\ttfamily \#include $<$Pickup\+Classes.\+h$>$}
+
+Inheritance diagram for Pickup\+Bomb\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_pickup_bomb}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pickup_bomb_ae36c7d8e4d6dc2c91904d3ab8a938913}{Pickup\+Bomb}} ()
+\item 
+void \mbox{\hyperlink{class_pickup_bomb_af0a85c0b2dd4872a64a684dd88724ed3}{on\+Pickup}} (\mbox{\hyperlink{class_player}{Player}} \&player) override
+\begin{DoxyCompactList}\small\item\em Pure virtual function. To be called by the \doxylink{class_player}{Player} object when it detects the collision. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_pickup}{Pickup}}}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_collision_circle}{Collision\+Circle}} \& \mbox{\hyperlink{class_pickup_a9225d1ddc730e0ee8accb5bcba168b52}{get\+Hitbox}} () const
+\begin{DoxyCompactList}\small\item\em getter of the hitbox\+\_\+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pickup_a594c8d7d91c821f335ca8a67da172538}{process}} ()
+\begin{DoxyCompactList}\small\item\em Process function. Handles the movement of a \doxylink{class_pickup}{Pickup} object. Should get called every frame. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_pickup_ad799dc67c0c715dab3da577cb35c4e81}{\texorpdfstring{$\sim$}{\string~}\+Pickup}} ()=default
+\begin{DoxyCompactList}\small\item\em The default virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_a5b5c5227d2c6487f5ff925e066f9449a}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current position of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_positionable_a1f1525ace9fc2b25462e6b088ed058d8}{set\+Position}} (sf\+::\+Vector2f pos)
+\begin{DoxyCompactList}\small\item\em Sets the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sprite_owner_a42c30188e75ab8b437364b66e4ecb253}{is\+Disabled}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the sprite owner is currently disabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sprite_owner_aff092b79461bcda2b34cd48358227d05}{disable}} ()
+\begin{DoxyCompactList}\small\item\em Disables the sprite owner. Sets the internal flag to true, preventing further rendering or processing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sprite_owner_aec9bd1d26b203a50e38d1ac4e4776247}{render}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the owned sprite to the specified SFML render window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_pickup}{Pickup}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pickup_a96d607c3c6fbe14446c5cafc33163844}{Pickup}} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. Initializes the sprite and the hitbox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pickup_a48901d2ee061d344100979cefc3f0031}{move}} (sf\+::\+Vector2f displacement)
+\begin{DoxyCompactList}\small\item\em Moves the pickup, its hitbox and sprite by a displacement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sprite_owner_ac188881cf211fc2b9213c7fc8b9e05a0}{Sprite\+Owner}} ()
+\begin{DoxyCompactList}\small\item\em Protected default constructor. Initializes the internal sf\+::\+Sprite with an error texture. This constructor is protected to ensure creation through derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_pickup}{Pickup}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collision_circle}{Collision\+Circle}} \mbox{\hyperlink{class_pickup_a57c01e25f96cbb2b4695225ea99d1219}{hitbox\+\_\+}}
+\begin{DoxyCompactList}\small\item\em hitbox of the pickup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_aa5ac62eec93831b439524651f3a96282}{position\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The 2D position of the object in game coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sprite_owner_a789762815ee1eb2238e1f33bc16ea7db}{disabled\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the sprite owner is disabled (for rendering and processing). \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_sprite_owner_a5329203d1a37c21b1bbf659473246ec8}{sprite\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The SFML sprite object owned by this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A pickup that increases the number of \doxylink{class_player}{Player}\textquotesingle{}s bombs. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pickup_bomb_ae36c7d8e4d6dc2c91904d3ab8a938913}\label{class_pickup_bomb_ae36c7d8e4d6dc2c91904d3ab8a938913} 
+\index{PickupBomb@{PickupBomb}!PickupBomb@{PickupBomb}}
+\index{PickupBomb@{PickupBomb}!PickupBomb@{PickupBomb}}
+\doxysubsubsection{\texorpdfstring{PickupBomb()}{PickupBomb()}}
+{\footnotesize\ttfamily Pickup\+Bomb\+::\+Pickup\+Bomb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pickup_bomb_af0a85c0b2dd4872a64a684dd88724ed3}\label{class_pickup_bomb_af0a85c0b2dd4872a64a684dd88724ed3} 
+\index{PickupBomb@{PickupBomb}!onPickup@{onPickup}}
+\index{onPickup@{onPickup}!PickupBomb@{PickupBomb}}
+\doxysubsubsection{\texorpdfstring{onPickup()}{onPickup()}}
+{\footnotesize\ttfamily void Pickup\+Bomb\+::on\+Pickup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual function. To be called by the \doxylink{class_player}{Player} object when it detects the collision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & -\/ A reference to the \doxylink{class_player}{Player} object. Neccessary for any given \doxylink{class_pickup}{Pickup} to be able to modify player stats. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_pickup_a53e2dd7217621bcc92bc73565ed45ba7}{Pickup}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_pickup_classes_8h}{Pickup\+Classes.\+h}}\end{DoxyCompactItemize}

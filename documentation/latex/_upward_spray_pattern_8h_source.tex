@@ -1,0 +1,43 @@
+\doxysection{Upward\+Spray\+Pattern.\+h}
+\hypertarget{_upward_spray_pattern_8h_source}{}\label{_upward_spray_pattern_8h_source}\mbox{\hyperlink{_upward_spray_pattern_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_attack_pattern_8h}{IAttackPattern.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SFML/System/Vector2.hpp>}\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Forward\ declarations}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_upward_spray_pattern}{UpwardSprayPattern}}\ :\ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_attack_pattern}{IAttackPattern}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_upward_spray_pattern_aa5b536845b3e4f79338608b9483b7ee1}{reload\_time\_}}\ =\ 60;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_upward_spray_pattern_a5e799c1d4b247c07f5868b993c5c3000}{until\_reload}}\ =\ \mbox{\hyperlink{class_upward_spray_pattern_aa5b536845b3e4f79338608b9483b7ee1}{reload\_time\_}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_upward_spray_pattern_aae2e28a310c2564a73f65341d9e52cd2}{projectile\_delay}}\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_upward_spray_pattern_ab888a8cb03f31611fea02279d64c30b9}{delay\_left}}\ =\ \mbox{\hyperlink{class_upward_spray_pattern_aae2e28a310c2564a73f65341d9e52cd2}{projectile\_delay}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_upward_spray_pattern_aa85d6ae32aa9060582d941cef88da465}{shots\_in\_series}}\ =\ 6;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_upward_spray_pattern_ab712e907d7d20f0c4e157b545edacd83}{shots\_left\_}}\ =\ 0;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_upward_spray_pattern_aa73150b0f60039cd27a05c27c1a29c43}{projectile\_scale\_}}\ =\ 0.5f;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_upward_spray_pattern_a93020638cd779723d6d6f8a836f818b5}{scale}}\ =\ 1.f;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_upward_spray_pattern_a7d0466fd64dc4a9e4a72fc5abc47422d}{velocity}}\ =\ 8.f;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00050\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_upward_spray_pattern_a88bb349291360daf2bc1ec2016ea5f35}{direction\_}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_upward_spray_pattern_a17f0fc20cb4377fbf971805bc752251e}{switch\_signal\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_upward_spray_pattern_a8ae0172cbf80c0e6fcba365758cdb7ee}{attack}}(\mbox{\hyperlink{class_player}{Player}}\&\ player,\ \mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_upward_spray_pattern_a8e9c9820abb21e5cc00754b2f5de16f5}{setReloadTime}}(\textcolor{keywordtype}{int}\ frames);}
+\DoxyCodeLine{00068\ \};}
+
+\end{DoxyCode}

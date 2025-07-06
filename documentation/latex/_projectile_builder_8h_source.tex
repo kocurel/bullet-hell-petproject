@@ -1,0 +1,86 @@
+\doxysection{Projectile\+Builder.\+h}
+\hypertarget{_projectile_builder_8h_source}{}\label{_projectile_builder_8h_source}\mbox{\hyperlink{_projectile_builder_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <concepts>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_projectile_8h}{Projectile.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_add_projectile_8h}{IAddProjectile.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ U>}
+\DoxyCodeLine{00013\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{concept_derived}{Derived}}\ =\ std::is\_base\_of<U,\ T>::value;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{template}<Derived<Projectile>\ T>}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile_builder}{ProjectileBuilder}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles\_;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{float}\ scale\_\ =\ 0.75f;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{float}\ damage\_\ =\ 1.f;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{float}\ velocity\_\ =\ 1.f;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ sf::Vector2f\ position\_;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ sf::Vector2f\ direction\_;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ sf::Color\ color\_\ =\ sf::Color(255,\ 255,\ 255,\ 255);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{float}\ max\_velocity\_\ =\ 1000000.f;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_projectile_builder_aa02459ff668b1ec0d83ad9c8a42fe1da}{ProjectileBuilder}}(\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles)\ :\ projectiles\_(projectiles)\ \{\};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_projectile_builder}{ProjectileBuilder}}\&\ \mbox{\hyperlink{class_projectile_builder_a15c1241ff7ed6208e806eab29399f41f}{color}}(\textcolor{keyword}{const}\ sf::Color\ clr)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ color\_\ =\ clr;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_projectile_builder}{ProjectileBuilder}}\&\ \mbox{\hyperlink{class_projectile_builder_a96a2f6fbcde18b57824baf751000043a}{scale}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_projectile_builder_a96a2f6fbcde18b57824baf751000043a}{scale}})\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ scale\_\ =\ \mbox{\hyperlink{class_projectile_builder_a96a2f6fbcde18b57824baf751000043a}{scale}};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_projectile_builder}{ProjectileBuilder}}\&\ \mbox{\hyperlink{class_projectile_builder_a197b6e150c1c187b6f4efd23a2cf2d9c}{position}}(\textcolor{keyword}{const}\ sf::Vector2f\ pos)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ position\_\ =\ pos;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_projectile_builder}{ProjectileBuilder}}\&\ \mbox{\hyperlink{class_projectile_builder_ab38e88cb902b8f6754501c0fc8d9f87f}{direction}}(\textcolor{keyword}{const}\ sf::Vector2f\ dir)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ direction\_\ =\ dir.normalized();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{class_projectile_builder}{ProjectileBuilder}}\&\ \mbox{\hyperlink{class_projectile_builder_adb2550104384892106749349bdddd0b8}{damage}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ dmg)\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ damage\_\ =\ dmg;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{class_projectile_builder}{ProjectileBuilder}}\&\ \mbox{\hyperlink{class_projectile_builder_a1020e022b41dcd1b4fd40e95599f14d1}{velocity}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ vel)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ velocity\_\ =\ vel;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_projectile_builder}{ProjectileBuilder}}\&\ \mbox{\hyperlink{class_projectile_builder_a4cea6e4fcef500d1fc9f4501d08ab0b6}{max\_velocity}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ vel)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ max\_velocity\_\ =\ vel;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00113\ \ \ \ \ std::unique\_ptr<T>\ \mbox{\hyperlink{class_projectile_builder_a264765c890c98e1b9abfe5e6f0b82543}{build}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ std::unique\_ptr<T>\ projectile\ =\ std::make\_unique<T>(projectiles\_,\ scale\_);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ T\&\ proj\ =\ *projectile;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ proj.setPosition(position\_);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ proj.setDirection(direction\_);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ proj.setVelocity(velocity\_);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ proj.setColor(color\_);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ proj.setDamage(damage\_);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ proj.setMaxVelocity(max\_velocity\_);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(projectile);}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \};}
+
+\end{DoxyCode}

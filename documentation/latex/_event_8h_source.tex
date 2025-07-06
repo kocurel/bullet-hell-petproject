@@ -1,0 +1,29 @@
+\doxysection{Event.\+h}
+\hypertarget{_event_8h_source}{}\label{_event_8h_source}\mbox{\hyperlink{_event_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//forward\ declarations}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemy_manager}{EnemyManager}};}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile_manager}{ProjectileManager}};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event}{Event}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ frames\_countdown\_\ =\ 0;}
+\DoxyCodeLine{00014\ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ wait\_\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_event_ae01057480f73d4d3669f6491733dca4b}{get\_wait}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_a6af9d71c268eca7257fb298ecb541471}{setWait}}(\textcolor{keywordtype}{bool}\ wait);}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_a47c8d7fe85757962e6d570bea82ee630}{setCountdown}}(\textcolor{keywordtype}{int}\ frames);}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_event_a7c96b5fd7657b7b94b7f637d83268a47}{countdown}}();}
+\DoxyCodeLine{00036\ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_ae0dade2d4ae418b474e80e54bb913064}{onRelease}}(\mbox{\hyperlink{class_enemy_manager}{EnemyManager}}\&\ enemies,\ \mbox{\hyperlink{class_projectile_manager}{ProjectileManager}}\&\ projectiles)\ =\ 0;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_event_a105223995bbf1a1e4714d0c77f91cf0b}{\string~Event}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00045\ \};}
+
+\end{DoxyCode}

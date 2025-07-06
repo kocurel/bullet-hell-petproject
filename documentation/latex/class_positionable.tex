@@ -1,0 +1,84 @@
+\doxysection{Positionable Class Reference}
+\hypertarget{class_positionable}{}\label{class_positionable}\index{Positionable@{Positionable}}
+
+
+Provides basic position management for objects in a 2D space.  
+
+
+
+
+{\ttfamily \#include $<$Positionable.\+h$>$}
+
+Inheritance diagram for Positionable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.087591cm]{class_positionable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_a5b5c5227d2c6487f5ff925e066f9449a}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current position of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_positionable_a1f1525ace9fc2b25462e6b088ed058d8}{set\+Position}} (sf\+::\+Vector2f pos)
+\begin{DoxyCompactList}\small\item\em Sets the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_aa5ac62eec93831b439524651f3a96282}{position\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The 2D position of the object in game coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides basic position management for objects in a 2D space. 
+
+This class defines a common interface for objects that have a position represented by an SFML 2D vector, allowing them to get and set their coordinates. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_positionable_a5b5c5227d2c6487f5ff925e066f9449a}\label{class_positionable_a5b5c5227d2c6487f5ff925e066f9449a} 
+\index{Positionable@{Positionable}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Positionable@{Positionable}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Positionable\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current position of the object. 
+
+\begin{DoxyReturn}{Returns}
+An sf\+::\+Vector2f representing the object\textquotesingle{}s current position. 
+\end{DoxyReturn}
+\Hypertarget{class_positionable_a1f1525ace9fc2b25462e6b088ed058d8}\label{class_positionable_a1f1525ace9fc2b25462e6b088ed058d8} 
+\index{Positionable@{Positionable}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Positionable@{Positionable}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Positionable\+::set\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{pos }\end{DoxyParamCaption})}
+
+
+
+Sets the position of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The new sf\+::\+Vector2f position for the object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_positionable_aa5ac62eec93831b439524651f3a96282}\label{class_positionable_aa5ac62eec93831b439524651f3a96282} 
+\index{Positionable@{Positionable}!position\_@{position\_}}
+\index{position\_@{position\_}!Positionable@{Positionable}}
+\doxysubsubsection{\texorpdfstring{position\_}{position\_}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Positionable\+::position\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The 2D position of the object in game coordinates. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_positionable_8h}{Positionable.\+h}}\item 
+\mbox{\hyperlink{_positionable_8cpp}{Positionable.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,30 @@
+\doxysection{Derived Concept Reference}
+\hypertarget{concept_derived}{}\label{concept_derived}\index{Derived@{Derived}}
+
+
+Concept to check if a type {\ttfamily T} is derived from a base type {\ttfamily U}.  
+
+
+
+
+{\ttfamily \#include $<$Projectile\+Builder.\+h$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ U>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{concept_derived}{Derived}}\ =\ \ std::is\_base\_of<U,\ T>::value}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+Concept to check if a type {\ttfamily T} is derived from a base type {\ttfamily U}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & -\/ The type to check if it\textquotesingle{}s derived. \\
+\hline
+{\em U} & -\/ The base type. \\
+\hline
+\end{DoxyTemplParams}

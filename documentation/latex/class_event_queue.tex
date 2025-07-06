@@ -1,0 +1,83 @@
+\doxysection{Event\+Queue Class Reference}
+\hypertarget{class_event_queue}{}\label{class_event_queue}\index{EventQueue@{EventQueue}}
+
+
+{\ttfamily \#include $<$Event\+Queue.\+h$>$}
+
+Inheritance diagram for Event\+Queue\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_event_queue}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_event_queue_a73d0c91ac0c0d0aee03760602d8f916b}{process}} (\mbox{\hyperlink{class_enemies}{Enemies}} \&enemies, \mbox{\hyperlink{class_projectiles}{Projectiles}} \&projectiles)
+\item 
+\mbox{\hyperlink{class_event_queue_ab7de5a41befc94aac0f461391e67f14a}{Event\+Queue}} ()
+\item 
+void \mbox{\hyperlink{class_event_queue_a48529eff5cb7971b4f0dc577ccfebd8e}{end\+Wave}} () override
+\item 
+bool \mbox{\hyperlink{class_event_queue_a3eb34d66918dd4a2874cb683cb4b04b5}{is\+Stage\+Over}} ()
+\item 
+void \mbox{\hyperlink{class_event_queue_a2f83ecd915ec09a42bcf0f52d39eec8c}{clear\+Events}} ()
+\item 
+void \mbox{\hyperlink{class_event_queue_a1be762f395ae07899e8e643f5430633a}{add\+Event}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_event}{Event}} $>$ \&event) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_event_queue_ab7de5a41befc94aac0f461391e67f14a}\label{class_event_queue_ab7de5a41befc94aac0f461391e67f14a} 
+\index{EventQueue@{EventQueue}!EventQueue@{EventQueue}}
+\index{EventQueue@{EventQueue}!EventQueue@{EventQueue}}
+\doxysubsubsection{\texorpdfstring{EventQueue()}{EventQueue()}}
+{\footnotesize\ttfamily Event\+Queue\+::\+Event\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_event_queue_a1be762f395ae07899e8e643f5430633a}\label{class_event_queue_a1be762f395ae07899e8e643f5430633a} 
+\index{EventQueue@{EventQueue}!addEvent@{addEvent}}
+\index{addEvent@{addEvent}!EventQueue@{EventQueue}}
+\doxysubsubsection{\texorpdfstring{addEvent()}{addEvent()}}
+{\footnotesize\ttfamily void Event\+Queue\+::add\+Event (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_event}{Event}} $>$ \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_add_event_a6eb59ce992550078cba33c7820d08c97}{IAdd\+Event}}.
+
+\Hypertarget{class_event_queue_a2f83ecd915ec09a42bcf0f52d39eec8c}\label{class_event_queue_a2f83ecd915ec09a42bcf0f52d39eec8c} 
+\index{EventQueue@{EventQueue}!clearEvents@{clearEvents}}
+\index{clearEvents@{clearEvents}!EventQueue@{EventQueue}}
+\doxysubsubsection{\texorpdfstring{clearEvents()}{clearEvents()}}
+{\footnotesize\ttfamily void Event\+Queue\+::clear\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_event_queue_a48529eff5cb7971b4f0dc577ccfebd8e}\label{class_event_queue_a48529eff5cb7971b4f0dc577ccfebd8e} 
+\index{EventQueue@{EventQueue}!endWave@{endWave}}
+\index{endWave@{endWave}!EventQueue@{EventQueue}}
+\doxysubsubsection{\texorpdfstring{endWave()}{endWave()}}
+{\footnotesize\ttfamily void Event\+Queue\+::end\+Wave (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_notify_end_wave_aa3d1bcf61a2f3628bbb82d84c72596a1}{INotify\+End\+Wave}}.
+
+\Hypertarget{class_event_queue_a3eb34d66918dd4a2874cb683cb4b04b5}\label{class_event_queue_a3eb34d66918dd4a2874cb683cb4b04b5} 
+\index{EventQueue@{EventQueue}!isStageOver@{isStageOver}}
+\index{isStageOver@{isStageOver}!EventQueue@{EventQueue}}
+\doxysubsubsection{\texorpdfstring{isStageOver()}{isStageOver()}}
+{\footnotesize\ttfamily bool Event\+Queue\+::is\+Stage\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_event_queue_a73d0c91ac0c0d0aee03760602d8f916b}\label{class_event_queue_a73d0c91ac0c0d0aee03760602d8f916b} 
+\index{EventQueue@{EventQueue}!process@{process}}
+\index{process@{process}!EventQueue@{EventQueue}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Event\+Queue\+::process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemies}{Enemies}} \&}]{enemies,  }\item[{\mbox{\hyperlink{class_projectiles}{Projectiles}} \&}]{projectiles }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_event_queue_8h}{Event\+Queue.\+h}}\item 
+\mbox{\hyperlink{_event_queue_8cpp}{Event\+Queue.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+\doxysection{New\+Projectile Class Reference}
+\hypertarget{class_new_projectile}{}\label{class_new_projectile}\index{NewProjectile@{NewProjectile}}
+
+
+An event that triggers the creation of a new projectile in the game. This class inherits from \doxylink{class_event}{Event} and encapsulates a unique\+\_\+ptr to a \doxylink{class_projectile}{Projectile} object, which is then added to the \doxylink{class_projectile_manager}{Projectile\+Manager} manager upon release.  
+
+
+
+
+{\ttfamily \#include $<$New\+Projectile.\+h$>$}
+
+Inheritance diagram for New\+Projectile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_new_projectile}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_new_projectile_aa222fe02ecffbf0e2eaa8921a4fedf78}{New\+Projectile}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&\&projectile)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_new_projectile}{New\+Projectile} event by taking ownership of a \doxylink{class_projectile}{Projectile} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_new_projectile_a93bd209e4b632a1038677b16e3839f48}{on\+Release}} (\mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \&enemies, \mbox{\hyperlink{class_projectile_manager}{Projectile\+Manager}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Implements the action to be performed when the event is released. This method adds the encapsulated \doxylink{class_projectile}{Projectile} object to the \doxylink{class_projectile_manager}{Projectile\+Manager} manager, effectively spawning it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_event}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_event_ae01057480f73d4d3669f6491733dca4b}{get\+\_\+wait}} () const
+\begin{DoxyCompactList}\small\item\em Gets the value of the wait\+\_\+ flag of the event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_event_a6af9d71c268eca7257fb298ecb541471}{set\+Wait}} (bool wait)
+\begin{DoxyCompactList}\small\item\em Sets the value of the wait\+\_\+ flag of the event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_event_a47c8d7fe85757962e6d570bea82ee630}{set\+Countdown}} (int frames)
+\begin{DoxyCompactList}\small\item\em Sets the initial countdown duration for the event. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_event_a7c96b5fd7657b7b94b7f637d83268a47}{countdown}} ()
+\begin{DoxyCompactList}\small\item\em Decrements the event\textquotesingle{}s internal frame countdown. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_event_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived \doxylink{class_event}{Event} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An event that triggers the creation of a new projectile in the game. This class inherits from \doxylink{class_event}{Event} and encapsulates a unique\+\_\+ptr to a \doxylink{class_projectile}{Projectile} object, which is then added to the \doxylink{class_projectile_manager}{Projectile\+Manager} manager upon release. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_new_projectile_aa222fe02ecffbf0e2eaa8921a4fedf78}\label{class_new_projectile_aa222fe02ecffbf0e2eaa8921a4fedf78} 
+\index{NewProjectile@{NewProjectile}!NewProjectile@{NewProjectile}}
+\index{NewProjectile@{NewProjectile}!NewProjectile@{NewProjectile}}
+\doxysubsubsection{\texorpdfstring{NewProjectile()}{NewProjectile()}}
+{\footnotesize\ttfamily New\+Projectile\+::\+New\+Projectile (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&\&}]{projectile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_new_projectile}{New\+Projectile} event by taking ownership of a \doxylink{class_projectile}{Projectile} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projectile} & An rvalue reference to a unique\+\_\+ptr$<$\+Projectile$>$. Ownership is moved from this parameter. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_new_projectile_a93bd209e4b632a1038677b16e3839f48}\label{class_new_projectile_a93bd209e4b632a1038677b16e3839f48} 
+\index{NewProjectile@{NewProjectile}!onRelease@{onRelease}}
+\index{onRelease@{onRelease}!NewProjectile@{NewProjectile}}
+\doxysubsubsection{\texorpdfstring{onRelease()}{onRelease()}}
+{\footnotesize\ttfamily void New\+Projectile\+::on\+Release (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \&}]{enemies,  }\item[{\mbox{\hyperlink{class_projectile_manager}{Projectile\+Manager}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements the action to be performed when the event is released. This method adds the encapsulated \doxylink{class_projectile}{Projectile} object to the \doxylink{class_projectile_manager}{Projectile\+Manager} manager, effectively spawning it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemies} & -\/ a reference to the \doxylink{class_enemy_manager}{Enemy\+Manager} manager (not used by this specific event, but required by base class signature). \\
+\hline
+{\em projectiles} & -\/ a reference to the \doxylink{class_projectile_manager}{Projectile\+Manager} manager, used to add the new projectile. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_event_ae0dade2d4ae418b474e80e54bb913064}{Event}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_new_projectile_8h}{New\+Projectile.\+h}}\item 
+\mbox{\hyperlink{_new_projectile_8cpp}{New\+Projectile.\+cpp}}\end{DoxyCompactItemize}

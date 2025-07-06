@@ -1,0 +1,67 @@
+\doxysection{IAttack\+Pattern Class Reference}
+\hypertarget{class_i_attack_pattern}{}\label{class_i_attack_pattern}\index{IAttackPattern@{IAttackPattern}}
+
+
+Interface base class of all attack patterns.  
+
+
+
+
+{\ttfamily \#include $<$IAttack\+Pattern.\+h$>$}
+
+Inheritance diagram for IAttack\+Pattern\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_i_attack_pattern}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_attack_pattern_a2bc29249375f1ad83c9570370efc111b}{attack}} (\mbox{\hyperlink{class_player}{Player}} \&player, \mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectile\+\_\+manager)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function defining the logic of each attack pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_a5b5c5227d2c6487f5ff925e066f9449a}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current position of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_positionable_a1f1525ace9fc2b25462e6b088ed058d8}{set\+Position}} (sf\+::\+Vector2f pos)
+\begin{DoxyCompactList}\small\item\em Sets the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_aa5ac62eec93831b439524651f3a96282}{position\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The 2D position of the object in game coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface base class of all attack patterns. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_attack_pattern_a2bc29249375f1ad83c9570370efc111b}\label{class_i_attack_pattern_a2bc29249375f1ad83c9570370efc111b} 
+\index{IAttackPattern@{IAttackPattern}!attack@{attack}}
+\index{attack@{attack}!IAttackPattern@{IAttackPattern}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily virtual void IAttack\+Pattern\+::attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player,  }\item[{\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&}]{projectile\+\_\+manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function defining the logic of each attack pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & -\/ a reference to the \doxylink{class_player}{Player} object. \\
+\hline
+{\em projectile\+\_\+manager} & -\/ a reference to the interface of \doxylink{class_projectile_manager}{Projectile\+Manager} \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_enemy1_a6f2dcf53edd6f5dad02cf2ef232e873a}{Enemy1}}, \mbox{\hyperlink{class_enemy2_aa98c1f28b19b3448d3d071cccca11b5b}{Enemy2}}, \mbox{\hyperlink{class_series_in_line_pattern_a51b8800960501d8a3c31f20d2ff33f93}{Series\+In\+Line\+Pattern}}, \mbox{\hyperlink{class_triple_straight_pattern_a7051d37aea0170d820cc384ed5f8e272}{Triple\+Straight\+Pattern}}, and \mbox{\hyperlink{class_upward_spray_pattern_a8ae0172cbf80c0e6fcba365758cdb7ee}{Upward\+Spray\+Pattern}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_i_attack_pattern_8h}{IAttack\+Pattern.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,63 @@
+\doxysection{Projectile.\+h}
+\hypertarget{_projectile_8h_source}{}\label{_projectile_8h_source}\mbox{\hyperlink{_projectile_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_collision_circle_8h}{CollisionCircle.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sprite_owner_8h}{SpriteOwner.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile}{Projectile}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_sprite_owner}{SpriteOwner}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ \mbox{\hyperlink{class_projectile_ac6720df93fe1b448503d3790cc896789}{projectiles\_}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_projectile_a140bc7cb513fbdbeadcc62f673cef8af}{position\_}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_projectile_abf37648dc4512444b0cc0dd2d90d757c}{direction\_}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_projectile_a301d83ffaa938156290b3256b68ce03a}{Projectile}}(\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_collision_circle}{CollisionCircle}}\ \mbox{\hyperlink{class_projectile_ad009e6e19868597e7c56f8c5a1f5b9cd}{hitbox\_}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_projectile_a7439591e3f6dcaca2482f8bea882a7e1}{damage\_}}\ =\ 3.f;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_projectile_adf526081f49a2e8140dbcf5f6bf0c2b0}{scale\_}}\ =\ 1.f;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_projectile_a555f1c2b6ef07d347201c5a3ec17f92c}{velocity\_}}\ =\ 3.f;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_projectile_a0379c4528185049b6bcde1200afd627c}{max\_velocity\_}}\ =\ 1000000.f;\ \textcolor{comment}{//\ A\ very\ large\ number,\ effectively\ no\ limit\ by\ default}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_projectile_a954a349fe38dfd24ff9e427b44ac9619}{\string~Projectile}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_ad035b64c306155cccbcdf87e55da35f6}{process}}()\ =\ 0;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_collision_circle}{CollisionCircle}}\&\ \mbox{\hyperlink{class_projectile_a418157c7c89d7d34cadcd38e1a41ac77}{getHitbox}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_projectile_affba3102e074d81233a4b0aec1122408}{getDamage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_a1c71b5758815bfcf12e392289efa0721}{setScale}}(\textcolor{keywordtype}{float}\ scale);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_aa0e3a660f30a86c3d0756426f3e544c2}{setDirection}}(sf::Vector2f\ direction);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_a27d913b202db4ed44152fe8923d830f4}{setDamage}}(\textcolor{keywordtype}{float}\ damage);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_a3736c79af23d2b4d3857115dd187742b}{setVelocity}}(\textcolor{keywordtype}{float}\ velocity);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_aba773e4990a8e1badb355623eec24001}{move}}(sf::Vector2f\ displacement);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_ae07f879ff7091e007f89e1e875f08962}{setPosition}}(sf::Vector2f\ position);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_a070ccfaab6322e71228465baba39a1bc}{setMaxVelocity}}(\textcolor{keywordtype}{float}\ max\_velocity);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_projectile_aa115a7f1aa9f562e3894a97bc456f4b7}{setColor}}(sf::Color\ color);}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00109\ sf::Vector2f\ \mbox{\hyperlink{_projectile_8h_a277488bd2b804afa1fe1046036381f36}{rotateVector}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ vec,\ \textcolor{keywordtype}{float}\ angle\_deg);}
+
+\end{DoxyCode}

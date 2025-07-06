@@ -1,0 +1,85 @@
+\doxysection{Event\+Parser Class Reference}
+\hypertarget{class_event_parser}{}\label{class_event_parser}\index{EventParser@{EventParser}}
+
+
+Parses event definition files and creates corresponding game events. This class is responsible for reading structured event data from files, interpreting it, and using an \doxylink{class_event_factory}{Event\+Factory} to instantiate and enqueue these events into the game\textquotesingle{}s event system.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Parser.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_event_parser_1_1_wave_entry}{Wave\+Entry}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_event_parser_a9e4d48d97ffba56d520841fbb510d45e}{Event\+Parser}} (\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectiles, \mbox{\hyperlink{class_i_add_event}{IAdd\+Event}} \&event\+\_\+manager)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{class_event_parser}{Event\+Parser}. This constructor initializes the internal \doxylink{class_event_factory}{Event\+Factory} and populates the list of event files by iterating through a predefined directory (e.\+g., "{}./event\+\_\+dir"{}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_event_parser_a830241f109e766dce5ee52a0502a1dbc}{load}} (unsigned int file\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Loads events from a specific event definition file by its index. This method retrieves a file path from the internally stored list of event files based on the given index, and then calls parse() to process its contents. If the file\+\_\+number is out of bounds, no action is taken. \end{DoxyCompactList}\item 
+const std\+::filesystem\+::path \& \mbox{\hyperlink{class_event_parser_ad8d304a3c3b1648642ddd8e0c8dfe3a6}{get\+Path}} ()
+\begin{DoxyCompactList}\small\item\em The getter of current\+\_\+file\+\_\+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parses event definition files and creates corresponding game events. This class is responsible for reading structured event data from files, interpreting it, and using an \doxylink{class_event_factory}{Event\+Factory} to instantiate and enqueue these events into the game\textquotesingle{}s event system. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_event_parser_a9e4d48d97ffba56d520841fbb510d45e}\label{class_event_parser_a9e4d48d97ffba56d520841fbb510d45e} 
+\index{EventParser@{EventParser}!EventParser@{EventParser}}
+\index{EventParser@{EventParser}!EventParser@{EventParser}}
+\doxysubsubsection{\texorpdfstring{EventParser()}{EventParser()}}
+{\footnotesize\ttfamily Event\+Parser\+::\+Event\+Parser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&}]{projectiles,  }\item[{\mbox{\hyperlink{class_i_add_event}{IAdd\+Event}} \&}]{event\+\_\+manager }\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{class_event_parser}{Event\+Parser}. This constructor initializes the internal \doxylink{class_event_factory}{Event\+Factory} and populates the list of event files by iterating through a predefined directory (e.\+g., "{}./event\+\_\+dir"{}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projectiles} & -\/ a reference to the \doxylink{class_i_add_projectile}{IAdd\+Projectile} interface of the \doxylink{class_projectile_manager}{Projectile\+Manager} class, passed to the \doxylink{class_event_factory}{Event\+Factory}. \\
+\hline
+{\em event\+\_\+manager} & -\/ a reference to the \doxylink{class_i_add_event}{IAdd\+Event} interface of the \doxylink{class_event_manager}{Event\+Manager} class, passed to the \doxylink{class_event_factory}{Event\+Factory} and used to enqueue events. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_event_parser_ad8d304a3c3b1648642ddd8e0c8dfe3a6}\label{class_event_parser_ad8d304a3c3b1648642ddd8e0c8dfe3a6} 
+\index{EventParser@{EventParser}!getPath@{getPath}}
+\index{getPath@{getPath}!EventParser@{EventParser}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily const std\+::filesystem\+::path \& Event\+Parser\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The getter of current\+\_\+file\+\_\+. 
+
+\begin{DoxyReturn}{Returns}
+Returns a const reference to current\+\_\+file\+\_\+ path. 
+\end{DoxyReturn}
+\Hypertarget{class_event_parser_a830241f109e766dce5ee52a0502a1dbc}\label{class_event_parser_a830241f109e766dce5ee52a0502a1dbc} 
+\index{EventParser@{EventParser}!load@{load}}
+\index{load@{load}!EventParser@{EventParser}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Event\+Parser\+::load (\begin{DoxyParamCaption}\item[{unsigned int}]{file\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Loads events from a specific event definition file by its index. This method retrieves a file path from the internally stored list of event files based on the given index, and then calls parse() to process its contents. If the file\+\_\+number is out of bounds, no action is taken. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+number} & -\/ the zero-\/based index of the event file to load from the discovered files. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_event_parser_8h}{Event\+Parser.\+h}}\item 
+\mbox{\hyperlink{_event_parser_8cpp}{Event\+Parser.\+cpp}}\end{DoxyCompactItemize}

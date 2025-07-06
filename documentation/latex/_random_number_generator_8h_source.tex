@@ -1,0 +1,26 @@
+\doxysection{Random\+Number\+Generator.\+h}
+\hypertarget{_random_number_generator_8h_source}{}\label{_random_number_generator_8h_source}\mbox{\hyperlink{_random_number_generator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_random_number_generator}{RandomNumberGenerator}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_random_number_generator}{RandomNumberGenerator}}\&\ \mbox{\hyperlink{class_random_number_generator_ac6bd7d016b298cf42eaf2204821595af}{getInstance}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_random_number_generator_a34c6f571d52fa537efeb63c15234e736}{uniformRange}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ lower\_bound,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ upper\_bound);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_random_number_generator_a34c6f571d52fa537efeb63c15234e736}{uniformRange}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ lower\_bound,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ upper\_bound);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_random_number_generator_a5567db9a0e079b2188d0800c9d065f33}{RandomNumberGenerator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_random_number_generator}{RandomNumberGenerator}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_random_number_generator}{RandomNumberGenerator}}\&\ \mbox{\hyperlink{class_random_number_generator_a1fad21ff5e6af89a9380905ef6e4a35a}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_random_number_generator}{RandomNumberGenerator}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_random_number_generator}{RandomNumberGenerator}}();}
+\DoxyCodeLine{00043\ \ \ \ \ std::default\_random\_engine\ engine\_;}
+\DoxyCodeLine{00045\ \ \ \ \ std::mutex\ mtx\_;}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+
+\end{DoxyCode}

@@ -1,0 +1,91 @@
+\doxysection{Collision\+Circle Class Reference}
+\hypertarget{class_collision_circle}{}\label{class_collision_circle}\index{CollisionCircle@{CollisionCircle}}
+
+
+A collision circle used for collision detection.  
+
+
+
+
+{\ttfamily \#include $<$Collision\+Circle.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collision_circle_af28b6b0e7d28c4387b54c80de3226416}{Collision\+Circle}} ()
+\begin{DoxyCompactList}\small\item\em The default constructor. The default values are \doxylink{class_collision_circle_a4f80813b1eb17793e68d7c4fe517bb07}{position\+\_\+(0, 0)}, \doxylink{class_collision_circle_ad3b7ce6ced80c61e7a9ff8b47f61a3a1}{radius\+\_\+(0)}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_collision_circle_af1cf2e37caf8b6910fdbae28efe81f0a}{check\+Collision}} (const \mbox{\hyperlink{class_collision_circle}{Collision\+Circle}} \&other) const
+\begin{DoxyCompactList}\small\item\em Checks if the \doxylink{class_collision_circle}{Collision\+Circle} object is colliding with another \doxylink{class_collision_circle}{Collision\+Circle} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_collision_circle_a4f80813b1eb17793e68d7c4fe517bb07}{position\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The position of the center of the circle. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_collision_circle_ad3b7ce6ced80c61e7a9ff8b47f61a3a1}{radius\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The radius of the circle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A collision circle used for collision detection. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_collision_circle_af28b6b0e7d28c4387b54c80de3226416}\label{class_collision_circle_af28b6b0e7d28c4387b54c80de3226416} 
+\index{CollisionCircle@{CollisionCircle}!CollisionCircle@{CollisionCircle}}
+\index{CollisionCircle@{CollisionCircle}!CollisionCircle@{CollisionCircle}}
+\doxysubsubsection{\texorpdfstring{CollisionCircle()}{CollisionCircle()}}
+{\footnotesize\ttfamily Collision\+Circle\+::\+Collision\+Circle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The default constructor. The default values are \doxylink{class_collision_circle_a4f80813b1eb17793e68d7c4fe517bb07}{position\+\_\+(0, 0)}, \doxylink{class_collision_circle_ad3b7ce6ced80c61e7a9ff8b47f61a3a1}{radius\+\_\+(0)}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_collision_circle_af1cf2e37caf8b6910fdbae28efe81f0a}\label{class_collision_circle_af1cf2e37caf8b6910fdbae28efe81f0a} 
+\index{CollisionCircle@{CollisionCircle}!checkCollision@{checkCollision}}
+\index{checkCollision@{checkCollision}!CollisionCircle@{CollisionCircle}}
+\doxysubsubsection{\texorpdfstring{checkCollision()}{checkCollision()}}
+{\footnotesize\ttfamily bool Collision\+Circle\+::check\+Collision (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_collision_circle}{Collision\+Circle}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the \doxylink{class_collision_circle}{Collision\+Circle} object is colliding with another \doxylink{class_collision_circle}{Collision\+Circle} object. 
+
+The two circle are colliding if they overlap ie. the distance between them is lower than sum of their radii. 
+\begin{DoxyParams}{Parameters}
+{\em other} & -\/ a const reference to the other \doxylink{class_collision_circle}{Collision\+Circle} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the two circles are colliding, false otherwise. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_collision_circle_a4f80813b1eb17793e68d7c4fe517bb07}\label{class_collision_circle_a4f80813b1eb17793e68d7c4fe517bb07} 
+\index{CollisionCircle@{CollisionCircle}!position\_@{position\_}}
+\index{position\_@{position\_}!CollisionCircle@{CollisionCircle}}
+\doxysubsubsection{\texorpdfstring{position\_}{position\_}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Collision\+Circle\+::position\+\_\+}
+
+
+
+The position of the center of the circle. 
+
+\Hypertarget{class_collision_circle_ad3b7ce6ced80c61e7a9ff8b47f61a3a1}\label{class_collision_circle_ad3b7ce6ced80c61e7a9ff8b47f61a3a1} 
+\index{CollisionCircle@{CollisionCircle}!radius\_@{radius\_}}
+\index{radius\_@{radius\_}!CollisionCircle@{CollisionCircle}}
+\doxysubsubsection{\texorpdfstring{radius\_}{radius\_}}
+{\footnotesize\ttfamily float Collision\+Circle\+::radius\+\_\+}
+
+
+
+The radius of the circle. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_collision_circle_8h}{Collision\+Circle.\+h}}\item 
+\mbox{\hyperlink{_collision_circle_8cpp}{Collision\+Circle.\+cpp}}\end{DoxyCompactItemize}

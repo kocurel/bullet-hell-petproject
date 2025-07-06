@@ -1,0 +1,123 @@
+\doxysection{Triple\+Straight\+Pattern Class Reference}
+\hypertarget{class_triple_straight_pattern}{}\label{class_triple_straight_pattern}\index{TripleStraightPattern@{TripleStraightPattern}}
+
+
+An attack pattern consisting of three projectiles shot simultaneously.  
+
+
+
+
+{\ttfamily \#include $<$Triple\+Straight\+Pattern.\+h$>$}
+
+Inheritance diagram for Triple\+Straight\+Pattern\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_triple_straight_pattern}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_triple_straight_pattern_a7051d37aea0170d820cc384ed5f8e272}{attack}} (\mbox{\hyperlink{class_player}{Player}} \&player, \mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Implements the attack logic for this pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_a5b5c5227d2c6487f5ff925e066f9449a}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current position of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_positionable_a1f1525ace9fc2b25462e6b088ed058d8}{set\+Position}} (sf\+::\+Vector2f pos)
+\begin{DoxyCompactList}\small\item\em Sets the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_triple_straight_pattern_a1b1289f7de9ecf06ac8a35553466a2fa}{reload\+\_\+time\+\_\+}} = 80
+\begin{DoxyCompactList}\small\item\em The time (in frames) required to reload before the next triple shot can occur. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_triple_straight_pattern_a2f9f44d192ce380bedd6690afeb2002e}{switch\+\_\+signal\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em A signal flag indicating that the current burst of shots has completed. This can be used by an external manager to switch to a different attack pattern. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_triple_straight_pattern_a9d09661266f5e3c0f26d62be90d26a30}{until\+\_\+reload\+\_\+}} = \mbox{\hyperlink{class_triple_straight_pattern_a1b1289f7de9ecf06ac8a35553466a2fa}{reload\+\_\+time\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Counter for the remaining time until the next attack burst. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{class_triple_straight_pattern_acb30b75be8b0c9ef5068aeafc2117313}{bullet\+\_\+speed\+\_\+}} = 8.f
+\begin{DoxyCompactList}\small\item\em The speed of the projectiles fired in this pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_aa5ac62eec93831b439524651f3a96282}{position\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The 2D position of the object in game coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An attack pattern consisting of three projectiles shot simultaneously. 
+
+These projectiles are shot with a 30-\/degree rotation between them, forming a fan-\/like spread. The pattern sets {\ttfamily switch\+\_\+signal\+\_\+} to true when the projectiles have been shot, indicating the completion of this attack burst. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_triple_straight_pattern_a7051d37aea0170d820cc384ed5f8e272}\label{class_triple_straight_pattern_a7051d37aea0170d820cc384ed5f8e272} 
+\index{TripleStraightPattern@{TripleStraightPattern}!attack@{attack}}
+\index{attack@{attack}!TripleStraightPattern@{TripleStraightPattern}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily void Triple\+Straight\+Pattern\+::attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player,  }\item[{\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements the attack logic for this pattern. 
+
+This method manages the cooldown for the triple shot and, when ready, creates three projectiles simultaneously with a rotational spread. 
+\begin{DoxyParams}{Parameters}
+{\em player} & A reference to the \doxylink{class_player}{Player} object, used to determine the initial direction of projectiles. \\
+\hline
+{\em projectiles} & A reference to an \doxylink{class_i_add_projectile}{IAdd\+Projectile} interface to create new enemy projectiles. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_attack_pattern_a2bc29249375f1ad83c9570370efc111b}{IAttack\+Pattern}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_triple_straight_pattern_acb30b75be8b0c9ef5068aeafc2117313}\label{class_triple_straight_pattern_acb30b75be8b0c9ef5068aeafc2117313} 
+\index{TripleStraightPattern@{TripleStraightPattern}!bullet\_speed\_@{bullet\_speed\_}}
+\index{bullet\_speed\_@{bullet\_speed\_}!TripleStraightPattern@{TripleStraightPattern}}
+\doxysubsubsection{\texorpdfstring{bullet\_speed\_}{bullet\_speed\_}}
+{\footnotesize\ttfamily const float Triple\+Straight\+Pattern\+::bullet\+\_\+speed\+\_\+ = 8.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The speed of the projectiles fired in this pattern. 
+
+\Hypertarget{class_triple_straight_pattern_a1b1289f7de9ecf06ac8a35553466a2fa}\label{class_triple_straight_pattern_a1b1289f7de9ecf06ac8a35553466a2fa} 
+\index{TripleStraightPattern@{TripleStraightPattern}!reload\_time\_@{reload\_time\_}}
+\index{reload\_time\_@{reload\_time\_}!TripleStraightPattern@{TripleStraightPattern}}
+\doxysubsubsection{\texorpdfstring{reload\_time\_}{reload\_time\_}}
+{\footnotesize\ttfamily const int Triple\+Straight\+Pattern\+::reload\+\_\+time\+\_\+ = 80\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The time (in frames) required to reload before the next triple shot can occur. 
+
+\Hypertarget{class_triple_straight_pattern_a2f9f44d192ce380bedd6690afeb2002e}\label{class_triple_straight_pattern_a2f9f44d192ce380bedd6690afeb2002e} 
+\index{TripleStraightPattern@{TripleStraightPattern}!switch\_signal\_@{switch\_signal\_}}
+\index{switch\_signal\_@{switch\_signal\_}!TripleStraightPattern@{TripleStraightPattern}}
+\doxysubsubsection{\texorpdfstring{switch\_signal\_}{switch\_signal\_}}
+{\footnotesize\ttfamily bool Triple\+Straight\+Pattern\+::switch\+\_\+signal\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A signal flag indicating that the current burst of shots has completed. This can be used by an external manager to switch to a different attack pattern. 
+
+\Hypertarget{class_triple_straight_pattern_a9d09661266f5e3c0f26d62be90d26a30}\label{class_triple_straight_pattern_a9d09661266f5e3c0f26d62be90d26a30} 
+\index{TripleStraightPattern@{TripleStraightPattern}!until\_reload\_@{until\_reload\_}}
+\index{until\_reload\_@{until\_reload\_}!TripleStraightPattern@{TripleStraightPattern}}
+\doxysubsubsection{\texorpdfstring{until\_reload\_}{until\_reload\_}}
+{\footnotesize\ttfamily int Triple\+Straight\+Pattern\+::until\+\_\+reload\+\_\+ = \mbox{\hyperlink{class_triple_straight_pattern_a1b1289f7de9ecf06ac8a35553466a2fa}{reload\+\_\+time\+\_\+}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Counter for the remaining time until the next attack burst. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_triple_straight_pattern_8h}{Triple\+Straight\+Pattern.\+h}}\item 
+\mbox{\hyperlink{_triple_straight_pattern_8cpp}{Triple\+Straight\+Pattern.\+cpp}}\end{DoxyCompactItemize}

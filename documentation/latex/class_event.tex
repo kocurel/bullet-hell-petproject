@@ -1,0 +1,140 @@
+\doxysection{Event Class Reference}
+\hypertarget{class_event}{}\label{class_event}\index{Event@{Event}}
+
+
+Represents a game event that can be triggered after a countdown. This is an abstract base class, requiring derived classes to implement the \textquotesingle{}on\+Release\textquotesingle{} behavior.  
+
+
+
+
+{\ttfamily \#include $<$Event.\+h$>$}
+
+Inheritance diagram for Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_event_ae01057480f73d4d3669f6491733dca4b}{get\+\_\+wait}} () const
+\begin{DoxyCompactList}\small\item\em Gets the value of the wait\+\_\+ flag of the event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_event_a6af9d71c268eca7257fb298ecb541471}{set\+Wait}} (bool wait)
+\begin{DoxyCompactList}\small\item\em Sets the value of the wait\+\_\+ flag of the event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_event_a47c8d7fe85757962e6d570bea82ee630}{set\+Countdown}} (int frames)
+\begin{DoxyCompactList}\small\item\em Sets the initial countdown duration for the event. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_event_a7c96b5fd7657b7b94b7f637d83268a47}{countdown}} ()
+\begin{DoxyCompactList}\small\item\em Decrements the event\textquotesingle{}s internal frame countdown. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_event_ae0dade2d4ae418b474e80e54bb913064}{on\+Release}} (\mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \&enemies, \mbox{\hyperlink{class_projectile_manager}{Projectile\+Manager}} \&projectiles)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to define the action performed when the event is released. \doxylink{concept_derived}{Derived} classes must implement this to define specific event behaviors. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_event_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived \doxylink{class_event}{Event} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a game event that can be triggered after a countdown. This is an abstract base class, requiring derived classes to implement the \textquotesingle{}on\+Release\textquotesingle{} behavior. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_event_a105223995bbf1a1e4714d0c77f91cf0b}\label{class_event_a105223995bbf1a1e4714d0c77f91cf0b} 
+\index{Event@{Event}!````~Event@{\texorpdfstring{$\sim$}{\string~}Event}}
+\index{````~Event@{\texorpdfstring{$\sim$}{\string~}Event}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Event()}{\string~Event()}}
+{\footnotesize\ttfamily virtual Event\+::\texorpdfstring{$\sim$}{\string~}\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor to ensure proper cleanup of derived \doxylink{class_event}{Event} objects. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_event_a7c96b5fd7657b7b94b7f637d83268a47}\label{class_event_a7c96b5fd7657b7b94b7f637d83268a47} 
+\index{Event@{Event}!countdown@{countdown}}
+\index{countdown@{countdown}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{countdown()}{countdown()}}
+{\footnotesize\ttfamily bool Event\+::countdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Decrements the event\textquotesingle{}s internal frame countdown. 
+
+\begin{DoxyReturn}{Returns}
+True if the countdown has reached zero or less, indicating the event is ready to trigger; false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_event_ae01057480f73d4d3669f6491733dca4b}\label{class_event_ae01057480f73d4d3669f6491733dca4b} 
+\index{Event@{Event}!get\_wait@{get\_wait}}
+\index{get\_wait@{get\_wait}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{get\_wait()}{get\_wait()}}
+{\footnotesize\ttfamily bool Event\+::get\+\_\+wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the value of the wait\+\_\+ flag of the event. 
+
+\begin{DoxyReturn}{Returns}
+The value of wait\+\_\+ flag. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+wait\+\_\+ 
+\end{DoxySeeAlso}
+\Hypertarget{class_event_ae0dade2d4ae418b474e80e54bb913064}\label{class_event_ae0dade2d4ae418b474e80e54bb913064} 
+\index{Event@{Event}!onRelease@{onRelease}}
+\index{onRelease@{onRelease}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{onRelease()}{onRelease()}}
+{\footnotesize\ttfamily virtual void Event\+::on\+Release (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \&}]{enemies,  }\item[{\mbox{\hyperlink{class_projectile_manager}{Projectile\+Manager}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to define the action performed when the event is released. \doxylink{concept_derived}{Derived} classes must implement this to define specific event behaviors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemies} & -\/ A reference to the \doxylink{class_enemy_manager}{Enemy\+Manager} manager, allowing event to interact with enemies. \\
+\hline
+{\em projectiles} & -\/ A reference to the \doxylink{class_projectile_manager}{Projectile\+Manager} manager, allowing event to interact with projectiles. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_new_enemy_a6052f57c0ba306efceb10d78f5a18661}{New\+Enemy}}, and \mbox{\hyperlink{class_new_projectile_a93bd209e4b632a1038677b16e3839f48}{New\+Projectile}}.
+
+\Hypertarget{class_event_a47c8d7fe85757962e6d570bea82ee630}\label{class_event_a47c8d7fe85757962e6d570bea82ee630} 
+\index{Event@{Event}!setCountdown@{setCountdown}}
+\index{setCountdown@{setCountdown}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{setCountdown()}{setCountdown()}}
+{\footnotesize\ttfamily void Event\+::set\+Countdown (\begin{DoxyParamCaption}\item[{int}]{frames }\end{DoxyParamCaption})}
+
+
+
+Sets the initial countdown duration for the event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frames} & The number of frames to count down before the event is ready. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_event_a6af9d71c268eca7257fb298ecb541471}\label{class_event_a6af9d71c268eca7257fb298ecb541471} 
+\index{Event@{Event}!setWait@{setWait}}
+\index{setWait@{setWait}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{setWait()}{setWait()}}
+{\footnotesize\ttfamily void Event\+::set\+Wait (\begin{DoxyParamCaption}\item[{bool}]{wait }\end{DoxyParamCaption})}
+
+
+
+Sets the value of the wait\+\_\+ flag of the event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wait} & -\/ the new value of the wait\+\_\+ flag. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+wait\+\_\+ 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_event_8h}{Event.\+h}}\item 
+\mbox{\hyperlink{_event_8cpp}{Event.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,40 @@
+\doxysection{Pickup\+Manager.\+h}
+\hypertarget{_pickup_manager_8h_source}{}\label{_pickup_manager_8h_source}\mbox{\hyperlink{_pickup_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <ranges>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pickup_8h}{Pickup.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Forward\ declarations}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pickup}{Pickup}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pickup_manager}{PickupManager}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<std::unique\_ptr<Pickup>>\ pickups\_;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ cleanup\_counter\_\ =\ 0;}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ std::mutex\ mtx\_;}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ cleanup();}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_manager_a3ad6e368c0ff9095f99f253c7c6de201}{clearPickups}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::unique\_ptr<Pickup>>\&\ \mbox{\hyperlink{class_pickup_manager_a71524ac9d5827e1cd0a236432cc1e8fe}{getPickups}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_manager_ac0d0f23fec96c90e88c9d30cac8b588e}{process}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_manager_aebe8af10605c41b4233638f6ce24adfd}{renderPickups}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00066\ \ \ \ \ std::mutex\&\ \mbox{\hyperlink{class_pickup_manager_a7ca95027ce16a7de7214fd49b72705bc}{getMutex}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_manager_a94d8e3cdc94ab3bf0b1fcb8e419bbb5f}{createPickup}}(\textcolor{keywordtype}{int}\ type,\ sf::Vector2f\ posistion);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_pickup_manager_ab1d29f071202e24cf7998d0a022fc5c1}{\string~PickupManager}}();}
+\DoxyCodeLine{00079\ \};}
+
+\end{DoxyCode}

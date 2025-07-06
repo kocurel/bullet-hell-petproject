@@ -1,0 +1,24 @@
+\doxysection{Enemy2.\+h}
+\hypertarget{_enemy2_8h_source}{}\label{_enemy2_8h_source}\mbox{\hyperlink{_enemy2_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_enemy_8h}{Enemy.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_projectile_builder_8h}{ProjectileBuilder.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_series_in_line_pattern_8h}{SeriesInLinePattern.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_triple_straight_pattern_8h}{TripleStraightPattern.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_upward_spray_pattern_8h}{UpwardSprayPattern.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemy2}{Enemy2}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_enemy}{Enemy}},\ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_upward_spray_pattern}{UpwardSprayPattern}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_enemy2_a71dc1a068da7c347a705cc6cc37a9c1b}{pattern\_}}\ =\ 0;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_enemy2_a93c6d0de1b5835c949ab9bc41664b86c}{going\_left\_}}\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy2_aa98c1f28b19b3448d3d071cccca11b5b}{attack}}(\mbox{\hyperlink{class_player}{Player}}\&\ player,\ \mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_enemy2_a0076f6afe9da848e19e6f509bff99a03}{Enemy2}}(\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy2_af87d8e611fe8449b7dc84103c614eaf1}{process}}(\mbox{\hyperlink{class_player}{Player}}\&\ player)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ \};}
+
+\end{DoxyCode}

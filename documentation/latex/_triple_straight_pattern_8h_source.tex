@@ -1,0 +1,27 @@
+\doxysection{Triple\+Straight\+Pattern.\+h}
+\hypertarget{_triple_straight_pattern_8h_source}{}\label{_triple_straight_pattern_8h_source}\mbox{\hyperlink{_triple_straight_pattern_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_attack_pattern_8h}{IAttackPattern.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SFML/System/Vector2.hpp>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Forward\ declarations}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_triple_straight_pattern}{TripleStraightPattern}}\ :\ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_attack_pattern}{IAttackPattern}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_triple_straight_pattern_a1b1289f7de9ecf06ac8a35553466a2fa}{reload\_time\_}}\ =\ 80;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_triple_straight_pattern_a2f9f44d192ce380bedd6690afeb2002e}{switch\_signal\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_triple_straight_pattern_a9d09661266f5e3c0f26d62be90d26a30}{until\_reload\_}}\ =\ \mbox{\hyperlink{class_triple_straight_pattern_a1b1289f7de9ecf06ac8a35553466a2fa}{reload\_time\_}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_triple_straight_pattern_acb30b75be8b0c9ef5068aeafc2117313}{bullet\_speed\_}}\ =\ 8.f;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_triple_straight_pattern_a7051d37aea0170d820cc384ed5f8e272}{attack}}(\mbox{\hyperlink{class_player}{Player}}\&\ player,\ \mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ \};}
+
+\end{DoxyCode}

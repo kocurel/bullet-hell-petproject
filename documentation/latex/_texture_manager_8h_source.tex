@@ -1,0 +1,33 @@
+\doxysection{Texture\+Manager.\+h}
+\hypertarget{_texture_manager_8h_source}{}\label{_texture_manager_8h_source}\mbox{\hyperlink{_texture_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_texture_manager}{TextureManager}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_texture_manager}{TextureManager}}\&\ \mbox{\hyperlink{class_texture_manager_a8a5e21d83ec790c9075325c09111b8b1}{getInstance}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ sf::Texture\&\ \mbox{\hyperlink{class_texture_manager_a1d0972efb44fc9364a6b0c08365b974e}{getTexture}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_manager_a96f95762bb82a328e166c3352e5ad17a}{loadAllTextures}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ texturePaths);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ sf::Texture\&\ \mbox{\hyperlink{class_texture_manager_a803f07530048154181ec7854e4c21168}{getErrorTexture}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_texture_manager_ae0a812052ff90565e3a0e3bcfc766240}{TextureManager}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_texture_manager}{TextureManager}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_texture_manager}{TextureManager}}\&\ \mbox{\hyperlink{class_texture_manager_ab69a7a235f3fa0a0e5a1cc6cf9c29ab3}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_texture_manager}{TextureManager}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_texture_manager}{TextureManager}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00049\ \ \ \ \ std::map<std::string,\ sf::Texture>\ textures\_;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ sf::Texture\ errorTexture\_;}
+\DoxyCodeLine{00053\ \};}
+
+\end{DoxyCode}

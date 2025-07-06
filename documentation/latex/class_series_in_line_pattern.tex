@@ -1,0 +1,171 @@
+\doxysection{Series\+In\+Line\+Pattern Class Reference}
+\hypertarget{class_series_in_line_pattern}{}\label{class_series_in_line_pattern}\index{SeriesInLinePattern@{SeriesInLinePattern}}
+
+
+An attack pattern where a series of small projectiles are shot in a line.  
+
+
+
+
+{\ttfamily \#include $<$Series\+In\+Line\+Pattern.\+h$>$}
+
+Inheritance diagram for Series\+In\+Line\+Pattern\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_series_in_line_pattern}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_series_in_line_pattern_a51b8800960501d8a3c31f20d2ff33f93}{attack}} (\mbox{\hyperlink{class_player}{Player}} \&player, \mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Implements the attack logic for this pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_a5b5c5227d2c6487f5ff925e066f9449a}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current position of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_positionable_a1f1525ace9fc2b25462e6b088ed058d8}{set\+Position}} (sf\+::\+Vector2f pos)
+\begin{DoxyCompactList}\small\item\em Sets the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_series_in_line_pattern_a11da0c4a25f33b16e53a28dc951e18c6}{reload\+\_\+time\+\_\+}} = 60
+\begin{DoxyCompactList}\small\item\em The time (in frames) required to reload before starting a new series of shots. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_series_in_line_pattern_af278ba4d6000ef58b4c565b5757c7b0b}{until\+\_\+reload}} = \mbox{\hyperlink{class_series_in_line_pattern_a11da0c4a25f33b16e53a28dc951e18c6}{reload\+\_\+time\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Counter for the remaining time until the next series can start. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_series_in_line_pattern_a345de5f9dafd24936191a5adab4d0b9e}{projectile\+\_\+delay}} = 4
+\begin{DoxyCompactList}\small\item\em The delay (in frames) between individual projectile shots within a series. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_series_in_line_pattern_a7f3c99c369fbd562d9bd40593aa1c40a}{delay\+\_\+left}} = \mbox{\hyperlink{class_series_in_line_pattern_a345de5f9dafd24936191a5adab4d0b9e}{projectile\+\_\+delay}}
+\begin{DoxyCompactList}\small\item\em Counter for the remaining delay until the next projectile in the current series can be shot. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_series_in_line_pattern_a3f1c0e1d6046ddb8c41429730bc786dd}{shots\+\_\+in\+\_\+series}} = 8
+\begin{DoxyCompactList}\small\item\em The total number of projectiles to be shot in one series. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_series_in_line_pattern_af48829aceb2c8a2d11ffa4aafba96e50}{shots\+\_\+left\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Counter for the number of shots remaining in the current series. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{class_series_in_line_pattern_a3cc98849e819ec4a7b4201f974dcfda4}{projectile\+\_\+scale\+\_\+}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em The scaling factor applied to the projectiles created by this pattern. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_series_in_line_pattern_a5775f27a43416af721ad81c49519863f}{switch\+\_\+signal\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em A signal flag indicating that the current series of shots has completed. This can be used by an external manager to switch to a different attack pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_aa5ac62eec93831b439524651f3a96282}{position\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The 2D position of the object in game coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An attack pattern where a series of small projectiles are shot in a line. 
+
+This pattern involves shooting a fixed number of projectiles ({\ttfamily shots\+\_\+in\+\_\+series}) with a small {\ttfamily projectile\+\_\+delay} between each shot. After the series is complete, there\textquotesingle{}s a longer {\ttfamily reload\+\_\+time\+\_\+} before the next series can begin. It signals completion of a series via {\ttfamily switch\+\_\+signal\+\_\+}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_series_in_line_pattern_a51b8800960501d8a3c31f20d2ff33f93}\label{class_series_in_line_pattern_a51b8800960501d8a3c31f20d2ff33f93} 
+\index{SeriesInLinePattern@{SeriesInLinePattern}!attack@{attack}}
+\index{attack@{attack}!SeriesInLinePattern@{SeriesInLinePattern}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily void Series\+In\+Line\+Pattern\+::attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player,  }\item[{\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements the attack logic for this pattern. 
+
+This method is called each frame to manage the shooting sequence, including delays between shots and reloads between series. 
+\begin{DoxyParams}{Parameters}
+{\em player} & -\/ a reference to the \doxylink{class_player}{Player} object, used to determine target position. \\
+\hline
+{\em projectiles} & -\/ a reference to an \doxylink{class_i_add_projectile}{IAdd\+Projectile} interface to create new enemy projectiles. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_attack_pattern_a2bc29249375f1ad83c9570370efc111b}{IAttack\+Pattern}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_series_in_line_pattern_a7f3c99c369fbd562d9bd40593aa1c40a}\label{class_series_in_line_pattern_a7f3c99c369fbd562d9bd40593aa1c40a} 
+\index{SeriesInLinePattern@{SeriesInLinePattern}!delay\_left@{delay\_left}}
+\index{delay\_left@{delay\_left}!SeriesInLinePattern@{SeriesInLinePattern}}
+\doxysubsubsection{\texorpdfstring{delay\_left}{delay\_left}}
+{\footnotesize\ttfamily int Series\+In\+Line\+Pattern\+::delay\+\_\+left = \mbox{\hyperlink{class_series_in_line_pattern_a345de5f9dafd24936191a5adab4d0b9e}{projectile\+\_\+delay}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Counter for the remaining delay until the next projectile in the current series can be shot. 
+
+\Hypertarget{class_series_in_line_pattern_a345de5f9dafd24936191a5adab4d0b9e}\label{class_series_in_line_pattern_a345de5f9dafd24936191a5adab4d0b9e} 
+\index{SeriesInLinePattern@{SeriesInLinePattern}!projectile\_delay@{projectile\_delay}}
+\index{projectile\_delay@{projectile\_delay}!SeriesInLinePattern@{SeriesInLinePattern}}
+\doxysubsubsection{\texorpdfstring{projectile\_delay}{projectile\_delay}}
+{\footnotesize\ttfamily const int Series\+In\+Line\+Pattern\+::projectile\+\_\+delay = 4\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The delay (in frames) between individual projectile shots within a series. 
+
+\Hypertarget{class_series_in_line_pattern_a3cc98849e819ec4a7b4201f974dcfda4}\label{class_series_in_line_pattern_a3cc98849e819ec4a7b4201f974dcfda4} 
+\index{SeriesInLinePattern@{SeriesInLinePattern}!projectile\_scale\_@{projectile\_scale\_}}
+\index{projectile\_scale\_@{projectile\_scale\_}!SeriesInLinePattern@{SeriesInLinePattern}}
+\doxysubsubsection{\texorpdfstring{projectile\_scale\_}{projectile\_scale\_}}
+{\footnotesize\ttfamily const float Series\+In\+Line\+Pattern\+::projectile\+\_\+scale\+\_\+ = 0.\+5f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The scaling factor applied to the projectiles created by this pattern. 
+
+\Hypertarget{class_series_in_line_pattern_a11da0c4a25f33b16e53a28dc951e18c6}\label{class_series_in_line_pattern_a11da0c4a25f33b16e53a28dc951e18c6} 
+\index{SeriesInLinePattern@{SeriesInLinePattern}!reload\_time\_@{reload\_time\_}}
+\index{reload\_time\_@{reload\_time\_}!SeriesInLinePattern@{SeriesInLinePattern}}
+\doxysubsubsection{\texorpdfstring{reload\_time\_}{reload\_time\_}}
+{\footnotesize\ttfamily const int Series\+In\+Line\+Pattern\+::reload\+\_\+time\+\_\+ = 60\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The time (in frames) required to reload before starting a new series of shots. 
+
+\Hypertarget{class_series_in_line_pattern_a3f1c0e1d6046ddb8c41429730bc786dd}\label{class_series_in_line_pattern_a3f1c0e1d6046ddb8c41429730bc786dd} 
+\index{SeriesInLinePattern@{SeriesInLinePattern}!shots\_in\_series@{shots\_in\_series}}
+\index{shots\_in\_series@{shots\_in\_series}!SeriesInLinePattern@{SeriesInLinePattern}}
+\doxysubsubsection{\texorpdfstring{shots\_in\_series}{shots\_in\_series}}
+{\footnotesize\ttfamily const int Series\+In\+Line\+Pattern\+::shots\+\_\+in\+\_\+series = 8\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The total number of projectiles to be shot in one series. 
+
+\Hypertarget{class_series_in_line_pattern_af48829aceb2c8a2d11ffa4aafba96e50}\label{class_series_in_line_pattern_af48829aceb2c8a2d11ffa4aafba96e50} 
+\index{SeriesInLinePattern@{SeriesInLinePattern}!shots\_left\_@{shots\_left\_}}
+\index{shots\_left\_@{shots\_left\_}!SeriesInLinePattern@{SeriesInLinePattern}}
+\doxysubsubsection{\texorpdfstring{shots\_left\_}{shots\_left\_}}
+{\footnotesize\ttfamily int Series\+In\+Line\+Pattern\+::shots\+\_\+left\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Counter for the number of shots remaining in the current series. 
+
+\Hypertarget{class_series_in_line_pattern_a5775f27a43416af721ad81c49519863f}\label{class_series_in_line_pattern_a5775f27a43416af721ad81c49519863f} 
+\index{SeriesInLinePattern@{SeriesInLinePattern}!switch\_signal\_@{switch\_signal\_}}
+\index{switch\_signal\_@{switch\_signal\_}!SeriesInLinePattern@{SeriesInLinePattern}}
+\doxysubsubsection{\texorpdfstring{switch\_signal\_}{switch\_signal\_}}
+{\footnotesize\ttfamily bool Series\+In\+Line\+Pattern\+::switch\+\_\+signal\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A signal flag indicating that the current series of shots has completed. This can be used by an external manager to switch to a different attack pattern. 
+
+\Hypertarget{class_series_in_line_pattern_af278ba4d6000ef58b4c565b5757c7b0b}\label{class_series_in_line_pattern_af278ba4d6000ef58b4c565b5757c7b0b} 
+\index{SeriesInLinePattern@{SeriesInLinePattern}!until\_reload@{until\_reload}}
+\index{until\_reload@{until\_reload}!SeriesInLinePattern@{SeriesInLinePattern}}
+\doxysubsubsection{\texorpdfstring{until\_reload}{until\_reload}}
+{\footnotesize\ttfamily int Series\+In\+Line\+Pattern\+::until\+\_\+reload = \mbox{\hyperlink{class_series_in_line_pattern_a11da0c4a25f33b16e53a28dc951e18c6}{reload\+\_\+time\+\_\+}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Counter for the remaining time until the next series can start. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_series_in_line_pattern_8h}{Series\+In\+Line\+Pattern.\+h}}\item 
+\mbox{\hyperlink{_series_in_line_pattern_8cpp}{Series\+In\+Line\+Pattern.\+cpp}}\end{DoxyCompactItemize}

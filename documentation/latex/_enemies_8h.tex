@@ -1,0 +1,15 @@
+\doxysection{Enemies.\+h File Reference}
+\hypertarget{_enemies_8h}{}\label{_enemies_8h}\index{Enemies.h@{Enemies.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_enemy}{Enemy} manager class. Keeps all enemies inside a vector of unique pointers Is responsible for calling \doxylink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{Enemy\+::process(\+Player\&)}, \doxylink{class_sprite_owner_aec9bd1d26b203a50e38d1ac4e4776247}{Enemy\+::render(sf\+::\+Render\+Window\&)}, receiving new enemies and cleaning up the disabled enemies. Has exclusive ownership over the stored objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacesf}{sf}}
+\end{DoxyCompactItemize}

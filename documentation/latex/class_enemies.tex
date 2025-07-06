@@ -1,0 +1,155 @@
+\doxysection{Enemies Class Reference}
+\hypertarget{class_enemies}{}\label{class_enemies}\index{Enemies@{Enemies}}
+
+
+\doxylink{class_enemy}{Enemy} storage class. Keeps all enemies inside a vector of unique pointers Is responsible for calling process(), \doxylink{class_enemies_a3d526f70519098e8e41c16a8d387e677}{render()}, receiving new enemies and cleaning up the disabled enemies.  
+
+
+
+
+{\ttfamily \#include $<$Enemies.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemies_ac43fe195cbc4d891034977d652defba8}{Enemies}} (\mbox{\hyperlink{class_enemies}{Enemies}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Disabled copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_enemies}{Enemies}} \& \mbox{\hyperlink{class_enemies_afccfd3060f2529cf8ebd8e50a1988974}{operator=}} (\mbox{\hyperlink{class_enemies}{Enemies}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Disabled copy assignment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_enemies_abaadc7e43e7bc7df82fd1190c6cc453b}{Enemies}} (\mbox{\hyperlink{class_i_notify_end_wave}{INotify\+End\+Wave}} \&wave\+\_\+controller)
+\begin{DoxyCompactList}\small\item\em The class constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemies_af097961790a29bf21d44cfab2d697c59}{clear\+Enemies}} ()
+\begin{DoxyCompactList}\small\item\em Clears the enemies\+\_\+ vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemies_ae366a523116a2969b8c121655fd5e512}{process\+Enemies}} (\mbox{\hyperlink{class_player}{Player}} \&player, \mbox{\hyperlink{class_projectiles}{Projectiles}} \&projectiles)
+\begin{DoxyCompactList}\small\item\em Main process function. Is to be called each frame by the game controller. It is resposible for calling cleanup\+Enemies(),check\+Wave() and calling \doxylink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{Enemy\+::process(\+Player\&)} for each non-\/disabled enemy and checking collisions with player projectiles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemies_a3f448eacc7aae23ca9afd948de9027e7}{create\+Enemy}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $>$ \&\&enemy)
+\begin{DoxyCompactList}\small\item\em Moves a unique pointer passed as parameter to the enemies\+\_\+ vector. Once called, the \doxylink{class_enemies}{Enemies} class becomes the owner of the enemy object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemies_a3d526f70519098e8e41c16a8d387e677}{render}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Calls \doxylink{class_enemies_a3d526f70519098e8e41c16a8d387e677}{render(sf\+::\+Render\+Window\&)} of all the non-\/disabled enemies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_enemy}{Enemy} storage class. Keeps all enemies inside a vector of unique pointers Is responsible for calling process(), \doxylink{class_enemies_a3d526f70519098e8e41c16a8d387e677}{render()}, receiving new enemies and cleaning up the disabled enemies. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_enemy}{Enemy} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_enemies_ac43fe195cbc4d891034977d652defba8}\label{class_enemies_ac43fe195cbc4d891034977d652defba8} 
+\index{Enemies@{Enemies}!Enemies@{Enemies}}
+\index{Enemies@{Enemies}!Enemies@{Enemies}}
+\doxysubsubsection{\texorpdfstring{Enemies()}{Enemies()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Enemies\+::\+Enemies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemies}{Enemies}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Disabled copy constructor. 
+
+\Hypertarget{class_enemies_abaadc7e43e7bc7df82fd1190c6cc453b}\label{class_enemies_abaadc7e43e7bc7df82fd1190c6cc453b} 
+\index{Enemies@{Enemies}!Enemies@{Enemies}}
+\index{Enemies@{Enemies}!Enemies@{Enemies}}
+\doxysubsubsection{\texorpdfstring{Enemies()}{Enemies()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Enemies\+::\+Enemies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_notify_end_wave}{INotify\+End\+Wave}} \&}]{wave\+\_\+controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+The class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wave\+\_\+controller} & -\/ Reference to the \doxylink{class_i_notify_end_wave}{INotify\+End\+Wave} interface of \doxylink{class_event_queue}{Event\+Queue} to let \doxylink{class_enemies}{Enemies} call \doxylink{class_i_notify_end_wave_aa3d1bcf61a2f3628bbb82d84c72596a1}{INotify\+End\+Wave\+::end\+Wave()}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_i_notify_end_wave}{INotify\+End\+Wave}, Enemies\+::check\+Wave 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_enemies_af097961790a29bf21d44cfab2d697c59}\label{class_enemies_af097961790a29bf21d44cfab2d697c59} 
+\index{Enemies@{Enemies}!clearEnemies@{clearEnemies}}
+\index{clearEnemies@{clearEnemies}!Enemies@{Enemies}}
+\doxysubsubsection{\texorpdfstring{clearEnemies()}{clearEnemies()}}
+{\footnotesize\ttfamily void Enemies\+::clear\+Enemies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the enemies\+\_\+ vector. 
+
+To be called when starting a new game. \begin{DoxySeeAlso}{See also}
+Enemies\+::enemies\+\_\+ 
+\end{DoxySeeAlso}
+\Hypertarget{class_enemies_a3f448eacc7aae23ca9afd948de9027e7}\label{class_enemies_a3f448eacc7aae23ca9afd948de9027e7} 
+\index{Enemies@{Enemies}!createEnemy@{createEnemy}}
+\index{createEnemy@{createEnemy}!Enemies@{Enemies}}
+\doxysubsubsection{\texorpdfstring{createEnemy()}{createEnemy()}}
+{\footnotesize\ttfamily void Enemies\+::create\+Enemy (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $>$ \&\&}]{enemy }\end{DoxyParamCaption})}
+
+
+
+Moves a unique pointer passed as parameter to the enemies\+\_\+ vector. Once called, the \doxylink{class_enemies}{Enemies} class becomes the owner of the enemy object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & -\/ a unique pointer to the new enemy object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Enemies\+::enemies\+\_\+ 
+\end{DoxySeeAlso}
+\Hypertarget{class_enemies_afccfd3060f2529cf8ebd8e50a1988974}\label{class_enemies_afccfd3060f2529cf8ebd8e50a1988974} 
+\index{Enemies@{Enemies}!operator=@{operator=}}
+\index{operator=@{operator=}!Enemies@{Enemies}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_enemies}{Enemies}} \& Enemies\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemies}{Enemies}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Disabled copy assignment. 
+
+\Hypertarget{class_enemies_ae366a523116a2969b8c121655fd5e512}\label{class_enemies_ae366a523116a2969b8c121655fd5e512} 
+\index{Enemies@{Enemies}!processEnemies@{processEnemies}}
+\index{processEnemies@{processEnemies}!Enemies@{Enemies}}
+\doxysubsubsection{\texorpdfstring{processEnemies()}{processEnemies()}}
+{\footnotesize\ttfamily void Enemies\+::process\+Enemies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player,  }\item[{\mbox{\hyperlink{class_projectiles}{Projectiles}} \&}]{projectiles }\end{DoxyParamCaption})}
+
+
+
+Main process function. Is to be called each frame by the game controller. It is resposible for calling cleanup\+Enemies(),check\+Wave() and calling \doxylink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{Enemy\+::process(\+Player\&)} for each non-\/disabled enemy and checking collisions with player projectiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & -\/ a reference to the \doxylink{class_player}{Player} object, necessary to pass as a parammeter to \doxylink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{Enemy\+::process()} \\
+\hline
+{\em projectiles} & -\/ a reference to the \doxylink{class_projectiles}{Projectiles} object, necessary to check for collisions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Enemies\+::cleanup\+Enemies, Enemies\+::check\+Wave, \doxylink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{Enemy\+::process}, \doxylink{class_collision_circle_af1cf2e37caf8b6910fdbae28efe81f0a}{Collision\+Circle\+::check\+Collision} 
+\end{DoxySeeAlso}
+\Hypertarget{class_enemies_a3d526f70519098e8e41c16a8d387e677}\label{class_enemies_a3d526f70519098e8e41c16a8d387e677} 
+\index{Enemies@{Enemies}!render@{render}}
+\index{render@{render}!Enemies@{Enemies}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Enemies\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Calls \doxylink{class_enemies_a3d526f70519098e8e41c16a8d387e677}{render(sf\+::\+Render\+Window\&)} of all the non-\/disabled enemies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & -\/ a reference to the Render\+Window, necessary to pass as a parameter to Sprite\+Owner\+::render(\+Render\+Window\&) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_sprite_owner_aec9bd1d26b203a50e38d1ac4e4776247}{Sprite\+Owner\+::render} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_enemies_8h}{Enemies.\+h}}\item 
+\mbox{\hyperlink{_enemies_8cpp}{Enemies.\+cpp}}\end{DoxyCompactItemize}

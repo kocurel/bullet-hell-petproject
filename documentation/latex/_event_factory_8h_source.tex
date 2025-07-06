@@ -1,0 +1,25 @@
+\doxysection{Event\+Factory.\+h}
+\hypertarget{_event_factory_8h_source}{}\label{_event_factory_8h_source}\mbox{\hyperlink{_event_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_event_8h}{Event.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ forward\ declarations}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}};}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_add_event}{IAddEvent}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectile_manager}{ProjectileManager}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemy}{Enemy}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event_factory}{EventFactory}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_i_add_event}{IAddEvent}}\&\ event\_manager\_;}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles\_;}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_event_factory_a411999969da02f1a6a21fa8b1fdf01fe}{EventFactory}}(\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles,\ \mbox{\hyperlink{class_i_add_event}{IAddEvent}}\&\ event\_queue);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_factory_a92b7e4a20d47c9276e70b20619d98450}{createEvent}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ wait,\ \textcolor{keywordtype}{int}\ countdown);}
+\DoxyCodeLine{00035\ \};}
+
+\end{DoxyCode}

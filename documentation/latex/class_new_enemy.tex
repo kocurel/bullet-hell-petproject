@@ -1,0 +1,88 @@
+\doxysection{New\+Enemy Class Reference}
+\hypertarget{class_new_enemy}{}\label{class_new_enemy}\index{NewEnemy@{NewEnemy}}
+
+
+An event that triggers the creation of a new enemy in the game. This class inherits from \doxylink{class_event}{Event} and encapsulates a unique\+\_\+ptr to an \doxylink{class_enemy}{Enemy} object, which is then moved into the \doxylink{class_enemy_manager}{Enemy\+Manager} manager upon release.  
+
+
+
+
+{\ttfamily \#include $<$New\+Enemy.\+h$>$}
+
+Inheritance diagram for New\+Enemy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_new_enemy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_new_enemy_a613ec62b4ced63532dbff7d133321445}{New\+Enemy}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $>$ \&\&enemy)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_new_enemy}{New\+Enemy} event by taking ownership of an \doxylink{class_enemy}{Enemy} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_new_enemy_a6052f57c0ba306efceb10d78f5a18661}{on\+Release}} (\mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \&enemies, \mbox{\hyperlink{class_projectile_manager}{Projectile\+Manager}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Implements the action to be performed when the event is released. This method moves the encapsulated \doxylink{class_enemy}{Enemy} object into the \doxylink{class_enemy_manager}{Enemy\+Manager} manager, effectively spawning it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_event}{Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_event_ae01057480f73d4d3669f6491733dca4b}{get\+\_\+wait}} () const
+\begin{DoxyCompactList}\small\item\em Gets the value of the wait\+\_\+ flag of the event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_event_a6af9d71c268eca7257fb298ecb541471}{set\+Wait}} (bool wait)
+\begin{DoxyCompactList}\small\item\em Sets the value of the wait\+\_\+ flag of the event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_event_a47c8d7fe85757962e6d570bea82ee630}{set\+Countdown}} (int frames)
+\begin{DoxyCompactList}\small\item\em Sets the initial countdown duration for the event. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_event_a7c96b5fd7657b7b94b7f637d83268a47}{countdown}} ()
+\begin{DoxyCompactList}\small\item\em Decrements the event\textquotesingle{}s internal frame countdown. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_event_a105223995bbf1a1e4714d0c77f91cf0b}{\texorpdfstring{$\sim$}{\string~}\+Event}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived \doxylink{class_event}{Event} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An event that triggers the creation of a new enemy in the game. This class inherits from \doxylink{class_event}{Event} and encapsulates a unique\+\_\+ptr to an \doxylink{class_enemy}{Enemy} object, which is then moved into the \doxylink{class_enemy_manager}{Enemy\+Manager} manager upon release. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_new_enemy_a613ec62b4ced63532dbff7d133321445}\label{class_new_enemy_a613ec62b4ced63532dbff7d133321445} 
+\index{NewEnemy@{NewEnemy}!NewEnemy@{NewEnemy}}
+\index{NewEnemy@{NewEnemy}!NewEnemy@{NewEnemy}}
+\doxysubsubsection{\texorpdfstring{NewEnemy()}{NewEnemy()}}
+{\footnotesize\ttfamily New\+Enemy\+::\+New\+Enemy (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $>$ \&\&}]{enemy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{class_new_enemy}{New\+Enemy} event by taking ownership of an \doxylink{class_enemy}{Enemy} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & An rvalue reference to a unique\+\_\+ptr$<$\+Enemy$>$. Ownership is moved from this parameter. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_new_enemy_a6052f57c0ba306efceb10d78f5a18661}\label{class_new_enemy_a6052f57c0ba306efceb10d78f5a18661} 
+\index{NewEnemy@{NewEnemy}!onRelease@{onRelease}}
+\index{onRelease@{onRelease}!NewEnemy@{NewEnemy}}
+\doxysubsubsection{\texorpdfstring{onRelease()}{onRelease()}}
+{\footnotesize\ttfamily void New\+Enemy\+::on\+Release (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_manager}{Enemy\+Manager}} \&}]{enemies,  }\item[{\mbox{\hyperlink{class_projectile_manager}{Projectile\+Manager}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements the action to be performed when the event is released. This method moves the encapsulated \doxylink{class_enemy}{Enemy} object into the \doxylink{class_enemy_manager}{Enemy\+Manager} manager, effectively spawning it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemies} & -\/ a reference to the \doxylink{class_enemy_manager}{Enemy\+Manager} manager, used to add the new enemy. \\
+\hline
+{\em projectiles} & -\/ a reference to the \doxylink{class_projectile_manager}{Projectile\+Manager} manager (not used by this specific event, but required by base class signature). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_event_ae0dade2d4ae418b474e80e54bb913064}{Event}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_new_enemy_8h}{New\+Enemy.\+h}}\item 
+\mbox{\hyperlink{_new_enemy_8cpp}{New\+Enemy.\+cpp}}\end{DoxyCompactItemize}

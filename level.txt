@@ -1,0 +1,38 @@
+<wave>
+	<enemy>
+		<pos>
+			0
+		</pos>
+		<id>
+			1
+		</id>
+		<ctdwn>
+			60
+		</ctdwn>
+
+	</enemy>
+		<enemy>
+		<pos>
+			0
+		</pos>
+		<id>
+			1
+		</id>
+		<ctdwn>
+			60
+		</ctdwn>
+	</enemy>
+
+		<enemy>
+		<pos>
+			0
+		</pos>
+		<id>
+			1
+		</id>
+		<ctdwn>
+			60
+		</ctdwn>
+	</enemy>
+
+</wave>

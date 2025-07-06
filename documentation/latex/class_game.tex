@@ -1,0 +1,106 @@
+\doxysection{Game Class Reference}
+\hypertarget{class_game}{}\label{class_game}\index{Game@{Game}}
+
+
+Main class responsible for handling game logic. Has to be called each frame with \doxylink{class_game_aeaa87dabe9d859300293f9b02095de48}{process()} and \doxylink{class_game_a15ddd769261d923827a3cdf41499c843}{render()}. For the \doxylink{class_game}{Game} class to work a pointer to the SFML Window has to be set using the \doxylink{class_game_a3c91ff49b408d218cbd22edcf01b82d6}{set\+Render\+Window(sf\+::\+Render\+Window\texorpdfstring{$\ast$}{*})} method.  
+
+
+
+
+{\ttfamily \#include $<$Game.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}} ()
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_abb28875d74d25fa9e0dcdbe37c6ad89c}{Game}} (const \mbox{\hyperlink{class_game}{Game}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor to prevent \doxylink{class_game}{Game} object from being copied. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game}{Game}} \& \mbox{\hyperlink{class_game_aead5d069ae11b86a22857d9e7be2f184}{operator=}} (const \mbox{\hyperlink{class_game}{Game}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator to prevent \doxylink{class_game}{Game} object from being copied. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a3c91ff49b408d218cbd22edcf01b82d6}{set\+Render\+Window}} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Sets the SFML Render\+Window. Necessary for rendering to work. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_aeaa87dabe9d859300293f9b02095de48}{process}} ()
+\begin{DoxyCompactList}\small\item\em Core method responsible for calling all the process methods and handling game management logic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a15ddd769261d923827a3cdf41499c843}{render}} ()
+\begin{DoxyCompactList}\small\item\em Core method responsible for calling all the render methods. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main class responsible for handling game logic. Has to be called each frame with \doxylink{class_game_aeaa87dabe9d859300293f9b02095de48}{process()} and \doxylink{class_game_a15ddd769261d923827a3cdf41499c843}{render()}. For the \doxylink{class_game}{Game} class to work a pointer to the SFML Window has to be set using the \doxylink{class_game_a3c91ff49b408d218cbd22edcf01b82d6}{set\+Render\+Window(sf\+::\+Render\+Window\texorpdfstring{$\ast$}{*})} method. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_game_ad59df6562a58a614fda24622d3715b65}\label{class_game_ad59df6562a58a614fda24622d3715b65} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Class constructor. 
+
+\Hypertarget{class_game_abb28875d74d25fa9e0dcdbe37c6ad89c}\label{class_game_abb28875d74d25fa9e0dcdbe37c6ad89c} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game}{Game}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy constructor to prevent \doxylink{class_game}{Game} object from being copied. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_aead5d069ae11b86a22857d9e7be2f184}\label{class_game_aead5d069ae11b86a22857d9e7be2f184} 
+\index{Game@{Game}!operator=@{operator=}}
+\index{operator=@{operator=}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game}{Game}} \& Game\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game}{Game}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy assignment operator to prevent \doxylink{class_game}{Game} object from being copied. 
+
+\Hypertarget{class_game_aeaa87dabe9d859300293f9b02095de48}\label{class_game_aeaa87dabe9d859300293f9b02095de48} 
+\index{Game@{Game}!process@{process}}
+\index{process@{process}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Game\+::process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Core method responsible for calling all the process methods and handling game management logic. 
+
+\Hypertarget{class_game_a15ddd769261d923827a3cdf41499c843}\label{class_game_a15ddd769261d923827a3cdf41499c843} 
+\index{Game@{Game}!render@{render}}
+\index{render@{render}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Game\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Core method responsible for calling all the render methods. 
+
+\Hypertarget{class_game_a3c91ff49b408d218cbd22edcf01b82d6}\label{class_game_a3c91ff49b408d218cbd22edcf01b82d6} 
+\index{Game@{Game}!setRenderWindow@{setRenderWindow}}
+\index{setRenderWindow@{setRenderWindow}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{setRenderWindow()}{setRenderWindow()}}
+{\footnotesize\ttfamily void Game\+::set\+Render\+Window (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})}
+
+
+
+Sets the SFML Render\+Window. Necessary for rendering to work. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & -\/ pointer to an SFML Render\+Window. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_8h}{Game.\+h}}\item 
+\mbox{\hyperlink{_game_8cpp}{Game.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,47 @@
+\doxysection{Game.\+h}
+\hypertarget{_game_8h_source}{}\label{_game_8h_source}\mbox{\hyperlink{_game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_projectile_manager_8h}{ProjectileManager.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_event_manager_8h}{EventManager.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_enemy_manager_8h}{EnemyManager.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_player_8h}{Player.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_event_parser_8h}{EventParser.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pickup_manager_8h}{PickupManager.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//forward\ declarations}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacesf}{sf}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }RenderWindow;}
+\DoxyCodeLine{00017\ \}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game}{Game}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ stage\_selection\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ game\_over\_\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ stage\_finished\_\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00031\ \ \ \ \ sf::RenderWindow*\ window\_\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_event_parser}{EventParser}}\ parser\_;}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_projectile_manager}{ProjectileManager}}\ projectiles\_;}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_event_manager}{EventManager}}\ event\_manager\_;}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_pickup_manager}{PickupManager}}\ pickup\_manager\_;}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_enemy_manager}{EnemyManager}}\ enemy\_manager\_;}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\ player\_;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ processPlayer(\mbox{\hyperlink{class_game}{Game}}\&\ game);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ processEnemies(\mbox{\hyperlink{class_game}{Game}}\&\ game);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \textcolor{keywordtype}{void}\ checkLevelSelection();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \textcolor{keywordtype}{void}\ resetGame();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \textcolor{keywordtype}{void}\ saveScore();}
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}}();\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_game_abb28875d74d25fa9e0dcdbe37c6ad89c}{Game}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_game}{Game}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}\&\ \mbox{\hyperlink{class_game_aead5d069ae11b86a22857d9e7be2f184}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_game}{Game}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a3c91ff49b408d218cbd22edcf01b82d6}{setRenderWindow}}(sf::RenderWindow*\ window);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_aeaa87dabe9d859300293f9b02095de48}{process}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a15ddd769261d923827a3cdf41499c843}{render}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \};}
+
+\end{DoxyCode}

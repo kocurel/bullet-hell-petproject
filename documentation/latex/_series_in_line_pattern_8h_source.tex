@@ -1,0 +1,32 @@
+\doxysection{Series\+In\+Line\+Pattern.\+h}
+\hypertarget{_series_in_line_pattern_8h_source}{}\label{_series_in_line_pattern_8h_source}\mbox{\hyperlink{_series_in_line_pattern_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_attack_pattern_8h}{IAttackPattern.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_series_in_line_pattern}{SeriesInLinePattern}}\ :\ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_attack_pattern}{IAttackPattern}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_series_in_line_pattern_a11da0c4a25f33b16e53a28dc951e18c6}{reload\_time\_}}\ =\ 60;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_series_in_line_pattern_af278ba4d6000ef58b4c565b5757c7b0b}{until\_reload}}\ =\ \mbox{\hyperlink{class_series_in_line_pattern_a11da0c4a25f33b16e53a28dc951e18c6}{reload\_time\_}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_series_in_line_pattern_a345de5f9dafd24936191a5adab4d0b9e}{projectile\_delay}}\ =\ 4;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_series_in_line_pattern_a7f3c99c369fbd562d9bd40593aa1c40a}{delay\_left}}\ =\ \mbox{\hyperlink{class_series_in_line_pattern_a345de5f9dafd24936191a5adab4d0b9e}{projectile\_delay}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_series_in_line_pattern_a3f1c0e1d6046ddb8c41429730bc786dd}{shots\_in\_series}}\ =\ 8;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_series_in_line_pattern_af48829aceb2c8a2d11ffa4aafba96e50}{shots\_left\_}}\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_series_in_line_pattern_a3cc98849e819ec4a7b4201f974dcfda4}{projectile\_scale\_}}\ =\ 0.5f;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_series_in_line_pattern_a5775f27a43416af721ad81c49519863f}{switch\_signal\_}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_series_in_line_pattern_a51b8800960501d8a3c31f20d2ff33f93}{attack}}(\mbox{\hyperlink{class_player}{Player}}\&\ player,\ \mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ \};}
+
+\end{DoxyCode}

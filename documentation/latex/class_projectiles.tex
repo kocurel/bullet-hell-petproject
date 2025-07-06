@@ -1,0 +1,115 @@
+\doxysection{Projectiles Class Reference}
+\hypertarget{class_projectiles}{}\label{class_projectiles}\index{Projectiles@{Projectiles}}
+
+
+{\ttfamily \#include $<$Projectiles.\+h$>$}
+
+Inheritance diagram for Projectiles\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_projectiles}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_projectiles_a1c2d12ed2a660e5536edf5ecb385df6f}{Projectiles}} ()
+\item 
+void \mbox{\hyperlink{class_projectiles_a444ea732ddd2b5110843782fb97b4bfe}{clear\+Projectiles}} ()
+\item 
+void \mbox{\hyperlink{class_projectiles_a7ccf290a391a661bfcf680cf04a2ab96}{process\+\_\+projectiles}} ()
+\item 
+void \mbox{\hyperlink{class_projectiles_a9460145f2dd05a860376d11322b5d2c1}{create\+Player\+Projectile}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&projectile) override
+\item 
+void \mbox{\hyperlink{class_projectiles_afac0c95d71ca5b34badc7e11034d3908}{create\+Enemy\+Projectile}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&projectile) override
+\item 
+void \mbox{\hyperlink{class_projectiles_a76570e7bd85e2f84db42c9275fba89c3}{render}} (sf\+::\+Render\+Window \&window)
+\item 
+std\+::mutex \& \mbox{\hyperlink{class_projectiles_ad90afb061694695e5399a82b0aa8b3d4}{get\+Enemy\+Mtx}} ()
+\item 
+std\+::mutex \& \mbox{\hyperlink{class_projectiles_a81019af11cfeca73bad6e53cc6379e36}{get\+Player\+Mtx}} ()
+\item 
+const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ $>$ \& \mbox{\hyperlink{class_projectiles_ad7c2c5f46f67634671197c6235bbc4b1}{get\+Player\+Projectiles}} ()
+\item 
+const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ $>$ \& \mbox{\hyperlink{class_projectiles_a43622c2d69a40a4ca1e60050dd6ff211}{get\+Enemy\+Projectiles}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_projectiles_a1c2d12ed2a660e5536edf5ecb385df6f}\label{class_projectiles_a1c2d12ed2a660e5536edf5ecb385df6f} 
+\index{Projectiles@{Projectiles}!Projectiles@{Projectiles}}
+\index{Projectiles@{Projectiles}!Projectiles@{Projectiles}}
+\doxysubsubsection{\texorpdfstring{Projectiles()}{Projectiles()}}
+{\footnotesize\ttfamily Projectiles\+::\+Projectiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_projectiles_a444ea732ddd2b5110843782fb97b4bfe}\label{class_projectiles_a444ea732ddd2b5110843782fb97b4bfe} 
+\index{Projectiles@{Projectiles}!clearProjectiles@{clearProjectiles}}
+\index{clearProjectiles@{clearProjectiles}!Projectiles@{Projectiles}}
+\doxysubsubsection{\texorpdfstring{clearProjectiles()}{clearProjectiles()}}
+{\footnotesize\ttfamily void Projectiles\+::clear\+Projectiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_projectiles_afac0c95d71ca5b34badc7e11034d3908}\label{class_projectiles_afac0c95d71ca5b34badc7e11034d3908} 
+\index{Projectiles@{Projectiles}!createEnemyProjectile@{createEnemyProjectile}}
+\index{createEnemyProjectile@{createEnemyProjectile}!Projectiles@{Projectiles}}
+\doxysubsubsection{\texorpdfstring{createEnemyProjectile()}{createEnemyProjectile()}}
+{\footnotesize\ttfamily void Projectiles\+::create\+Enemy\+Projectile (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&}]{projectile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_add_projectile_a79ecbf253ba3f9e14541292373c20398}{IAdd\+Projectile}}.
+
+\Hypertarget{class_projectiles_a9460145f2dd05a860376d11322b5d2c1}\label{class_projectiles_a9460145f2dd05a860376d11322b5d2c1} 
+\index{Projectiles@{Projectiles}!createPlayerProjectile@{createPlayerProjectile}}
+\index{createPlayerProjectile@{createPlayerProjectile}!Projectiles@{Projectiles}}
+\doxysubsubsection{\texorpdfstring{createPlayerProjectile()}{createPlayerProjectile()}}
+{\footnotesize\ttfamily void Projectiles\+::create\+Player\+Projectile (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ \&}]{projectile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_add_projectile_ae968e2f10f71d6f61cd0e952b5135abe}{IAdd\+Projectile}}.
+
+\Hypertarget{class_projectiles_ad90afb061694695e5399a82b0aa8b3d4}\label{class_projectiles_ad90afb061694695e5399a82b0aa8b3d4} 
+\index{Projectiles@{Projectiles}!getEnemyMtx@{getEnemyMtx}}
+\index{getEnemyMtx@{getEnemyMtx}!Projectiles@{Projectiles}}
+\doxysubsubsection{\texorpdfstring{getEnemyMtx()}{getEnemyMtx()}}
+{\footnotesize\ttfamily std\+::mutex \& Projectiles\+::get\+Enemy\+Mtx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_projectiles_a43622c2d69a40a4ca1e60050dd6ff211}\label{class_projectiles_a43622c2d69a40a4ca1e60050dd6ff211} 
+\index{Projectiles@{Projectiles}!getEnemyProjectiles@{getEnemyProjectiles}}
+\index{getEnemyProjectiles@{getEnemyProjectiles}!Projectiles@{Projectiles}}
+\doxysubsubsection{\texorpdfstring{getEnemyProjectiles()}{getEnemyProjectiles()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ $>$ \& Projectiles\+::get\+Enemy\+Projectiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_projectiles_a81019af11cfeca73bad6e53cc6379e36}\label{class_projectiles_a81019af11cfeca73bad6e53cc6379e36} 
+\index{Projectiles@{Projectiles}!getPlayerMtx@{getPlayerMtx}}
+\index{getPlayerMtx@{getPlayerMtx}!Projectiles@{Projectiles}}
+\doxysubsubsection{\texorpdfstring{getPlayerMtx()}{getPlayerMtx()}}
+{\footnotesize\ttfamily std\+::mutex \& Projectiles\+::get\+Player\+Mtx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_projectiles_ad7c2c5f46f67634671197c6235bbc4b1}\label{class_projectiles_ad7c2c5f46f67634671197c6235bbc4b1} 
+\index{Projectiles@{Projectiles}!getPlayerProjectiles@{getPlayerProjectiles}}
+\index{getPlayerProjectiles@{getPlayerProjectiles}!Projectiles@{Projectiles}}
+\doxysubsubsection{\texorpdfstring{getPlayerProjectiles()}{getPlayerProjectiles()}}
+{\footnotesize\ttfamily const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_projectile}{Projectile}} $>$ $>$ \& Projectiles\+::get\+Player\+Projectiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_projectiles_a7ccf290a391a661bfcf680cf04a2ab96}\label{class_projectiles_a7ccf290a391a661bfcf680cf04a2ab96} 
+\index{Projectiles@{Projectiles}!process\_projectiles@{process\_projectiles}}
+\index{process\_projectiles@{process\_projectiles}!Projectiles@{Projectiles}}
+\doxysubsubsection{\texorpdfstring{process\_projectiles()}{process\_projectiles()}}
+{\footnotesize\ttfamily void Projectiles\+::process\+\_\+projectiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_projectiles_a76570e7bd85e2f84db42c9275fba89c3}\label{class_projectiles_a76570e7bd85e2f84db42c9275fba89c3} 
+\index{Projectiles@{Projectiles}!render@{render}}
+\index{render@{render}!Projectiles@{Projectiles}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Projectiles\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_projectiles_8h}{Projectiles.\+h}}\item 
+\mbox{\hyperlink{_projectiles_8cpp}{Projectiles.\+cpp}}\end{DoxyCompactItemize}

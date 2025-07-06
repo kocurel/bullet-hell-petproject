@@ -1,0 +1,33 @@
+\doxysection{Event\+Parser.\+h}
+\hypertarget{_event_parser_8h_source}{}\label{_event_parser_8h_source}\mbox{\hyperlink{_event_parser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_event_factory_8h}{EventFactory.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ forward\ declarations}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_add_event}{IAddEvent}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event_parser}{EventParser}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ std::filesystem::path\ current\_file\_;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_event_parser_1_1_wave_entry}{WaveEntry}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_event_factory}{EventFactory}}\ event\_factory\_;}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ std::vector<std::filesystem::path>\ files\_;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ parse(\textcolor{keyword}{const}\ std::filesystem::path\ path);}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_event_parser_a9e4d48d97ffba56d520841fbb510d45e}{EventParser}}(\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles,\ \mbox{\hyperlink{class_i_add_event}{IAddEvent}}\&\ event\_manager);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_parser_a830241f109e766dce5ee52a0502a1dbc}{load}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ file\_number);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ std::filesystem::path\&\ \mbox{\hyperlink{class_event_parser_ad8d304a3c3b1648642ddd8e0c8dfe3a6}{getPath}}();}
+\DoxyCodeLine{00055\ \};}
+
+\end{DoxyCode}

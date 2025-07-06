@@ -1,0 +1,32 @@
+\doxysection{Pickup.\+h}
+\hypertarget{_pickup_8h_source}{}\label{_pickup_8h_source}\mbox{\hyperlink{_pickup_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_positionable_8h}{Positionable.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sprite_owner_8h}{SpriteOwner.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_collision_circle_8h}{CollisionCircle.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_texture_manager_8h}{TextureManager.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ forward\ declaration}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pickup}{Pickup}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_positionable}{Positionable}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_sprite_owner}{SpriteOwner}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_collision_circle}{CollisionCircle}}\ \mbox{\hyperlink{class_pickup_a57c01e25f96cbb2b4695225ea99d1219}{hitbox\_}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_pickup_a96d607c3c6fbe14446c5cafc33163844}{Pickup}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_a48901d2ee061d344100979cefc3f0031}{move}}(sf::Vector2f\ displacement);}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_collision_circle}{CollisionCircle}}\&\ \mbox{\hyperlink{class_pickup_a9225d1ddc730e0ee8accb5bcba168b52}{getHitbox}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_a53e2dd7217621bcc92bc73565ed45ba7}{onPickup}}(\mbox{\hyperlink{class_player}{Player}}\&\ player)\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_a594c8d7d91c821f335ca8a67da172538}{process}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_pickup_ad799dc67c0c715dab3da577cb35c4e81}{\string~Pickup}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00041\ \};}
+
+\end{DoxyCode}

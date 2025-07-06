@@ -1,0 +1,29 @@
+\doxysection{Input\+Manager.\+h}
+\hypertarget{_input_manager_8h_source}{}\label{_input_manager_8h_source}\mbox{\hyperlink{_input_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once\ }}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SFML/Window/Keyboard.hpp>}\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_input_manager}{InputManager}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_input_manager}{InputManager}}\&\ \mbox{\hyperlink{class_input_manager_a4e1058b89c07e2f3ec1097b843c19fc8}{getInstance}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_input_manager_abf6fef4ddfb8653e32a8d797ee862f3b}{InputManager}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_input_manager}{InputManager}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_input_manager}{InputManager}}\&\ \mbox{\hyperlink{class_input_manager_a0f2bda14104ad625c7294ae994bc2926}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_input_manager}{InputManager}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_manager_aa6907eebb5e63a21e10276e233575680}{setKeyJustPressed}}(sf::Keyboard::Key\ key);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_manager_acdec9ed6e5455b62bf8a1513f5cc67d1}{isKeyJustPressed}}(sf::Keyboard::Key\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_manager_a4a4cdc68f99df31ea018b0d837b80fcb}{clearInputs}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_input_manager}{InputManager}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00055\ \ \ \ \ std::map<sf::Keyboard::Key,\ bool>\ is\_key\_just\_pressed\_;}
+\DoxyCodeLine{00056\ \};}
+
+\end{DoxyCode}

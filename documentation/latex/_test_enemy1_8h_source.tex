@@ -1,0 +1,24 @@
+\doxysection{Test\+Enemy1.\+h}
+\hypertarget{_test_enemy1_8h_source}{}\label{_test_enemy1_8h_source}\mbox{\hyperlink{_test_enemy1_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_enemy_8h}{Enemy.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_projectile_builder_8h}{ProjectileBuilder.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ sf::Vector2f\ \mbox{\hyperlink{_test_enemy1_8h_a277488bd2b804afa1fe1046036381f36}{rotateVector}}(\textcolor{keyword}{const}\ sf::Vector2f\&\ vec,\ \textcolor{keywordtype}{float}\ angle\_deg);}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_enemy1}{TestEnemy1}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_enemy}{Enemy}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_test_enemy1_a57c13f92c516b9bea8f6ce632a2a7569}{bullet\_speed\_}}\ =\ 8.f;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_test_enemy1_ae3a7726255da2a66b034134013e7dff6}{going\_left\_}}\ =\ 0;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_test_enemy1_aa473b7fe40016b881d120fd61873565c}{attack\_cooldown\_}}\ =\ 0;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_test_enemy1_a51e3a41f0bab2f00be7b250c88963de2}{attack\_pattern\_}}\ =\ 2;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{static}\ sf::Texture\&\ \mbox{\hyperlink{class_test_enemy1_a4b8e9cd16704036319dc5d584e4fc891}{getTexture}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_test_enemy1_a7cddc36f8312166303c5d74fc33e3380}{TestEnemy1}}(\mbox{\hyperlink{class_i_add_projectile}{IAddProjectile}}\&\ projectiles);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_enemy1_ae008381468e2637eb81748a9c99075d3}{process}}(\mbox{\hyperlink{class_player}{Player}}\&\ player);}
+\DoxyCodeLine{00019\ \};}
+
+\end{DoxyCode}

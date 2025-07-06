@@ -1,0 +1,36 @@
+\doxysection{Projectile.\+cpp File Reference}
+\hypertarget{_projectile_8cpp}{}\label{_projectile_8cpp}\index{Projectile.cpp@{Projectile.cpp}}
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include "{}IAdd\+Projectile.\+h"{}}\newline
+{\ttfamily \#include "{}Projectile.\+h"{}}\newline
+{\ttfamily \#include "{}Texture\+Manager.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{_projectile_8cpp_a277488bd2b804afa1fe1046036381f36}{rotate\+Vector}} (const sf\+::\+Vector2f \&vec, float angle\+\_\+deg)
+\begin{DoxyCompactList}\small\item\em Rotates a 2D vector by a specified angle in degrees. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_projectile_8cpp_a277488bd2b804afa1fe1046036381f36}\label{_projectile_8cpp_a277488bd2b804afa1fe1046036381f36} 
+\index{Projectile.cpp@{Projectile.cpp}!rotateVector@{rotateVector}}
+\index{rotateVector@{rotateVector}!Projectile.cpp@{Projectile.cpp}}
+\doxysubsubsection{\texorpdfstring{rotateVector()}{rotateVector()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f rotate\+Vector (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{vec,  }\item[{float}]{angle\+\_\+deg }\end{DoxyParamCaption})}
+
+
+
+Rotates a 2D vector by a specified angle in degrees. 
+
+This function uses a static unordered\+\_\+map to cache sine and cosine values for frequently used angles, improving performance for repeated rotations. The angle is rounded to two decimal places for caching. 
+\begin{DoxyParams}{Parameters}
+{\em vec} & -\/ The sf\+::\+Vector2f to rotate. \\
+\hline
+{\em angle\+\_\+deg} & -\/ The angle in degrees by which to rotate the vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An sf\+::\+Vector2f representing the rotated vector. 
+\end{DoxyReturn}

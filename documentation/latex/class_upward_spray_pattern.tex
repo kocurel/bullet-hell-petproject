@@ -1,0 +1,224 @@
+\doxysection{Upward\+Spray\+Pattern Class Reference}
+\hypertarget{class_upward_spray_pattern}{}\label{class_upward_spray_pattern}\index{UpwardSprayPattern@{UpwardSprayPattern}}
+
+
+An attack pattern consisting of a series of 6 bigger falling projectiles.  
+
+
+
+
+{\ttfamily \#include $<$Upward\+Spray\+Pattern.\+h$>$}
+
+Inheritance diagram for Upward\+Spray\+Pattern\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_upward_spray_pattern}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_upward_spray_pattern_a8ae0172cbf80c0e6fcba365758cdb7ee}{attack}} (\mbox{\hyperlink{class_player}{Player}} \&player, \mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Implements the attack logic for this pattern. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_upward_spray_pattern_a8e9c9820abb21e5cc00754b2f5de16f5}{set\+Reload\+Time}} (int frames)
+\begin{DoxyCompactList}\small\item\em Sets the reload time for the attack pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_a5b5c5227d2c6487f5ff925e066f9449a}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current position of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_positionable_a1f1525ace9fc2b25462e6b088ed058d8}{set\+Position}} (sf\+::\+Vector2f pos)
+\begin{DoxyCompactList}\small\item\em Sets the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_upward_spray_pattern_aa5b536845b3e4f79338608b9483b7ee1}{reload\+\_\+time\+\_\+}} = 60
+\begin{DoxyCompactList}\small\item\em The time (in frames) required to reload before starting a new series of shots. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_upward_spray_pattern_a5e799c1d4b247c07f5868b993c5c3000}{until\+\_\+reload}} = \mbox{\hyperlink{class_upward_spray_pattern_aa5b536845b3e4f79338608b9483b7ee1}{reload\+\_\+time\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Counter for the remaining time until the next series can start. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_upward_spray_pattern_aae2e28a310c2564a73f65341d9e52cd2}{projectile\+\_\+delay}} = 0
+\begin{DoxyCompactList}\small\item\em The delay (in frames) between individual projectile shots within a series. In this pattern, it\textquotesingle{}s set to 0, meaning shots are fired consecutively without delay. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_upward_spray_pattern_ab888a8cb03f31611fea02279d64c30b9}{delay\+\_\+left}} = \mbox{\hyperlink{class_upward_spray_pattern_aae2e28a310c2564a73f65341d9e52cd2}{projectile\+\_\+delay}}
+\begin{DoxyCompactList}\small\item\em Counter for the remaining delay until the next projectile in the current series can be shot. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_upward_spray_pattern_aa85d6ae32aa9060582d941cef88da465}{shots\+\_\+in\+\_\+series}} = 6
+\begin{DoxyCompactList}\small\item\em The total number of projectiles to be shot in one series. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_upward_spray_pattern_ab712e907d7d20f0c4e157b545edacd83}{shots\+\_\+left\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Counter for the number of shots remaining in the current series. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{class_upward_spray_pattern_aa73150b0f60039cd27a05c27c1a29c43}{projectile\+\_\+scale\+\_\+}} = 0.\+5f
+\begin{DoxyCompactList}\small\item\em The base scaling factor applied to the projectiles created by this pattern. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{class_upward_spray_pattern_a93020638cd779723d6d6f8a836f818b5}{scale}} = 1.f
+\begin{DoxyCompactList}\small\item\em An additional scaling factor applied to the projectiles. This might be intended for further size adjustments. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{class_upward_spray_pattern_a7d0466fd64dc4a9e4a72fc5abc47422d}{velocity}} = 8.f
+\begin{DoxyCompactList}\small\item\em The velocity (speed) of the projectiles created by this pattern. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_upward_spray_pattern_a88bb349291360daf2bc1ec2016ea5f35}{direction\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The current direction vector for the projectiles in the spray. This vector is rotated for each subsequent projectile in a series. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_upward_spray_pattern_a17f0fc20cb4377fbf971805bc752251e}{switch\+\_\+signal\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em A signal flag indicating that the current series of shots has completed. This can be used by an external manager to switch to a different attack pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_aa5ac62eec93831b439524651f3a96282}{position\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The 2D position of the object in game coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An attack pattern consisting of a series of 6 bigger falling projectiles. 
+
+These projectiles are shot in an upwards spray with an 18-\/degree rotation between each shot in the series. The pattern sets {\ttfamily switch\+\_\+signal\+\_\+} to true when all projectiles in a series have been shot, indicating completion. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_upward_spray_pattern_a8ae0172cbf80c0e6fcba365758cdb7ee}\label{class_upward_spray_pattern_a8ae0172cbf80c0e6fcba365758cdb7ee} 
+\index{UpwardSprayPattern@{UpwardSprayPattern}!attack@{attack}}
+\index{attack@{attack}!UpwardSprayPattern@{UpwardSprayPattern}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily void Upward\+Spray\+Pattern\+::attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player,  }\item[{\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements the attack logic for this pattern. 
+
+This method is called each frame to manage the shooting sequence, including delays between shots, reloads between series, and rotating the projectile direction for the spray effect. 
+\begin{DoxyParams}{Parameters}
+{\em player} & -\/ a reference to the \doxylink{class_player}{Player} object (though not directly used for target in this pattern\textquotesingle{}s {\ttfamily attack} method). \\
+\hline
+{\em projectiles} & -\/ a reference to an \doxylink{class_i_add_projectile}{IAdd\+Projectile} interface to create new enemy projectiles. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_attack_pattern_a2bc29249375f1ad83c9570370efc111b}{IAttack\+Pattern}}.
+
+\Hypertarget{class_upward_spray_pattern_a8e9c9820abb21e5cc00754b2f5de16f5}\label{class_upward_spray_pattern_a8e9c9820abb21e5cc00754b2f5de16f5} 
+\index{UpwardSprayPattern@{UpwardSprayPattern}!setReloadTime@{setReloadTime}}
+\index{setReloadTime@{setReloadTime}!UpwardSprayPattern@{UpwardSprayPattern}}
+\doxysubsubsection{\texorpdfstring{setReloadTime()}{setReloadTime()}}
+{\footnotesize\ttfamily void Upward\+Spray\+Pattern\+::set\+Reload\+Time (\begin{DoxyParamCaption}\item[{int}]{frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sets the reload time for the attack pattern. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frames} & The new reload time in frames. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_upward_spray_pattern_ab888a8cb03f31611fea02279d64c30b9}\label{class_upward_spray_pattern_ab888a8cb03f31611fea02279d64c30b9} 
+\index{UpwardSprayPattern@{UpwardSprayPattern}!delay\_left@{delay\_left}}
+\index{delay\_left@{delay\_left}!UpwardSprayPattern@{UpwardSprayPattern}}
+\doxysubsubsection{\texorpdfstring{delay\_left}{delay\_left}}
+{\footnotesize\ttfamily int Upward\+Spray\+Pattern\+::delay\+\_\+left = \mbox{\hyperlink{class_upward_spray_pattern_aae2e28a310c2564a73f65341d9e52cd2}{projectile\+\_\+delay}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Counter for the remaining delay until the next projectile in the current series can be shot. 
+
+\Hypertarget{class_upward_spray_pattern_a88bb349291360daf2bc1ec2016ea5f35}\label{class_upward_spray_pattern_a88bb349291360daf2bc1ec2016ea5f35} 
+\index{UpwardSprayPattern@{UpwardSprayPattern}!direction\_@{direction\_}}
+\index{direction\_@{direction\_}!UpwardSprayPattern@{UpwardSprayPattern}}
+\doxysubsubsection{\texorpdfstring{direction\_}{direction\_}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Upward\+Spray\+Pattern\+::direction\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The current direction vector for the projectiles in the spray. This vector is rotated for each subsequent projectile in a series. 
+
+\Hypertarget{class_upward_spray_pattern_aae2e28a310c2564a73f65341d9e52cd2}\label{class_upward_spray_pattern_aae2e28a310c2564a73f65341d9e52cd2} 
+\index{UpwardSprayPattern@{UpwardSprayPattern}!projectile\_delay@{projectile\_delay}}
+\index{projectile\_delay@{projectile\_delay}!UpwardSprayPattern@{UpwardSprayPattern}}
+\doxysubsubsection{\texorpdfstring{projectile\_delay}{projectile\_delay}}
+{\footnotesize\ttfamily const int Upward\+Spray\+Pattern\+::projectile\+\_\+delay = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The delay (in frames) between individual projectile shots within a series. In this pattern, it\textquotesingle{}s set to 0, meaning shots are fired consecutively without delay. 
+
+\Hypertarget{class_upward_spray_pattern_aa73150b0f60039cd27a05c27c1a29c43}\label{class_upward_spray_pattern_aa73150b0f60039cd27a05c27c1a29c43} 
+\index{UpwardSprayPattern@{UpwardSprayPattern}!projectile\_scale\_@{projectile\_scale\_}}
+\index{projectile\_scale\_@{projectile\_scale\_}!UpwardSprayPattern@{UpwardSprayPattern}}
+\doxysubsubsection{\texorpdfstring{projectile\_scale\_}{projectile\_scale\_}}
+{\footnotesize\ttfamily const float Upward\+Spray\+Pattern\+::projectile\+\_\+scale\+\_\+ = 0.\+5f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The base scaling factor applied to the projectiles created by this pattern. 
+
+\Hypertarget{class_upward_spray_pattern_aa5b536845b3e4f79338608b9483b7ee1}\label{class_upward_spray_pattern_aa5b536845b3e4f79338608b9483b7ee1} 
+\index{UpwardSprayPattern@{UpwardSprayPattern}!reload\_time\_@{reload\_time\_}}
+\index{reload\_time\_@{reload\_time\_}!UpwardSprayPattern@{UpwardSprayPattern}}
+\doxysubsubsection{\texorpdfstring{reload\_time\_}{reload\_time\_}}
+{\footnotesize\ttfamily int Upward\+Spray\+Pattern\+::reload\+\_\+time\+\_\+ = 60\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The time (in frames) required to reload before starting a new series of shots. 
+
+\Hypertarget{class_upward_spray_pattern_a93020638cd779723d6d6f8a836f818b5}\label{class_upward_spray_pattern_a93020638cd779723d6d6f8a836f818b5} 
+\index{UpwardSprayPattern@{UpwardSprayPattern}!scale@{scale}}
+\index{scale@{scale}!UpwardSprayPattern@{UpwardSprayPattern}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily const float Upward\+Spray\+Pattern\+::scale = 1.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+An additional scaling factor applied to the projectiles. This might be intended for further size adjustments. 
+
+\Hypertarget{class_upward_spray_pattern_aa85d6ae32aa9060582d941cef88da465}\label{class_upward_spray_pattern_aa85d6ae32aa9060582d941cef88da465} 
+\index{UpwardSprayPattern@{UpwardSprayPattern}!shots\_in\_series@{shots\_in\_series}}
+\index{shots\_in\_series@{shots\_in\_series}!UpwardSprayPattern@{UpwardSprayPattern}}
+\doxysubsubsection{\texorpdfstring{shots\_in\_series}{shots\_in\_series}}
+{\footnotesize\ttfamily const int Upward\+Spray\+Pattern\+::shots\+\_\+in\+\_\+series = 6\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The total number of projectiles to be shot in one series. 
+
+\Hypertarget{class_upward_spray_pattern_ab712e907d7d20f0c4e157b545edacd83}\label{class_upward_spray_pattern_ab712e907d7d20f0c4e157b545edacd83} 
+\index{UpwardSprayPattern@{UpwardSprayPattern}!shots\_left\_@{shots\_left\_}}
+\index{shots\_left\_@{shots\_left\_}!UpwardSprayPattern@{UpwardSprayPattern}}
+\doxysubsubsection{\texorpdfstring{shots\_left\_}{shots\_left\_}}
+{\footnotesize\ttfamily int Upward\+Spray\+Pattern\+::shots\+\_\+left\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Counter for the number of shots remaining in the current series. 
+
+\Hypertarget{class_upward_spray_pattern_a17f0fc20cb4377fbf971805bc752251e}\label{class_upward_spray_pattern_a17f0fc20cb4377fbf971805bc752251e} 
+\index{UpwardSprayPattern@{UpwardSprayPattern}!switch\_signal\_@{switch\_signal\_}}
+\index{switch\_signal\_@{switch\_signal\_}!UpwardSprayPattern@{UpwardSprayPattern}}
+\doxysubsubsection{\texorpdfstring{switch\_signal\_}{switch\_signal\_}}
+{\footnotesize\ttfamily bool Upward\+Spray\+Pattern\+::switch\+\_\+signal\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A signal flag indicating that the current series of shots has completed. This can be used by an external manager to switch to a different attack pattern. 
+
+\Hypertarget{class_upward_spray_pattern_a5e799c1d4b247c07f5868b993c5c3000}\label{class_upward_spray_pattern_a5e799c1d4b247c07f5868b993c5c3000} 
+\index{UpwardSprayPattern@{UpwardSprayPattern}!until\_reload@{until\_reload}}
+\index{until\_reload@{until\_reload}!UpwardSprayPattern@{UpwardSprayPattern}}
+\doxysubsubsection{\texorpdfstring{until\_reload}{until\_reload}}
+{\footnotesize\ttfamily int Upward\+Spray\+Pattern\+::until\+\_\+reload = \mbox{\hyperlink{class_upward_spray_pattern_aa5b536845b3e4f79338608b9483b7ee1}{reload\+\_\+time\+\_\+}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Counter for the remaining time until the next series can start. 
+
+\Hypertarget{class_upward_spray_pattern_a7d0466fd64dc4a9e4a72fc5abc47422d}\label{class_upward_spray_pattern_a7d0466fd64dc4a9e4a72fc5abc47422d} 
+\index{UpwardSprayPattern@{UpwardSprayPattern}!velocity@{velocity}}
+\index{velocity@{velocity}!UpwardSprayPattern@{UpwardSprayPattern}}
+\doxysubsubsection{\texorpdfstring{velocity}{velocity}}
+{\footnotesize\ttfamily const float Upward\+Spray\+Pattern\+::velocity = 8.f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The velocity (speed) of the projectiles created by this pattern. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_upward_spray_pattern_8h}{Upward\+Spray\+Pattern.\+h}}\item 
+\mbox{\hyperlink{_upward_spray_pattern_8cpp}{Upward\+Spray\+Pattern.\+cpp}}\end{DoxyCompactItemize}

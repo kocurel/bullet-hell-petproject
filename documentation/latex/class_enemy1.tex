@@ -1,0 +1,217 @@
+\doxysection{Enemy1 Class Reference}
+\hypertarget{class_enemy1}{}\label{class_enemy1}\index{Enemy1@{Enemy1}}
+
+
+An \doxylink{class_enemy}{Enemy} subclass.  
+
+
+
+
+{\ttfamily \#include $<$Enemy1.\+h$>$}
+
+Inheritance diagram for Enemy1\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.452555cm]{class_enemy1}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy1_a37a3f519c3790f19b7ff3278eda33cd7}{Enemy1}} (\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectiles)
+\begin{DoxyCompactList}\small\item\em An explicit constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy1_a25d930a4939838b29aeb3479521aa9ab}{process}} (\mbox{\hyperlink{class_player}{Player}} \&player) override
+\begin{DoxyCompactList}\small\item\em The main process method of \doxylink{class_enemy1}{Enemy1}. should get called each frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_enemy}{Enemy}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_a17f6ce71aa488a91bf1c2b606468022d}{Enemy}} (\mbox{\hyperlink{class_enemy}{Enemy}} \&other)=default
+\begin{DoxyCompactList}\small\item\em The default copy constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_a3873c83d23938ebba3af92bdcdd8ee1f}{on\+Destruction}} (\mbox{\hyperlink{class_pickup_manager}{Pickup\+Manager}} \&pickups)
+\begin{DoxyCompactList}\small\item\em Virtual method, defines the behaviour, when \doxylink{class_enemy}{Enemy}\textquotesingle{}s health reaches 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_a3a13bd5a106b7559ba3f0a78662330f2}{hit}} (\mbox{\hyperlink{class_projectile}{Projectile}} \&projectile, \mbox{\hyperlink{class_pickup_manager}{Pickup\+Manager}} \&pickups)
+\begin{DoxyCompactList}\small\item\em Applies damage of a \doxylink{class_projectile}{Projectile} to the \doxylink{class_enemy}{Enemy}, disables the projectiles and checks if the \doxylink{class_enemy}{Enemy} has no health\+\_\+points. In that case it calls \doxylink{class_enemy_a3873c83d23938ebba3af92bdcdd8ee1f}{on\+Destruction()} and \doxylink{class_sprite_owner_aff092b79461bcda2b34cd48358227d05}{disable()}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_aaa242732555e05f659f27f21c32657b1}{check\+Collision}} (\mbox{\hyperlink{class_projectile}{Projectile}} \&projectile, \mbox{\hyperlink{class_pickup_manager}{Pickup\+Manager}} \&pickups)
+\begin{DoxyCompactList}\small\item\em Checks hitboxes by calling \doxylink{class_collision_circle_af1cf2e37caf8b6910fdbae28efe81f0a}{Collision\+Circle\+::check\+Collision} on \doxylink{class_enemy}{Enemy}\textquotesingle{}s and \doxylink{class_projectile}{Projectile}\textquotesingle{}s hitboxes. Calls hit(\+Projectile\&), when a collision is detected. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_enemy_aafb628c66008e33afdd750e2f492bd98}{\texorpdfstring{$\sim$}{\string~}\+Enemy}} ()=default
+\begin{DoxyCompactList}\small\item\em The default virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sprite_owner_a42c30188e75ab8b437364b66e4ecb253}{is\+Disabled}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the sprite owner is currently disabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sprite_owner_aff092b79461bcda2b34cd48358227d05}{disable}} ()
+\begin{DoxyCompactList}\small\item\em Disables the sprite owner. Sets the internal flag to true, preventing further rendering or processing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sprite_owner_aec9bd1d26b203a50e38d1ac4e4776247}{render}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the owned sprite to the specified SFML render window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_a5b5c5227d2c6487f5ff925e066f9449a}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current position of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_positionable_a1f1525ace9fc2b25462e6b088ed058d8}{set\+Position}} (sf\+::\+Vector2f pos)
+\begin{DoxyCompactList}\small\item\em Sets the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_enemy1_a6f2dcf53edd6f5dad02cf2ef232e873a}{attack}} (\mbox{\hyperlink{class_player}{Player}} \&player, \mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectiles) override
+\begin{DoxyCompactList}\small\item\em Defines attack behaviour of \doxylink{class_enemy1}{Enemy1}. Calls \doxylink{class_enemy1_a955e9625a9539c3aa4b2d00673cf5988}{choose\+Pattern()} whenever an attack pattern finishes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy1_a955e9625a9539c3aa4b2d00673cf5988}{choose\+Pattern}} ()
+\begin{DoxyCompactList}\small\item\em Uses \doxylink{class_random_number_generator}{Random\+Number\+Generator} to randomly select the next attack pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_enemy}{Enemy}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_a60808e25721a8d6dfb9cc00043407280}{Enemy}} (\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&projectiles)
+\begin{DoxyCompactList}\small\item\em The class constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sprite_owner_ac188881cf211fc2b9213c7fc8b9e05a0}{Sprite\+Owner}} ()
+\begin{DoxyCompactList}\small\item\em Protected default constructor. Initializes the internal sf\+::\+Sprite with an error texture. This constructor is protected to ensure creation through derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_enemy1_aea977f0e96222d80f890068ce0213273}{pattern\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em The current attack pattern. Used for switching up attack patterns. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_enemy1_a690d927f783525e7b3a733ed79cd379d}{going\+\_\+left\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Used for horizontal movement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_enemy}{Enemy}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \& \mbox{\hyperlink{class_enemy_a8463fc52c98fcc5b1593dedf2a364aa6}{projectiles\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A reference to the \doxylink{class_i_add_projectile}{IAdd\+Projectile} interface of \doxylink{class_projectile_manager}{Projectile\+Manager} class. Used to pass new projectiles to the \doxylink{class_projectile_manager}{Projectile\+Manager} manager class. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_enemy_aa6d000b5d884889125f5a068f1088b44}{health\+\_\+}} = 10
+\begin{DoxyCompactList}\small\item\em \doxylink{class_enemy}{Enemy}\textquotesingle{}s health\+\_\+points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_sprite_owner}{Sprite\+Owner}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sprite_owner_a789762815ee1eb2238e1f33bc16ea7db}{disabled\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the sprite owner is disabled (for rendering and processing). \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_sprite_owner_a5329203d1a37c21b1bbf659473246ec8}{sprite\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The SFML sprite object owned by this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_positionable}{Positionable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_positionable_aa5ac62eec93831b439524651f3a96282}{position\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The 2D position of the object in game coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_enemy}{Enemy}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collision_circle}{Collision\+Circle}} \mbox{\hyperlink{class_enemy_a53f5f7940c1cf1af557ff3f2a4faa563}{hitbox\+\_\+}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_enemy}{Enemy}\textquotesingle{}s hitbox. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An \doxylink{class_enemy}{Enemy} subclass. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_i_attack_pattern}{IAttack\+Pattern}, \doxylink{class_enemy}{Enemy} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_enemy1_a37a3f519c3790f19b7ff3278eda33cd7}\label{class_enemy1_a37a3f519c3790f19b7ff3278eda33cd7} 
+\index{Enemy1@{Enemy1}!Enemy1@{Enemy1}}
+\index{Enemy1@{Enemy1}!Enemy1@{Enemy1}}
+\doxysubsubsection{\texorpdfstring{Enemy1()}{Enemy1()}}
+{\footnotesize\ttfamily Enemy1\+::\+Enemy1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+An explicit constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projectiles} & -\/ a reference to the Interface of the \doxylink{class_projectile}{Projectile} Manager. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_enemy1_a6f2dcf53edd6f5dad02cf2ef232e873a}\label{class_enemy1_a6f2dcf53edd6f5dad02cf2ef232e873a} 
+\index{Enemy1@{Enemy1}!attack@{attack}}
+\index{attack@{attack}!Enemy1@{Enemy1}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily void Enemy1\+::attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player,  }\item[{\mbox{\hyperlink{class_i_add_projectile}{IAdd\+Projectile}} \&}]{projectiles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Defines attack behaviour of \doxylink{class_enemy1}{Enemy1}. Calls \doxylink{class_enemy1_a955e9625a9539c3aa4b2d00673cf5988}{choose\+Pattern()} whenever an attack pattern finishes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & -\/ a reference to the \doxylink{class_player}{Player} object. \\
+\hline
+{\em projectiles} & -\/ a reference to the IAdd\+Projectiles interface of \doxylink{class_projectile_manager}{Projectile\+Manager} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_enemy1_a955e9625a9539c3aa4b2d00673cf5988}{choose\+Pattern}, \doxylink{class_i_attack_pattern}{IAttack\+Pattern}, \doxylink{class_player}{Player}, IAdd\+Projectiles 
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{class_i_attack_pattern_a2bc29249375f1ad83c9570370efc111b}{IAttack\+Pattern}}.
+
+\Hypertarget{class_enemy1_a955e9625a9539c3aa4b2d00673cf5988}\label{class_enemy1_a955e9625a9539c3aa4b2d00673cf5988} 
+\index{Enemy1@{Enemy1}!choosePattern@{choosePattern}}
+\index{choosePattern@{choosePattern}!Enemy1@{Enemy1}}
+\doxysubsubsection{\texorpdfstring{choosePattern()}{choosePattern()}}
+{\footnotesize\ttfamily void Enemy1\+::choose\+Pattern (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Uses \doxylink{class_random_number_generator}{Random\+Number\+Generator} to randomly select the next attack pattern. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_random_number_generator}{Random\+Number\+Generator}, Attack\+Pattern 
+\end{DoxySeeAlso}
+\Hypertarget{class_enemy1_a25d930a4939838b29aeb3479521aa9ab}\label{class_enemy1_a25d930a4939838b29aeb3479521aa9ab} 
+\index{Enemy1@{Enemy1}!process@{process}}
+\index{process@{process}!Enemy1@{Enemy1}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Enemy1\+::process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+The main process method of \doxylink{class_enemy1}{Enemy1}. should get called each frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & -\/ a reference to the \doxylink{class_player}{Player} object. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_enemy_a772c6a76617a52ad603c28afcd63c0ef}{Enemy}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_enemy1_a690d927f783525e7b3a733ed79cd379d}\label{class_enemy1_a690d927f783525e7b3a733ed79cd379d} 
+\index{Enemy1@{Enemy1}!going\_left\_@{going\_left\_}}
+\index{going\_left\_@{going\_left\_}!Enemy1@{Enemy1}}
+\doxysubsubsection{\texorpdfstring{going\_left\_}{going\_left\_}}
+{\footnotesize\ttfamily bool Enemy1\+::going\+\_\+left\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Used for horizontal movement. 
+
+\Hypertarget{class_enemy1_aea977f0e96222d80f890068ce0213273}\label{class_enemy1_aea977f0e96222d80f890068ce0213273} 
+\index{Enemy1@{Enemy1}!pattern\_@{pattern\_}}
+\index{pattern\_@{pattern\_}!Enemy1@{Enemy1}}
+\doxysubsubsection{\texorpdfstring{pattern\_}{pattern\_}}
+{\footnotesize\ttfamily int Enemy1\+::pattern\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The current attack pattern. Used for switching up attack patterns. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_enemy1_8h}{Enemy1.\+h}}\item 
+\mbox{\hyperlink{_enemy1_8cpp}{Enemy1.\+cpp}}\end{DoxyCompactItemize}

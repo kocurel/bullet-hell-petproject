@@ -1,0 +1,126 @@
+\doxysection{Input\+Manager Class Reference}
+\hypertarget{class_input_manager}{}\label{class_input_manager}\index{InputManager@{InputManager}}
+
+
+The \doxylink{class_input_manager}{Input\+Manager} class handles keyboard input states.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_input_manager_abf6fef4ddfb8653e32a8d797ee862f3b}{Input\+Manager}} (const \mbox{\hyperlink{class_input_manager}{Input\+Manager}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor to prevent copying. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_input_manager}{Input\+Manager}} \& \mbox{\hyperlink{class_input_manager_a0f2bda14104ad625c7294ae994bc2926}{operator=}} (const \mbox{\hyperlink{class_input_manager}{Input\+Manager}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Deleted assignment operator to prevent copying. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_manager_aa6907eebb5e63a21e10276e233575680}{set\+Key\+Just\+Pressed}} (sf\+::\+Keyboard\+::\+Key key)
+\begin{DoxyCompactList}\small\item\em Sets the state of a key to \textquotesingle{}just pressed\textquotesingle{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_input_manager_acdec9ed6e5455b62bf8a1513f5cc67d1}{is\+Key\+Just\+Pressed}} (sf\+::\+Keyboard\+::\+Key key) const
+\begin{DoxyCompactList}\small\item\em Checks if a key was just pressed in the current frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_manager_a4a4cdc68f99df31ea018b0d837b80fcb}{clear\+Inputs}} ()
+\begin{DoxyCompactList}\small\item\em Clears all \textquotesingle{}just pressed\textquotesingle{} states for all keys. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_input_manager}{Input\+Manager}} \& \mbox{\hyperlink{class_input_manager_a4e1058b89c07e2f3ec1097b843c19fc8}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Get the single instance of the \doxylink{class_input_manager}{Input\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_input_manager}{Input\+Manager} class handles keyboard input states. 
+
+This class implements the Singleton design pattern to ensure that there is only one instance of the input manager throughout the application. It tracks which keys were just pressed in the current frame 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_input_manager_abf6fef4ddfb8653e32a8d797ee862f3b}\label{class_input_manager_abf6fef4ddfb8653e32a8d797ee862f3b} 
+\index{InputManager@{InputManager}!InputManager@{InputManager}}
+\index{InputManager@{InputManager}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{InputManager()}{InputManager()}}
+{\footnotesize\ttfamily Input\+Manager\+::\+Input\+Manager (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_input_manager}{Input\+Manager}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy constructor to prevent copying. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_input_manager_a4a4cdc68f99df31ea018b0d837b80fcb}\label{class_input_manager_a4a4cdc68f99df31ea018b0d837b80fcb} 
+\index{InputManager@{InputManager}!clearInputs@{clearInputs}}
+\index{clearInputs@{clearInputs}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{clearInputs()}{clearInputs()}}
+{\footnotesize\ttfamily void Input\+Manager\+::clear\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears all \textquotesingle{}just pressed\textquotesingle{} states for all keys. 
+
+This method should be called once at the end of each game loop iteration (after all events have been processed and input queries have been made) to prepare for the next frame. \Hypertarget{class_input_manager_a4e1058b89c07e2f3ec1097b843c19fc8}\label{class_input_manager_a4e1058b89c07e2f3ec1097b843c19fc8} 
+\index{InputManager@{InputManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_input_manager}{Input\+Manager}} \& Input\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the single instance of the \doxylink{class_input_manager}{Input\+Manager}. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{class_input_manager}{Input\+Manager} instance. 
+\end{DoxyReturn}
+\Hypertarget{class_input_manager_acdec9ed6e5455b62bf8a1513f5cc67d1}\label{class_input_manager_acdec9ed6e5455b62bf8a1513f5cc67d1} 
+\index{InputManager@{InputManager}!isKeyJustPressed@{isKeyJustPressed}}
+\index{isKeyJustPressed@{isKeyJustPressed}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{isKeyJustPressed()}{isKeyJustPressed()}}
+{\footnotesize\ttfamily bool Input\+Manager\+::is\+Key\+Just\+Pressed (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{key }\end{DoxyParamCaption}) const}
+
+
+
+Checks if a key was just pressed in the current frame. 
+
+A key is considered \textquotesingle{}just pressed\textquotesingle{} if it transitioned from not pressed to pressed within the current frame. This state is reset by \doxylink{class_input_manager_a4a4cdc68f99df31ea018b0d837b80fcb}{clear\+Inputs()} at the end of each frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The SFML keyboard key code to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the key was just pressed, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_input_manager_a0f2bda14104ad625c7294ae994bc2926}\label{class_input_manager_a0f2bda14104ad625c7294ae994bc2926} 
+\index{InputManager@{InputManager}!operator=@{operator=}}
+\index{operator=@{operator=}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_input_manager}{Input\+Manager}} \& Input\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_input_manager}{Input\+Manager}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted assignment operator to prevent copying. 
+
+\Hypertarget{class_input_manager_aa6907eebb5e63a21e10276e233575680}\label{class_input_manager_aa6907eebb5e63a21e10276e233575680} 
+\index{InputManager@{InputManager}!setKeyJustPressed@{setKeyJustPressed}}
+\index{setKeyJustPressed@{setKeyJustPressed}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{setKeyJustPressed()}{setKeyJustPressed()}}
+{\footnotesize\ttfamily void Input\+Manager\+::set\+Key\+Just\+Pressed (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{key }\end{DoxyParamCaption})}
+
+
+
+Sets the state of a key to \textquotesingle{}just pressed\textquotesingle{}. 
+
+This method should be called when an sf\+::\+Event\+::\+Key\+Pressed event is detected. The key\textquotesingle{}s \textquotesingle{}just pressed\textquotesingle{} state will be true until \doxylink{class_input_manager_a4a4cdc68f99df31ea018b0d837b80fcb}{clear\+Inputs()} is called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The SFML keyboard key code (e.\+g., sf\+::\+Keyboard\+::Z, sf\+::\+Keyboard\+::\+Space). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_input_manager_8h}{Input\+Manager.\+h}}\item 
+\mbox{\hyperlink{_input_manager_8cpp}{Input\+Manager.\+cpp}}\end{DoxyCompactItemize}

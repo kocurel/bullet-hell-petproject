@@ -1,0 +1,29 @@
+\doxysection{Event\+Queue.\+h}
+\hypertarget{_event_queue_8h_source}{}\label{_event_queue_8h_source}\mbox{\hyperlink{_event_queue_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_notify_end_wave_8h}{INotifyEndWave.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_add_event_8h}{IAddEvent.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event}{Event}};}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemies}{Enemies}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_projectiles}{Projectiles}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_event_queue}{EventQueue}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_notify_end_wave}{INotifyEndWave}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_add_event}{IAddEvent}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ std::queue<std::unique\_ptr<Event>>\ events\_;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ waiting\_\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_queue_a73d0c91ac0c0d0aee03760602d8f916b}{process}}(\mbox{\hyperlink{class_enemies}{Enemies}}\&\ enemies,\ \mbox{\hyperlink{class_projectiles}{Projectiles}}\&\ projectiles);}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_event_queue_ab7de5a41befc94aac0f461391e67f14a}{EventQueue}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_queue_a48529eff5cb7971b4f0dc577ccfebd8e}{endWave}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_event_queue_a3eb34d66918dd4a2874cb683cb4b04b5}{isStageOver}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_queue_a2f83ecd915ec09a42bcf0f52d39eec8c}{clearEvents}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_event_queue_a1be762f395ae07899e8e643f5430633a}{addEvent}}(std::unique\_ptr<Event>\&\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ \};}
+
+\end{DoxyCode}

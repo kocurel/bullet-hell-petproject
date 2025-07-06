@@ -1,0 +1,124 @@
+\doxysection{Sprite\+Owner Class Reference}
+\hypertarget{class_sprite_owner}{}\label{class_sprite_owner}\index{SpriteOwner@{SpriteOwner}}
+
+
+Base class for objects that own and manage an SFML sprite. Provides basic functionalities for rendering a sprite, and disabling the object.  
+
+
+
+
+{\ttfamily \#include $<$Sprite\+Owner.\+h$>$}
+
+Inheritance diagram for Sprite\+Owner\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.210526cm]{class_sprite_owner}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sprite_owner_a42c30188e75ab8b437364b66e4ecb253}{is\+Disabled}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the sprite owner is currently disabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sprite_owner_aff092b79461bcda2b34cd48358227d05}{disable}} ()
+\begin{DoxyCompactList}\small\item\em Disables the sprite owner. Sets the internal flag to true, preventing further rendering or processing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sprite_owner_aec9bd1d26b203a50e38d1ac4e4776247}{render}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the owned sprite to the specified SFML render window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sprite_owner_ac188881cf211fc2b9213c7fc8b9e05a0}{Sprite\+Owner}} ()
+\begin{DoxyCompactList}\small\item\em Protected default constructor. Initializes the internal sf\+::\+Sprite with an error texture. This constructor is protected to ensure creation through derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sprite_owner_a789762815ee1eb2238e1f33bc16ea7db}{disabled\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the sprite owner is disabled (for rendering and processing). \end{DoxyCompactList}\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_sprite_owner_a5329203d1a37c21b1bbf659473246ec8}{sprite\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The SFML sprite object owned by this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for objects that own and manage an SFML sprite. Provides basic functionalities for rendering a sprite, and disabling the object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sprite_owner_ac188881cf211fc2b9213c7fc8b9e05a0}\label{class_sprite_owner_ac188881cf211fc2b9213c7fc8b9e05a0} 
+\index{SpriteOwner@{SpriteOwner}!SpriteOwner@{SpriteOwner}}
+\index{SpriteOwner@{SpriteOwner}!SpriteOwner@{SpriteOwner}}
+\doxysubsubsection{\texorpdfstring{SpriteOwner()}{SpriteOwner()}}
+{\footnotesize\ttfamily Sprite\+Owner\+::\+Sprite\+Owner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Protected default constructor. Initializes the internal sf\+::\+Sprite with an error texture. This constructor is protected to ensure creation through derived classes. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sprite_owner_aff092b79461bcda2b34cd48358227d05}\label{class_sprite_owner_aff092b79461bcda2b34cd48358227d05} 
+\index{SpriteOwner@{SpriteOwner}!disable@{disable}}
+\index{disable@{disable}!SpriteOwner@{SpriteOwner}}
+\doxysubsubsection{\texorpdfstring{disable()}{disable()}}
+{\footnotesize\ttfamily void Sprite\+Owner\+::disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disables the sprite owner. Sets the internal flag to true, preventing further rendering or processing. 
+
+\Hypertarget{class_sprite_owner_a42c30188e75ab8b437364b66e4ecb253}\label{class_sprite_owner_a42c30188e75ab8b437364b66e4ecb253} 
+\index{SpriteOwner@{SpriteOwner}!isDisabled@{isDisabled}}
+\index{isDisabled@{isDisabled}!SpriteOwner@{SpriteOwner}}
+\doxysubsubsection{\texorpdfstring{isDisabled()}{isDisabled()}}
+{\footnotesize\ttfamily bool Sprite\+Owner\+::is\+Disabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the sprite owner is currently disabled. 
+
+\begin{DoxyReturn}{Returns}
+True if the object is disabled, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_sprite_owner_aec9bd1d26b203a50e38d1ac4e4776247}\label{class_sprite_owner_aec9bd1d26b203a50e38d1ac4e4776247} 
+\index{SpriteOwner@{SpriteOwner}!render@{render}}
+\index{render@{render}!SpriteOwner@{SpriteOwner}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Sprite\+Owner\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders the owned sprite to the specified SFML render window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML Render\+Window to which the sprite will be drawn. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_sprite_owner_a789762815ee1eb2238e1f33bc16ea7db}\label{class_sprite_owner_a789762815ee1eb2238e1f33bc16ea7db} 
+\index{SpriteOwner@{SpriteOwner}!disabled\_@{disabled\_}}
+\index{disabled\_@{disabled\_}!SpriteOwner@{SpriteOwner}}
+\doxysubsubsection{\texorpdfstring{disabled\_}{disabled\_}}
+{\footnotesize\ttfamily bool Sprite\+Owner\+::disabled\+\_\+ = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flag indicating if the sprite owner is disabled (for rendering and processing). 
+
+\Hypertarget{class_sprite_owner_a5329203d1a37c21b1bbf659473246ec8}\label{class_sprite_owner_a5329203d1a37c21b1bbf659473246ec8} 
+\index{SpriteOwner@{SpriteOwner}!sprite\_@{sprite\_}}
+\index{sprite\_@{sprite\_}!SpriteOwner@{SpriteOwner}}
+\doxysubsubsection{\texorpdfstring{sprite\_}{sprite\_}}
+{\footnotesize\ttfamily sf\+::\+Sprite Sprite\+Owner\+::sprite\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The SFML sprite object owned by this instance. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_sprite_owner_8h}{Sprite\+Owner.\+h}}\item 
+\mbox{\hyperlink{_sprite_owner_8cpp}{Sprite\+Owner.\+cpp}}\end{DoxyCompactItemize}
