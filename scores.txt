@@ -40,3 +40,35 @@ Local time: Wed Jul  2 17:08:21 2025
  Stage: "./event_dir\\level1.txt" SCORE: 110
 Local time: Wed Jul  2 23:31:31 2025
  Stage: "./event_dir\\level1.txt" SCORE: 110
+Local time: Tue Jul  8 07:49:53 2025
+ Stage: "./event_dir\\level1.txt" SCORE: 90
+Local time: Tue Jul  8 08:03:00 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 110
+Local time: Tue Jul  8 08:04:54 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 90
+Local time: Tue Jul  8 08:05:19 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 70
+Local time: Tue Jul  8 08:22:48 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 170
+Local time: Fri Jul 11 10:57:31 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 130
+Local time: Fri Jul 11 10:57:56 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 130
+Local time: Fri Jul 11 11:22:05 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 150
+Local time: Fri Jul 11 11:53:35 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 110
+Local time: Fri Jul 11 13:29:21 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 200
+Local time: Fri Jul 11 21:26:09 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 70
+Local time: Fri Jul 11 21:34:55 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 70
+Local time: Fri Jul 11 21:36:14 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 70
+Local time: Fri Jul 11 21:36:40 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 70
+Local time: Fri Jul 11 21:37:08 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 70
+Local time: Fri Jul 11 21:38:55 2025
+ Stage: "./event_dir\\stage1.txt" SCORE: 70

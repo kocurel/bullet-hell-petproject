@@ -76,6 +76,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)out\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)out\$(Configuration)\</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -89,9 +95,21 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\DEV\source\repos\test1\include\SFML-3.0.0\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\DEV\bullet_hell\lib\SFML;C:\DEV\source\repos\test1\include\SFML-3.0.0\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-audio-d.lib;sfml-graphics-d.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-network-d.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>mkdir $(OutputPath)dlls
+xcopy $(SolutionDir)dependencies\dlls $(OutputPath)dlls /y
+mkdir $(OutputPath)assets
+xcopy $(SolutionDir)assets $(OutputPath)assets /y
+mkdir $(OutputPath)event_dir
+xcopy $(SolutionDir)event_dir $(OutputPath)event_dir /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -113,6 +131,18 @@
       <AdditionalDependencies>sfml-audio.lib;sfml-graphics.lib;sfml-system.lib;sfml-window.lib;sfml-network.lib;sfml-main-s.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\DEV\source\repos\test1\include\SFML-3.0.0\lib</AdditionalLibraryDirectories>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>mkdir $(OutputPath)dlls
+xcopy $(SolutionDir)dependencies\dlls $(OutputPath)dlls /y
+mkdir $(OutputPath)assets
+xcopy $(SolutionDir)assets $(OutputPath)assets /y
+mkdir $(OutputPath)event_dir
+xcopy $(SolutionDir)event_dir $(OutputPath)event_dir /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -153,74 +183,80 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CollisionCircle.cpp" />
-    <ClCompile Include="EnemyManager.cpp" />
-    <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="Enemy1.cpp" />
-    <ClCompile Include="Enemy2.cpp" />
-    <ClCompile Include="Event.cpp" />
-    <ClCompile Include="EventFactory.cpp" />
-    <ClCompile Include="EventParser.cpp" />
-    <ClCompile Include="EventManager.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="InputManager.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="NewEnemy.cpp" />
-    <ClCompile Include="NewProjectile.cpp" />
-    <ClCompile Include="Pickup.cpp" />
-    <ClCompile Include="PickupManager.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Positionable.cpp" />
-    <ClCompile Include="Projectile.cpp" />
-    <ClCompile Include="ProjectileFalling.cpp" />
-    <ClCompile Include="ProjectileManager.cpp" />
-    <ClCompile Include="ProjectileStraight.cpp" />
-    <ClCompile Include="RandomNumberGenerator.cpp" />
-    <ClCompile Include="SeriesInLinePattern.cpp" />
-    <ClCompile Include="SpriteOwner.cpp" />
-    <ClCompile Include="TextureManager.cpp" />
-    <ClCompile Include="TripleStraightPattern.cpp" />
-    <ClCompile Include="UpwardSprayPattern.cpp" />
-    <ClCompile Include="UserInterface.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Enemy2.h" />
-    <ClInclude Include="InputManager.h" />
-    <ClInclude Include="PickupClasses.h" />
-    <ClInclude Include="PickupManager.h" />
-    <ClInclude Include="IAttackPattern.h" />
-    <ClInclude Include="CollisionCircle.h" />
-    <ClInclude Include="Enemy1.h" />
-    <ClInclude Include="EventFactory.h" />
-    <ClInclude Include="IAddEvent.h" />
-    <ClInclude Include="INotifyEndWave.h" />
-    <ClInclude Include="IAddProjectile.h" />
-    <ClInclude Include="EventParser.h" />
-    <ClInclude Include="Pickup.h" />
-    <ClInclude Include="Positionable.h" />
-    <ClInclude Include="NewProjectile.h" />
-    <ClInclude Include="ProjectileBuilder.h" />
-    <ClInclude Include="ProjectileFalling.h" />
-    <ClInclude Include="ProjectileStraight.h" />
-    <ClInclude Include="Event.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="Enemy.h" />
-    <ClInclude Include="RandomNumberGenerator.h" />
-    <ClInclude Include="SeriesInLinePattern.h" />
-    <ClInclude Include="SpriteOwner.h" />
-    <ClInclude Include="EventManager.h" />
-    <ClInclude Include="NewEnemy.h" />
-    <ClInclude Include="Projectile.h" />
-    <ClInclude Include="ProjectileManager.h" />
-    <ClInclude Include="EnemyManager.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="TextureManager.h" />
-    <ClInclude Include="TripleStraightPattern.h" />
-    <ClInclude Include="UpwardSprayPattern.h" />
-    <ClInclude Include="UserInterface.h" />
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="event_dir\level1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\CollisionCircle.h" />
+    <ClInclude Include="source\Enemy.h" />
+    <ClInclude Include="source\Enemy1.h" />
+    <ClInclude Include="source\Enemy2.h" />
+    <ClInclude Include="source\EnemyManager.h" />
+    <ClInclude Include="source\Event.h" />
+    <ClInclude Include="source\EventFactory.h" />
+    <ClInclude Include="source\EventManager.h" />
+    <ClInclude Include="source\EventParser.h" />
+    <ClInclude Include="source\Game.h" />
+    <ClInclude Include="source\IAddEvent.h" />
+    <ClInclude Include="source\IEnemyManager.h" />
+    <ClInclude Include="source\IPickupManager.h" />
+    <ClInclude Include="source\IProjectileManager.h" />
+    <ClInclude Include="source\IAttackPattern.h" />
+    <ClInclude Include="source\IEventManager.h" />
+    <ClInclude Include="source\InputManager.h" />
+    <ClInclude Include="source\NewEnemy.h" />
+    <ClInclude Include="source\NewProjectile.h" />
+    <ClInclude Include="source\Pickup.h" />
+    <ClInclude Include="source\PickupClasses.h" />
+    <ClInclude Include="source\PickupFactory.h" />
+    <ClInclude Include="source\PickupManager.h" />
+    <ClInclude Include="source\Player.h" />
+    <ClInclude Include="source\Positionable.h" />
+    <ClInclude Include="source\ProjecitleWavy.h" />
+    <ClInclude Include="source\Projectile.h" />
+    <ClInclude Include="source\ProjectileBuilder.h" />
+    <ClInclude Include="source\ProjectileFalling.h" />
+    <ClInclude Include="source\ProjectileManager.h" />
+    <ClInclude Include="source\ProjectileStraight.h" />
+    <ClInclude Include="source\RandomNumberGenerator.h" />
+    <ClInclude Include="source\SeriesInLinePattern.h" />
+    <ClInclude Include="source\SpriteOwner.h" />
+    <ClInclude Include="source\TextureManager.h" />
+    <ClInclude Include="source\TripleStraightPattern.h" />
+    <ClInclude Include="source\UpwardSprayPattern.h" />
+    <ClInclude Include="source\UserInterface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\CollisionCircle.cpp" />
+    <ClCompile Include="source\Enemy.cpp" />
+    <ClCompile Include="source\Enemy1.cpp" />
+    <ClCompile Include="source\Enemy2.cpp" />
+    <ClCompile Include="source\EnemyManager.cpp" />
+    <ClCompile Include="source\Event.cpp" />
+    <ClCompile Include="source\EventFactory.cpp" />
+    <ClCompile Include="source\EventManager.cpp" />
+    <ClCompile Include="source\EventParser.cpp" />
+    <ClCompile Include="source\Game.cpp" />
+    <ClCompile Include="source\InputManager.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\NewEnemy.cpp" />
+    <ClCompile Include="source\NewProjectile.cpp" />
+    <ClCompile Include="source\Pickup.cpp" />
+    <ClCompile Include="source\PickupFactory.cpp" />
+    <ClCompile Include="source\PickupManager.cpp" />
+    <ClCompile Include="source\Player.cpp" />
+    <ClCompile Include="source\Positionable.cpp" />
+    <ClCompile Include="source\ProjecitleWavy.cpp" />
+    <ClCompile Include="source\Projectile.cpp" />
+    <ClCompile Include="source\ProjectileFalling.cpp" />
+    <ClCompile Include="source\ProjectileManager.cpp" />
+    <ClCompile Include="source\ProjectileStraight.cpp" />
+    <ClCompile Include="source\RandomNumberGenerator.cpp" />
+    <ClCompile Include="source\SeriesInLinePattern.cpp" />
+    <ClCompile Include="source\SpriteOwner.cpp" />
+    <ClCompile Include="source\TextureManager.cpp" />
+    <ClCompile Include="source\TripleStraightPattern.cpp" />
+    <ClCompile Include="source\UpwardSprayPattern.cpp" />
+    <ClCompile Include="source\UserInterface.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
