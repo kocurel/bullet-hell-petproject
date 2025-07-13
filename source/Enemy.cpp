@@ -3,13 +3,13 @@
 #include "IProjectileManager.h"
 #include "Projectile.h"
 #include "ProjectileManager.h"
-#include "Player.h"
+#include "IPlayer.h"
 #include "UserInterface.h"
 #include "IPickupManager.h"
 #include "RandomNumberGenerator.h"
 #include "PickupFactory.h"
 
-Enemy::Enemy(IProjectileManager& projectiles) : projectiles_(projectiles) {
+Enemy::Enemy(IProjectileManager& projectiles) : projectile_manager_(projectiles) {
 }
 
 void Enemy::onDestruction(IPickupManager& pickups) {

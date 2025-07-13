@@ -2,7 +2,7 @@
 /// @brief declares all the different Pickup subclasses.
 #pragma once
 #include "Pickup.h"
-#include "Player.h"
+#include "IPlayer.h"
 #include "TextureManager.h"
 #include <SFML/System/Vector2.hpp>
 
@@ -13,8 +13,7 @@ public:
 		position_ = position;
 		sprite_.setColor(sf::Color(240, 0, 0));
 	}
-	void onPickup(Player& player) override {
-		disable();
+	void onPickup(IPlayer& player) override {
 		player.AttackSpeedUp();
 	};
 };
@@ -26,8 +25,7 @@ public:
 		position_ = position;
 		sprite_.setColor(sf::Color(0, 240, 0));
 	}
-	void onPickup(Player& player) override {
-		disable();
+	void onPickup(IPlayer& player) override {
 		player.increaseHealth();
 	};
 };
@@ -39,8 +37,7 @@ public:
 		position_ = position;
 		sprite_.setColor(sf::Color(255, 223, 0));
 	}
-	void onPickup(Player& player) override {
-		disable();
+	void onPickup(IPlayer& player) override {
 		player.nextAttackPattern();
 	};
 };
@@ -52,8 +49,7 @@ public:
 		position_ = position;
 		sprite_.setColor(sf::Color(255, 133, 25));
 	}
-	void onPickup(Player& player) override {
-		disable();
+	void onPickup(IPlayer& player) override {
 		player.increaseBomb();
 	};
 };

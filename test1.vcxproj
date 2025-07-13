@@ -199,6 +199,7 @@ xcopy $(SolutionDir)event_dir $(OutputPath)event_dir /y</Command>
     <ClInclude Include="source\IAddEvent.h" />
     <ClInclude Include="source\IEnemyManager.h" />
     <ClInclude Include="source\IPickupManager.h" />
+    <ClInclude Include="source\IPlayer.h" />
     <ClInclude Include="source\IProjectileManager.h" />
     <ClInclude Include="source\IAttackPattern.h" />
     <ClInclude Include="source\IEventManager.h" />
@@ -214,6 +215,7 @@ xcopy $(SolutionDir)event_dir $(OutputPath)event_dir /y</Command>
     <ClInclude Include="source\ProjecitleWavy.h" />
     <ClInclude Include="source\Projectile.h" />
     <ClInclude Include="source\ProjectileBuilder.h" />
+    <ClInclude Include="source\ProjectileFactory.h" />
     <ClInclude Include="source\ProjectileFalling.h" />
     <ClInclude Include="source\ProjectileManager.h" />
     <ClInclude Include="source\ProjectileStraight.h" />

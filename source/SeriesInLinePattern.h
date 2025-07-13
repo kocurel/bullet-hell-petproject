@@ -6,10 +6,10 @@
 #include "ProjectileBuilder.h"
 #include "ProjectileFalling.h"
 #include "IProjectileManager.h"
-#include "Player.h"
+#include "IPlayer.h"
 #include "Projectile.h"
 
-class Player;
+class IPlayer;
 class IAddProjectile;
 /// @brief An attack pattern where a series of small projectiles are shot in a line.
 ///
@@ -51,7 +51,7 @@ protected:
     /// including delays between shots and reloads between series.
     /// @param player - a reference to the Player object, used to determine target position.
     /// @param projectiles - a reference to an IAddProjectile interface to create new enemy projectiles.
-    void attack(Player& player, IProjectileManager& projectiles) override {
+    void attack(IPlayer& player, IProjectileManager& projectiles) override {
         static ProjectileBuilder<T> pbs(projectiles);
         if (shots_left_ > 0) {
             if (--delay_left <= 0) {
@@ -65,7 +65,7 @@ protected:
                     .scale(projectile_scale_)
                     .velocity(8.f)
                     .build();
-                projectiles.createEnemyProjectile(std::move(projectile));
+                projectiles.addEnemyProjectile(std::move(projectile));
             }
         }
         else if (--until_reload <= 0) {

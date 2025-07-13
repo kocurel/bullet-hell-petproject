@@ -5,7 +5,7 @@
 #include <cmath>
 #include <utility>
 
-Projectile::Projectile(IProjectileManager& projectiles) : projectiles_(projectiles) {}
+Projectile::Projectile(IProjectileManager& projectiles) : projectile_manager_(projectiles) {}
 
 const CollisionCircle& Projectile::getHitbox() const {
     return hitbox_;

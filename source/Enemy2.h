@@ -22,7 +22,7 @@ protected:
     /// @param player - a reference to the Player object.
     /// @param projectiles - a reference to the IAddProjectiles interface of ProjectileManager
     /// @sa choosePattern, IAttackPattern, Player, IAddProjectiles
-    void attack(Player& player, IProjectileManager& projectiles) override;
+    void attack(IPlayer& player, IProjectileManager& projectiles) override;
 public:
     /// @brief An explicit constructor
     /// @param projectiles - a reference to the Interface of the Projectile Manager. 
@@ -31,5 +31,5 @@ public:
     /// @brief The main process method of Enemy2.
     /// should get called each frame.
     /// @param player - a reference to the Player object.
-    void process(Player& player) override;
+    void process(IPlayer& player) override;
 };

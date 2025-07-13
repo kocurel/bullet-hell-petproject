@@ -6,7 +6,7 @@
 #include "Player.h"
 #include "Projectile.h"
 
-void UpwardSprayPattern::attack(Player& player, IProjectileManager& projectiles) {
+void UpwardSprayPattern::attack(IPlayer& player, IProjectileManager& projectiles) {
 	static ProjectileBuilder<ProjectileFalling> pbs(projectiles);
 	if (shots_left_ > 0) {
 		if (--delay_left <= 0) {
@@ -22,7 +22,7 @@ void UpwardSprayPattern::attack(Player& player, IProjectileManager& projectiles)
 				.velocity(velocity)
 				.scale(scale)
 				.build();
-			projectiles.createEnemyProjectile(std::move(projectile));
+			projectiles.addEnemyProjectile(std::move(projectile));
 			direction_ = rotateVector(direction_, -18);
 		}
 	}

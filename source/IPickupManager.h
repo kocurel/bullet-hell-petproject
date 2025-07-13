@@ -4,7 +4,7 @@
 namespace sf {
 	class RenderWindow;
 }
-class Player;
+class IPlayer;
 
 class IPickupManager {
 public:
@@ -14,7 +14,7 @@ public:
 	/// @param window - a reference to the SFML RenderWindow.
 	virtual void render(sf::RenderWindow& window) = 0;
 	/// @brief Processes all active pickups.
-	virtual void process() = 0;
+	virtual void process(IPlayer& player) = 0;
 	/// @brief Creates a pickup by taking ownership of the Pickup passed by parameter.
 	/// @param pickup - rvalue reference to a unique_pointer to a Pickup object.
 	virtual void createPickup(std::unique_ptr<Pickup>&& pickup) = 0;

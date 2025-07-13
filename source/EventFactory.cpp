@@ -13,33 +13,33 @@
 #include "NewProjectile.h"
 
 EventFactory::EventFactory(IProjectileManager& projectiles, IEventManager& event_manager)
-    : projectiles_(projectiles),
+    : projectile_manager_(projectiles),
     event_manager_(event_manager) {
 }
 
 void EventFactory::createEvent(int id, bool wait, int countdown) {
     std::unique_ptr<Enemy> enemy;
     std::unique_ptr<Event> event;
-    ProjectileBuilder<ProjectileStraight> pb(projectiles_);
+    ProjectileBuilder<ProjectileStraight> pb(projectile_manager_);
     std::unique_ptr<Projectile> projectile;
     switch (id) {
     case 0x010:
-        enemy = std::make_unique<Enemy1>(projectiles_);
+        enemy = std::make_unique<Enemy1>(projectile_manager_);
         enemy->setPosition(sf::Vector2f(701.f, -50.f));
         event = std::make_unique<NewEnemy>(std::move(enemy));
         break;
     case 0x011:
-        enemy = std::make_unique<Enemy1>(projectiles_);
+        enemy = std::make_unique<Enemy1>(projectile_manager_);
         enemy->setPosition(sf::Vector2f(199.f, -50.f));
         event = std::make_unique<NewEnemy>(std::move(enemy));
         break;
     case 0x012:
-        enemy = std::make_unique<Enemy1>(projectiles_);
+        enemy = std::make_unique<Enemy1>(projectile_manager_);
         enemy->setPosition(sf::Vector2f(450.f, -50.f));
         event = std::make_unique<NewEnemy>(std::move(enemy));
         break;
     case 0x020:
-        enemy = std::make_unique<Enemy2>(projectiles_);
+        enemy = std::make_unique<Enemy2>(projectile_manager_);
         enemy->setPosition(sf::Vector2f(450.f, -50.f));
         event = std::make_unique<NewEnemy>(std::move(enemy));
         break;

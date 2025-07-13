@@ -40,7 +40,7 @@ public:
 	///
 	/// This method first calls cleanup() to remove disabled pickups.
 	/// Then, it iterates through all remaining active pickups and calls their process() method.
-	void process() override;
+	void process(IPlayer& player) override;
 
 	/// @brief Renders all active pickups on the provided SFML render window.
 	///

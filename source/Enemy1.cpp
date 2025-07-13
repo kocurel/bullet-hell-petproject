@@ -60,24 +60,24 @@ void Enemy1::choosePattern() {
     }
 }
 
-void Enemy1::attack(Player& player, IProjectileManager& projectiles_) {
+void Enemy1::attack(IPlayer& player, IProjectileManager& projectile_manager_) {
     switch (pattern_) {
     case 0:
-        UpwardSprayPattern::attack(player, projectiles_);
+        UpwardSprayPattern::attack(player, projectile_manager_);
         if (UpwardSprayPattern::switch_signal_) {
             choosePattern();
             UpwardSprayPattern::switch_signal_ = false;
         }
         break;
     case 1:
-        SeriesInLinePattern::attack(player, projectiles_);
+        SeriesInLinePattern::attack(player, projectile_manager_);
         if (SeriesInLinePattern::switch_signal_) {
             choosePattern();
             SeriesInLinePattern::switch_signal_ = false;
         }
         break;
     case 2:
-        TripleStraightPattern::attack(player, projectiles_);
+        TripleStraightPattern::attack(player, projectile_manager_);
         if (TripleStraightPattern::switch_signal_) {
             choosePattern();
             TripleStraightPattern::switch_signal_ = false;
@@ -86,7 +86,7 @@ void Enemy1::attack(Player& player, IProjectileManager& projectiles_) {
     }
 }
 
-void Enemy1::process(Player& player) {
+void Enemy1::process(IPlayer& player) {
     bool getting_into_position = position_.y < 50;
     if (getting_into_position) {
         position_ += sf::Vector2f(0.f, 1.f) * 3.f;
@@ -107,7 +107,7 @@ void Enemy1::process(Player& player) {
         }
     }
     // attack
-    attack(player, projectiles_);
+    attack(player, projectile_manager_);
     hitbox_.position_ = position_;
     sprite_.setPosition(position_);
     if (position_.y > 1200) {

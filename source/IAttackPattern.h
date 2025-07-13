@@ -4,7 +4,7 @@
 #include "Positionable.h"
 
 // forward declarations
-class Player;
+class IPlayer;
 class IProjectileManager;
 
 /// @brief Interface base class of all attack patterns
@@ -13,5 +13,5 @@ protected:
 	/// @brief Pure virtual function defining the logic of each attack pattern.
 	/// @param player - a reference to the Player object.
 	/// @param projectile_manager - a reference to the interface of ProjectileManager
-	virtual void attack(Player& player, IProjectileManager& projectile_manager) = 0;
+	virtual void attack(IPlayer& player, IProjectileManager& projectile_manager) = 0;
 };

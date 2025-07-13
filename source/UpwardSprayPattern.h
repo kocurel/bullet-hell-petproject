@@ -60,7 +60,7 @@ protected:
     /// the projectile direction for the spray effect.
     /// @param player - a reference to the Player object (though not directly used for target in this pattern's `attack` method).
     /// @param projectiles - a reference to an IProjectileManager interface to create new enemy projectiles.
-    void attack(Player& player, IProjectileManager& projectiles) override;
+    void attack(IPlayer& player, IProjectileManager& projectiles) override;
 
     /// @brief Sets the reload time for the attack pattern.
     /// @param frames The new reload time in frames.

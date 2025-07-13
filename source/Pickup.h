@@ -8,7 +8,7 @@
 #include "TextureManager.h"
 
 // forward declaration
-class Player;
+class IPlayer;
 
 /// @brief Abstract base class for all pickup types.
 class Pickup : public Positionable, public SpriteOwner {
@@ -30,7 +30,7 @@ public:
 	/// @brief Pure virtual function. To be called by the Player object when it detects the collision
 	/// @param player - A reference to the Player object. 
 	/// Neccessary for any given Pickup to be able to modify player stats.
-	virtual void onPickup(Player& player) = 0;
+	virtual void onPickup(IPlayer& player) = 0;
 
 	/// @brief Process function. Handles the movement of a Pickup object. 
 	/// Should get called every frame.

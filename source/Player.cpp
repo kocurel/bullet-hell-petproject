@@ -1,22 +1,16 @@
 #include "Player.h"
-
-#include "PickupManager.h"
-#include "ProjectileManager.h"
+#include "IPickupManager.h"
 #include "ProjectileStraight.h"
 #include "ProjectileBuilder.h"
 #include "UserInterface.h"
 #include "IProjectileManager.h"
-#include "Projectile.h"
-#include <SFML/Window.hpp>
-#include "SpriteOwner.h"
 #include "TextureManager.h"
 #include "InputManager.h"
 #include <algorithm>
-#include <ranges>
-#include <iostream>
 #include <numbers>
+#include "ProjectileFactory.h"
 
-Player::Player(IProjectileManager& projectiles) : projectiles_(projectiles) {
+Player::Player(IProjectileManager& projectile_manager) : projectile_manager_(projectile_manager) {
     sprite_.setTexture(TextureManager::getInstance().getTexture("assets/circle64.png"));
     sprite_.setOrigin({ 32.f, 32.f });
     sprite_.scale({ 0.5f, 0.5f });
@@ -24,23 +18,22 @@ Player::Player(IProjectileManager& projectiles) : projectiles_(projectiles) {
     hitbox_.radius_ = 4.f;
 }
 
+const CollisionCircle& Player::getHitbox() const {
+    return hitbox_;
+}
+
 void Player::hit(Projectile& projectile) {
-    projectile.disable();
+    i_frames_ = 30;
     --health_points_;
     UserInterface::getInstance().updateLife(health_points_);
 }
 
 void Player::attack(IProjectileManager& projectiles) const {
     std::unique_ptr<Projectile> projectile;
-    ProjectileBuilder<ProjectileStraight> ps_builder(projectiles_);
     if (attack_pattern_ % 2 == 0) {
-        ps_builder.color({ 255, 255, 255, 168 })
-            .damage(bullet_damage_)
-            .direction({ 0.f, -1.f })
-            .position(position_)
-            .velocity(bullet_speed_);
-        projectile = ps_builder.build();
-        projectiles.createPlayerProjectile(std::move(projectile));
+        projectile = ProjectileFactory::createProjectile(ProjectileType::ProjectileStraight, 
+            projectiles, position_, { 0, -1 }, bullet_speed_, 0.75f, { 255, 255, 255, 168 });
+        projectiles.addPlayerProjectile(std::move(projectile));
     }
 
     for (int i = 0; i < (attack_pattern_ + 1) /2; i++) {
@@ -48,16 +41,15 @@ void Player::attack(IProjectileManager& projectiles) const {
         if (attack_pattern_ % 2 == 0) {
             space_in_the_middle = 8.f;
         }
-        ps_builder.color({ 255, 255, 255, 168 })
-            .damage(bullet_damage_)
-            .direction({ 0.f, -1.f })
-            .position(position_ - sf::Vector2f(float(i+1)*16 + space_in_the_middle - 8.f, 0))
-            .velocity(bullet_speed_);
-        projectile = ps_builder.build();
-        projectiles.createPlayerProjectile(std::move(projectile));
-        ps_builder.position(position_ + sf::Vector2f(float(i+1)*16 + space_in_the_middle - 8.f, 0));
-        projectile = ps_builder.build();
-        projectiles.createPlayerProjectile(std::move(projectile));
+        sf::Vector2f pos = (position_ - sf::Vector2f(float(i + 1) * 16 + space_in_the_middle - 8.f, 0));
+        projectile = ProjectileFactory::createProjectile(ProjectileType::ProjectileStraight,
+            projectiles, pos, { 0, -1 }, bullet_speed_, 0.75f, { 255, 255, 255, 168 });
+        projectiles.addPlayerProjectile(std::move(projectile));
+        
+        pos = (position_ + sf::Vector2f(float(i + 1) * 16 + space_in_the_middle - 8.f, 0));
+        projectile = ProjectileFactory::createProjectile(ProjectileType::ProjectileStraight,
+            projectiles, pos, { 0, -1 }, bullet_speed_, 0.75f, { 255, 255, 255, 168 });
+        projectiles.addPlayerProjectile(std::move(projectile));
     }
 }
 
@@ -113,6 +105,10 @@ void Player::move() {
      attack_cooldown_ *= 0.975f;
  }
 
+ bool Player::isInvincible() const {
+     return (i_frames_ > 0);
+ }
+
  void Player::increaseBomb() {
      if (bombs_ < 3) {
          ++bombs_;
@@ -132,42 +128,24 @@ void Player::move() {
      UserInterface::getInstance().updateLife(health_points_);
  }
 
-void Player::process(ProjectileManager& projectiles, PickupManager& pickups) {
+void Player::process(IProjectileManager& projectiles, IPickupManager& pickups) {
+    move();
     if (i_frames_ > 0) {
         --i_frames_;
     }
-    move();
-    if (--cooldown_ <= 0) {
-        cooldown_ = attack_cooldown_;
+    if (bomb_timer_ > 0) {
+        --bomb_timer_;
+    }
+    if (--attack_timer_ <= 0) {
+        attack_timer_ = attack_cooldown_;
         attack(projectiles);
     }
     bool bomb_pressed = InputManager::getInstance().isKeyJustPressed(sf::Keyboard::Key::X)
         || InputManager::getInstance().isKeyJustPressed(sf::Keyboard::Key::Space);
-    if (--bomb_cooldown <= 0 && bomb_pressed && bombs_ > 0) {
-        bomb_cooldown = 60;
+    if (bomb_pressed && bomb_timer_ == 0 && bombs_ > 0) {
+        bomb_timer_ = bomb_cooldown_;
         --bombs_;
         UserInterface::getInstance().updateBombs(bombs_);
         projectiles.clear();
     }
-
-    for (auto& projectile : projectiles.getEnemyProjectiles()
-        | std::views::filter([](const std::unique_ptr<Projectile>& obj) { return !obj->isDisabled(); })) {
-        bool collided = hitbox_.checkCollision(projectile->getHitbox());
-        if (i_frames_ > 0) {
-            break;
-        }
-        if (collided) {
-            i_frames_ = 30;
-            hit(*projectile);
-        }
-    }/*
-    for (auto& pickup : pickups.getPickups()
-        | std::views::filter([](const std::unique_ptr<Pickup>& obj) { return !obj->isDisabled(); })) {
-        bool collided = hitbox_.checkCollision(pickup->getHitbox());
-
-        if (collided) {
-            pickup->onPickup(*this);
-            UserInterface::getInstance().increaseScore(20);
-        }
-    }*/
 }

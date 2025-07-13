@@ -18,7 +18,7 @@ private:
     /// @brief Reference to the event manager interface, used to add newly created events.
     IEventManager& event_manager_;
     /// @brief Reference to the projectile addition interface, used by events that spawn projectiles.
-    IProjectileManager& projectiles_;
+    IProjectileManager& projectile_manager_;
 public:
     /// @brief Constructs an EventFactory.
     /// @param projectiles - a reference to the IProjectileManager interface of the ProjectileManager manager.

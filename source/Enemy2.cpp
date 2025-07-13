@@ -22,11 +22,11 @@ Enemy2::Enemy2(IProjectileManager& projectiles) : Enemy(projectiles) {
     setReloadTime(30);
 }
 
-void Enemy2::attack(Player& player, IProjectileManager& projectiles_) {
-    UpwardSprayPattern::attack(player, projectiles_);
+void Enemy2::attack(IPlayer& player, IProjectileManager& projectile_manager_) {
+    UpwardSprayPattern::attack(player, projectile_manager_);
 }
 
-void Enemy2::process(Player& player) {
+void Enemy2::process(IPlayer& player) {
     bool getting_into_position = position_.y < 100;
     if (getting_into_position) {
         position_ += sf::Vector2f(0.f, 1.f) * 3.f;
@@ -47,7 +47,7 @@ void Enemy2::process(Player& player) {
         }
     }
     // attack
-    attack(player, projectiles_);
+    attack(player, projectile_manager_);
     hitbox_.position_ = position_;
     sprite_.setPosition(position_);
     if (position_.y > 1200) {

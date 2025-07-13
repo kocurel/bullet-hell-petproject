@@ -23,7 +23,7 @@ class ProjectileBuilder {
 private:
     /// @brief Reference to an interface for adding projectiles to a collection.
     /// This is passed to the constructed projectile's constructor.
-    IProjectileManager& projectiles_;
+    IProjectileManager& projectile_manager_;
 
     /// @brief The scale factor for the projectile's sprite.
     float scale_ = 0.75f;
@@ -49,7 +49,7 @@ private:
 public:
     /// @brief Constructor for the ProjectileBuilder.
     /// @param projectiles A reference to an IAddProjectile interface, which will be passed to the constructed projectile.
-    explicit ProjectileBuilder(IProjectileManager& projectiles) : projectiles_(projectiles) {};
+    explicit ProjectileBuilder(IProjectileManager& projectiles) : projectile_manager_(projectiles) {};
 
     /// @brief Sets the color tint for the projectile.
     /// @param clr The sf::Color to set.
@@ -111,16 +111,17 @@ public:
     /// @brief Constructs and returns a unique pointer to the configured projectile.
     /// @return A std::unique_ptr to the newly created projectile of type T.
     std::unique_ptr<T> build() const {
-        std::unique_ptr<T> projectile = std::make_unique<T>(projectiles_, scale_);
+        //std::unique_ptr<T> projectile = std::make_unique<T>(projectile_manager_, scale_);
 
-        T& proj = *projectile;
-        proj.setPosition(position_);
-        proj.setDirection(direction_);
-        proj.setVelocity(velocity_);
-        proj.setColor(color_);
-        proj.setDamage(damage_);
-        proj.setMaxVelocity(max_velocity_);
+        //T& proj = *projectile;
+        //proj.setPosition(position_);
+        //proj.setDirection(direction_);
+        //proj.setVelocity(velocity_);
+        //proj.setColor(color_);
+        //proj.setDamage(damage_);
+        //proj.setMaxVelocity(max_velocity_);
 
-        return std::move(projectile);
+        //return std::move(projectile);
+        return nullptr;
     }
 };

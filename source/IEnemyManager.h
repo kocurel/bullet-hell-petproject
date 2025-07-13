@@ -7,7 +7,7 @@ namespace sf {
 }
 
 class Enemy;
-class Player;
+class IPlayer;
 class IProjectileManager;
 class IPickupManager;
 
@@ -18,7 +18,7 @@ public:
 	/// @param player - reference to the player for directed attacking.
 	/// @param projectiles - reference to the projectile manager for creating new projectiles.
 	/// @param pickups - reference to the pickups manager for creating new pickups.
-	virtual void process(Player& player, IProjectileManager& projectiles, IPickupManager& pickups) = 0;
+	virtual void process(IPlayer& player, IProjectileManager& projectiles, IPickupManager& pickups) = 0;
 	/// @brief Creates a new enemy by taking ownership of the Enemy object passed by parameter.
 	/// @param enemy - rvalue reference of the unique_pointer to Enemy object.
 	virtual void createEnemy(std::unique_ptr<Enemy>&& enemy) = 0;

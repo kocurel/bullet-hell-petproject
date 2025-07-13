@@ -6,7 +6,7 @@
 #include <SFML/System/Vector2.hpp>
 
 // Forward declarations
-class Player;
+class IPlayer;
 class IProjectileManager;
 
 /// @brief An attack pattern consisting of three projectiles shot simultaneously.
@@ -35,5 +35,5 @@ protected:
     /// creates three projectiles simultaneously with a rotational spread.
     /// @param player A reference to the Player object, used to determine the initial direction of projectiles.
     /// @param projectiles A reference to an IAddProjectile interface to create new enemy projectiles.
-    void attack(Player& player, IProjectileManager& projectiles) override;
+    void attack(IPlayer& player, IProjectileManager& projectiles) override;
 };

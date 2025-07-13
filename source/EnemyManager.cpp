@@ -32,7 +32,7 @@ void EnemyManager::checkWave() {
         }
     }
 }
-void EnemyManager::process(Player& player, IProjectileManager& projectiles, IPickupManager& pickups) {
+void EnemyManager::process(IPlayer& player, IProjectileManager& projectiles, IPickupManager& pickups) {
     cleanupEnemies();
     checkWave();
     for (auto& enemy : enemies_

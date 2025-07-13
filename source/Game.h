@@ -31,7 +31,7 @@ private:
     /// @brief EventParser object. Used to read stage files.
     EventParser parser_;
     /// @brief Projectile mnager object.
-    ProjectileManager projectiles_;
+    ProjectileManager projectile_manager_;
     /// @brief Event manager object.
     EventManager event_manager_;
     /// @brief Pickup manager object.

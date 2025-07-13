@@ -7,8 +7,7 @@
 #include "InputManager.h"
 #include <optional>
 
-#include <iostream>
-#define LAG_WARNING 1
+constexpr auto LAG_WARNING = 1;
 #define WINDOW_X 1120
 #define WINDOW_Y 840
 

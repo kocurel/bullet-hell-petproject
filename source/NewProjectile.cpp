@@ -7,5 +7,5 @@ NewProjectile::NewProjectile(std::unique_ptr<Projectile>&& projectile)
 }
 
 void NewProjectile::onRelease(EnemyManager& enemies, ProjectileManager& projectiles) {
-    projectiles.createEnemyProjectile(std::move(projectile_));
+    projectiles.addEnemyProjectile(std::move(projectile_));
 }

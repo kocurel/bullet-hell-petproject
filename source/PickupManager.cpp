@@ -1,6 +1,8 @@
 #include "PickupManager.h"
 #include "PickupClasses.h"
 #include <iostream>
+#include "IPlayer.h"
+#include "UserInterface.h"
 
 void PickupManager::cleanup() {
 	if (--cleanup_counter_ <= 0) {
@@ -14,11 +16,16 @@ void PickupManager::clear() {
 	pickups_.clear();
 }
 
-void PickupManager::process() {
+void PickupManager::process(IPlayer& player) {
 	cleanup();
 	for (auto& pickup : pickups_
 		| std::views::filter([](std::unique_ptr<Pickup>& obj) {return !obj->isDisabled(); })) {
 		pickup->process();
+		if (player.getHitbox().checkCollision(pickup->getHitbox())) {
+			pickup->disable();
+			pickup->onPickup(player);
+			UserInterface::getInstance().increaseScore(20);
+		}
 	}
 
 }

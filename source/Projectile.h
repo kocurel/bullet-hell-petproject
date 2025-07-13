@@ -19,7 +19,7 @@ class Projectile : public SpriteOwner {
 protected:
     /// @brief Reference to an interface for adding new projectiles.
     /// This allows projectiles to potentially create other projectiles (e.g., on hit, or for special attacks).
-    IProjectileManager& projectiles_;
+    IProjectileManager& projectile_manager_;
 
     /// @brief The current position of the projectile in game coordinates.
     sf::Vector2f position_;

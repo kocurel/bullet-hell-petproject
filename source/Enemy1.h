@@ -21,7 +21,7 @@ protected:
     /// @param player - a reference to the Player object.
     /// @param projectiles - a reference to the IAddProjectiles interface of ProjectileManager
     /// @sa choosePattern, IAttackPattern, Player, IAddProjectiles
-    void attack(Player& player, IProjectileManager& projectiles) override;
+    void attack(IPlayer& player, IProjectileManager& projectiles) override;
     /// @brief Uses RandomNumberGenerator to randomly select the next attack pattern
     /// @sa RandomNumberGenerator, AttackPattern
     void choosePattern();
@@ -33,5 +33,5 @@ public:
     /// @brief The main process method of Enemy1.
     /// should get called each frame.
     /// @param player - a reference to the Player object.
-    void process(Player& player) override;
+    void process(IPlayer& player) override;
 };

@@ -8,16 +8,16 @@
 // forward declarations
 class IPickupManager;
 class IProjectileManager;
-class Player;
+class IPlayer;
 class Projectile;
 
 /// @brief Abstract base class for all Enemy types.
 class Enemy : public SpriteOwner , public virtual Positionable {
 protected:
     /// @brief A reference to the projectile manager.
-    IProjectileManager& projectiles_;
+    IProjectileManager& projectile_manager_;
     /// @brief The class constructor.
-    /// @param projectiles - reference to the IProjectileManager interface for projectiles_.
+    /// @param projectiles - reference to the IProjectileManager interface for projectile_manager_.
     Enemy(IProjectileManager& projectiles);
     /// @brief Enemy's health_points.
     float health_ = 10;
@@ -31,7 +31,7 @@ public:
 
     /// @brief Pure virtual method, defines Enemy's behaviour in each game frame.
     /// @param player - a reference to the Player object
-    virtual void process(Player& player) = 0;
+    virtual void process(IPlayer& player) = 0;
 
     /// @brief Virtual method, defines the behaviour, when Enemy's health reaches 0.
     void onDestruction(IPickupManager& pickups); 

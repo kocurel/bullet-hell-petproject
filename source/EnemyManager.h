@@ -90,7 +90,7 @@ public:
 	/// @param projectiles - a reference to the ProjectileManager, necessary to check for collisions.
 	/// @param pickups - a reference to the PickupManager, necessary for enemies to create pickups on destruction.
 	/// @sa EnemyManager::cleanupEnemies, EnemyManager::checkWave, Enemy::process, CollisionCircle::checkCollision
-	void process(Player& player, IProjectileManager& projectiles, IPickupManager& pickups) override;
+	void process(IPlayer& player, IProjectileManager& projectiles, IPickupManager& pickups) override;
 
 	/// @brief Moves a unique pointer passed as parameter to the enemies_ vector.
 	/// Once called, the EnemyManager class becomes the owner of the enemy object.

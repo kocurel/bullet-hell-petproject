@@ -11,7 +11,7 @@
 #include "Enemy.h"
 #include <fstream>
 
-Game::Game() : parser_(projectiles_, event_manager_), enemy_manager_(event_manager_), player_(projectiles_) {}
+Game::Game() : parser_(projectile_manager_, event_manager_), enemy_manager_(event_manager_), player_(projectile_manager_) {}
 
 void Game::setRenderWindow(sf::RenderWindow* window) {
     window_ = window;
@@ -80,7 +80,7 @@ void Game::saveScore() {
 }
 void Game::resetGame() {
 
-    projectiles_.clear();
+    projectile_manager_.clear();
     player_.resetPlayer();
     pickup_manager_.clear();
     enemy_manager_.clear();
@@ -117,11 +117,11 @@ void Game::process() {
         checkLevelSelection();
         return;
     }
-    event_manager_.process(enemy_manager_, projectiles_);
-    player_.process(projectiles_, pickup_manager_);
-    enemy_manager_.process(player_, projectiles_, pickup_manager_);
-    projectiles_.process(enemy_manager_, player_, pickup_manager_);
-    pickup_manager_.process();
+    event_manager_.process(enemy_manager_, projectile_manager_);
+    player_.process(projectile_manager_, pickup_manager_);
+    enemy_manager_.process(player_, projectile_manager_, pickup_manager_);
+    projectile_manager_.process(enemy_manager_, player_, pickup_manager_);
+    pickup_manager_.process(player_);
 }
 
 void Game::render() {
@@ -131,7 +131,7 @@ void Game::render() {
     UserInterface::getInstance().renderBottom(window);
     player_.render(window);
     pickup_manager_.render(window);
-    projectiles_.render(window);
+    projectile_manager_.render(window);
     enemy_manager_.render(window);
     UserInterface::getInstance().renderTop(window);
 

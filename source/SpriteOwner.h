@@ -2,6 +2,7 @@
 /// @brief declares the SpriteOwner base class
 #pragma once
 #include "SFML/Graphics.hpp"
+#include <functional>
 
 /// @brief Base class for objects that own and manage an SFML sprite.
 /// Provides basic functionalities for rendering a sprite, and disabling the object.

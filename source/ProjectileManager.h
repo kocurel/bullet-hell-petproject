@@ -30,14 +30,6 @@ private:
     /// Cleanup runs only when this counter reaches zero.
     int cleanup_counter_ = 120;
 
-    /// @brief A function object (lambda) to check if a projectile is NOT disabled.
-    /// Used with C++20 ranges for filtering active projectiles.
-    std::function<bool(const std::unique_ptr<Projectile>&)> is_not_disabled;
-
-    /// @brief A function object (lambda) to check if a projectile IS disabled.
-    /// Used with `std::remove_if` during cleanup.
-    std::function<bool(const std::unique_ptr<Projectile>&)> is_disabled;
-
     /// @brief Cleans up disabled projectiles from both enemy and player projectile collections.
     ///
     /// This method is called periodically based on `cleanup_counter_`.
@@ -58,17 +50,17 @@ public:
     /// This method first calls `cleanupProjectiles()` to remove disabled ones.
     /// Then, it iterates through all remaining active enemy and player projectiles
     /// and calls their `process()` method.
-    void process(IEnemyManager& enemy_manager, Player& player, IPickupManager& pickup_manager) override;
+    void process(IEnemyManager& enemy_manager, IPlayer& player, IPickupManager& pickup_manager) override;
 
     /// @brief Creates and adds a new player-fired projectile to the manager.
     /// This method overrides the pure virtual function from `IAddProjectile`.
     /// @param projectile - An rvalue reference to a unique_ptr holding the new projectile.
-    void createPlayerProjectile(std::unique_ptr<Projectile>&& projectile) override;
+    void addPlayerProjectile(std::unique_ptr<Projectile>&& projectile) override;
 
     /// @brief Creates and adds a new enemy-fired projectile to the manager.
     /// This method overrides the pure virtual function from `IAddProjectile`.
     /// @param projectile - An rvalue reference to a unique_ptr holding the new projectile.
-    void createEnemyProjectile(std::unique_ptr<Projectile>&& projectile) override;
+    void addEnemyProjectile(std::unique_ptr<Projectile>&& projectile) override;
 
     /// @brief Renders all active projectiles (both player and enemy) on the provided SFML render window.
     /// @param window - A reference to the SFML RenderWindow where projectiles will be drawn.

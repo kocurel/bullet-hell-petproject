@@ -3,10 +3,10 @@
 #include "IProjectileManager.h"
 #include "ProjectileBuilder.h"
 #include "ProjectileStraight.h"
-#include "Player.h"
+#include "IPlayer.h"
 #include "Projectile.h"
 
-void TripleStraightPattern::attack(Player& player, IProjectileManager& projectiles) {
+void TripleStraightPattern::attack(IPlayer& player, IProjectileManager& projectiles) {
     if (--until_reload_ > 0) {
         switch_signal_ = false;
         return;
@@ -31,8 +31,8 @@ void TripleStraightPattern::attack(Player& player, IProjectileManager& projectil
     ps_builder
         .direction(direction3);
     std::unique_ptr<Projectile> projectile3 = ps_builder.build();
-    projectiles.createEnemyProjectile(std::move(projectile1));
-    projectiles.createEnemyProjectile(std::move(projectile3));
-    projectiles.createEnemyProjectile(std::move(projectile2));
+    projectiles.addEnemyProjectile(std::move(projectile1));
+    projectiles.addEnemyProjectile(std::move(projectile3));
+    projectiles.addEnemyProjectile(std::move(projectile2));
     switch_signal_ = true;
 }
